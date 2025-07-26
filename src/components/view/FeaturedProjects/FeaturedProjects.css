@@ -1,0 +1,75 @@
+.featured-projects-section {
+  background-color: #fff;
+  padding: 50px 20px;
+}
+
+.container-wrapper {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project-image {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 250px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #016cb4af;
+  color: white;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-text h5,
+.overlay-text p,
+.view-more {
+  color: white;
+}
+
+.view-more {
+  margin-top: 8px;
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: underline;
+}
+.ant-btn-variant-solid {
+  color: #fff !important;
+}
+.ant-btn-variant-solid:hover {
+  color: #198ce0 !important;
+}
+/* Mobile slider display toggle */
+.project-slider-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .project-list-desktop {
+    display: none;
+  }
+  .project-slider-mobile {
+    display: block;
+  }
+}

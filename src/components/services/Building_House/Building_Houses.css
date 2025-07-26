@@ -1,0 +1,144 @@
+/* ==== Container chính ==== */
+.building-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.building-wrapper {
+  width: 100%;
+}
+
+/* ==== Tiêu đề ==== */
+.building-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #014d91;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* ==== Mô tả ==== */
+.building-description {
+  padding: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.building-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+/* ==== Highlight ==== */
+.highlight {
+  color: #016bb4;
+  font-weight: bold;
+}
+
+/* ==== Hình ảnh hoàn thiện ==== */
+.building-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.building-image {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+.building-caption {
+  width: 80%;
+  background-color: #016bb4;
+  font-size: 16px;
+  color: #fff;
+  font-style: italic;
+  text-align: center;
+  padding: 8px 12px;
+}
+
+/* ==== Phần mô tả ==== */
+.building-description {
+  padding: 20px 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.building-text {
+  font-size: 16px;
+  line-height: 2;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.building-text-description {
+  font-size: 16px;
+  line-height: 2.5;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+.building-subtitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: #016bb4;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.building-subtitle-contact {
+  font-size: 22px;
+  font-weight: bold;
+  color: #016bb4;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.highlight-bold {
+  color: #016bb4;
+  font-weight: bold;
+}
+
+.building-subtitle-h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #016bb4;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.building-subtitle-h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.building-text {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.building-list {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.building-list li {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,94 @@
+/* ==== Container chính ==== */
+.finishing-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.finishing-wrapper {
+  width: 100%;
+}
+
+/* ==== Tiêu đề ==== */
+.finishing-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #014d91;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 40px 0 20px 0;
+}
+
+/* ==== Phần mô tả ==== */
+.finishing-description {
+  padding: 20px 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.finishing-text {
+  font-size: 16px;
+  line-height: 2;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.finishing-text-description {
+  font-size: 16px;
+  line-height: 2.5;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.finishing-subtitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: #016bb4;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* ==== Highlight ==== */
+.highlight-blue {
+  color: #016bb4;
+  font-weight: bold;
+}
+
+.highlight-nghien {
+  color: #016bb4;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+/* ==== Hình ảnh ==== */
+.finishing-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.finishing-image {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+.finishing-caption {
+  width: 80%;
+  background-color: #016bb4;
+  font-size: 16px;
+  color: #fff;
+  font-style: italic;
+  text-align: center;
+  padding: 8px 12px;
+}
+
+/* ==== Form và FAQ có thể dùng chung style nếu cần ==== */

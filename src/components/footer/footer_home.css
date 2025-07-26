@@ -1,0 +1,5 @@
+a:where(.css-dev-only-do-not-override-7t2xvq).ant-typography,
+:where(.css-dev-only-do-not-override-7t2xvq).ant-typography a {
+  color: #ffffff !important;
+  text-decoration: none;
+}

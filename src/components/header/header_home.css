@@ -1,0 +1,68 @@
+.ant-menu-horizontal .menu-about > .ant-menu-submenu-title > a,
+.ant-menu-horizontal .menu-services > .ant-menu-submenu-title > a,
+.ant-menu-horizontal .menu-projects > .ant-menu-submenu-title > a,
+.ant-menu-horizontal .menu-recruitment > a,
+.ant-menu-horizontal .menu-contact > a {
+  color: #222 !important;
+}
+
+.ant-menu-horizontal .menu-about-item > a,
+.ant-menu-horizontal .menu-services-item > a,
+.ant-menu-horizontal .menu-projects-item > a {
+  color: #222 !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover,
+.ant-menu-horizontal > .ant-menu-submenu:hover > .ant-menu-submenu-title {
+  color: #016bb4 !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item::after,
+.ant-menu-horizontal > .ant-menu-submenu::after,
+.ant-menu-horizontal > .ant-menu-item-selected::after,
+.ant-menu-horizontal
+  > .ant-menu-submenu-selected
+  .ant-menu-submenu-title::after {
+  border-bottom: none !important;
+  transition: none !important;
+}
+
+.logo-center-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:where(.css-dev-only-do-not-override-7t2xvq) a {
+  color: #000 !important;
+}
+:where(.css-dev-only-do-not-override-7t2xvq) a:hover {
+  color: #016bb4 !important;
+}
+
+/* Mobile Submenu style */
+.ant-drawer .ant-menu-inline .ant-menu-submenu {
+  background-color: #fafafa;
+}
+
+.ant-drawer .ant-menu-item {
+  padding-left: 32px;
+}
+
+.ant-drawer .ant-menu-submenu-open .ant-menu-sub {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .logo-center-mobile {
+    justify-content: flex-start;
+    padding-left: 250px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-center-mobile {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
