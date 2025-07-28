@@ -1,8 +1,8 @@
 import React from "react";
 import { Layout } from "antd";
-import HeaderHome from "../../components/Users/header/header_home";
-import FooterHome from "../../components/Users/footer/footer_home";
-import Container from "../../components/Users/view/Container";
+import HeaderHome from "../header/header_home";
+import FooterHome from "../footer/footer_home";
+import Container_Services from "../services/Container_Services/Container_Services";
 
 const { Content } = Layout;
 
@@ -11,7 +11,7 @@ const HomePages = () => {
     <Layout>
       <HeaderHome />
       <Content>
-        <Container />
+        <Container_Services />
       </Content>
       <FooterHome />
     </Layout>
