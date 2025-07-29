@@ -8,8 +8,8 @@ import {
   RiseOutlined,
   HomeOutlined,
 } from "@ant-design/icons";
-import DesignProcess from "./Design";
-import IntroductionHome from "./Introduction_home";
+import DesignProcess from "./Design/Design";
+import IntroductionHome from "./Introduction/Introduction_home";
 import FeaturedProjects from "./FeaturedProjects/FeaturedProjects";
 import SliderCMT from "./Slider_CMT/Slider_CMT";
 import ContactForm from "./Mail/ContactFormMail";
@@ -23,7 +23,7 @@ const Container = () => {
 
   return (
     <div>
-      {/* Giới thiệu nhỏ của trang home Wrapper for the rest of the content */}
+      {/* Giới thiệu nhỏ của trang home */}
       <IntroductionHome />
       {/* Thiết kế & Thi công trọn gói */}
       <DesignProcess />

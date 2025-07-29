@@ -73,3 +73,35 @@
     display: block;
   }
 }
+
+/* ===== Responsive layout cho thứ tự và canh giữa ===== */
+
+/* Mobile & Tablet: đảo thứ tự - chữ lên trước ảnh */
+@media screen and (max-width: 991px) {
+  .text-section-gt2 {
+    order: -1 !important; /* đưa lên trước */
+  }
+
+  .image-section-gt2 {
+    order: 1 !important; /* đưa xuống sau */
+  }
+}
+
+/* canh giữa văn bản Responsive Mobile & Tablet */
+@media screen and (max-width: 991px) {
+  .text-section {
+    text-align: center; /* Canh giữa văn bản */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-section h3,
+  .text-section p {
+    text-align: center !important; /* Canh giữa tiêu đề và đoạn văn */
+  }
+
+  .text-section .ant-btn {
+    margin-top: 5px;
+  }
+}

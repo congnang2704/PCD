@@ -35,6 +35,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePages />} />
+      <Route path="/nguyenhai.com.vn" element={<HomePages />} />
 
       {/* click here to see the about us page about us & history */}
       <Route path="/gioi-thieu" element={<AboutUs />} />

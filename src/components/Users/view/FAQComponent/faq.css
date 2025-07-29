@@ -1,7 +1,7 @@
 .faq-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 40px;
+  padding: 15px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fff;
 }
@@ -10,6 +10,7 @@
   background-color: #fff;
   color: #016bb4;
   text-align: center;
+  text-transform: uppercase;
   padding: 16px;
   font-size: 26px;
   font-weight: bold;
@@ -48,6 +49,7 @@
 
 .faq-text {
   flex: 1;
+  color: #016bb4;
   font-size: 16px;
   font-weight: 500;
 }
@@ -60,7 +62,8 @@
 
 .faq-answer {
   padding: 0 66px 16px 66px;
+  text-align: justify;
   font-size: 15px;
-  color: #000;
+  color: #016bb4;
   line-height: 1.6;
 }

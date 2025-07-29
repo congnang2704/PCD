@@ -43,7 +43,7 @@ const FAQComponent = () => {
 
   return (
     <div className="faq-container">
-      <h2 className="faq-title">Các câu hỏi thường gặp</h2>
+      <h1 className="faq-title">Các câu hỏi thường gặp</h1>
       {faqData.map((item, index) => (
         <div key={item.id} className="faq-item">
           <div className="faq-question" onClick={() => toggleFAQ(index)}>

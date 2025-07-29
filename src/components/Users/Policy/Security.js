@@ -10,7 +10,9 @@ const HomePages = () => {
   return (
     <Layout>
       <HeaderHome />
-      <Content>{/* <SecurityPolicy /> */}</Content>
+      <Content>
+        <SecurityPolicy />
+      </Content>
       <FooterHome />
     </Layout>
   );

@@ -1,3 +1,4 @@
+import "./Design.css";
 import React, { useState } from "react";
 import { Row, Col, Typography } from "antd";
 
@@ -17,41 +18,16 @@ const DesignProcess = () => {
         }}
       >
         {/* Tab Buttons */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            marginBottom: 32,
-          }}
-        >
+        <div className="tab-buttons">
           <div
+            className={`tab-btn left${activeTab === "design" ? " active" : ""}`}
             onClick={() => setActiveTab("design")}
-            style={{
-              padding: "10px 32px",
-              backgroundColor: activeTab === "design" ? "#016bb4" : "#5aa9dd",
-              color: "#fff",
-              fontSize: "18px",
-              fontWeight: "bold",
-              cursor: "pointer",
-              borderTopLeftRadius: 4,
-              borderBottomLeftRadius: 4,
-            }}
           >
             THIẾT KẾ
           </div>
           <div
+            className={`tab-btn right${activeTab === "build" ? " active" : ""}`}
             onClick={() => setActiveTab("build")}
-            style={{
-              padding: "10px 32px",
-              backgroundColor: activeTab === "build" ? "#016bb4" : "#5aa9dd",
-              color: "#fff",
-              fontSize: "18px",
-              fontWeight: "bold",
-              cursor: "pointer",
-              borderTopRightRadius: 4,
-              borderBottomRightRadius: 4,
-            }}
           >
             THI CÔNG TRỌN GÓI
           </div>

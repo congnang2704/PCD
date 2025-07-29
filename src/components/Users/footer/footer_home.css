@@ -3,3 +3,65 @@ a:where(.css-dev-only-do-not-override-7t2xvq).ant-typography,
   color: #ffffff !important;
   text-decoration: none;
 }
+
+.footer-home {
+  background-color: #016bb4;
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-title {
+  color: #fff !important;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.footer-text {
+  color: #fff;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.footer-link {
+  margin-bottom: 8px;
+  display: block;
+  color: #fff;
+}
+.footer-link:hover {
+  color: #ffd000 !important;
+}
+
+.footer-logo {
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-contact {
+  color: #fff;
+}
+
+.footer-icon {
+  color: #fff;
+  margin-top: 4px;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.footer-bottom-text {
+  color: #fff;
+}

@@ -1,42 +1,48 @@
-import React from 'react';
-import Slider from 'react-slick';
-import { Avatar, Typography } from 'antd';
-import { CommentOutlined } from '@ant-design/icons';
-import './Slider_CMT.css';
+import React from "react";
+import Slider from "react-slick";
+import { Avatar, Typography } from "antd";
+import { CommentOutlined } from "@ant-design/icons";
+import "./Slider_CMT.css";
+
+import imgavatar1 from "../../../../assets/avatarcmt/anh-doanh-nhan-nu-min-1170x780.jpg.webp";
+import imgavatar2 from "../../../../assets/avatarcmt/Nam-11-min.jpg.webp";
+import imgavatar3 from "../../../../assets/avatarcmt/Doanh-nhan-nu-tre-13.jpg";
+import imgavatar4 from "../../../../assets/avatarcmt/Anh-CV-chuyen-nghiep-min-1.jpg.webp";
+import imgavatar5 from "../../../../assets/avatarcmt/Anh-doanh-nhan-nu-dep-16-min.jpg";
 
 const { Paragraph } = Typography;
 
 const comments = [
   {
-    name: "Vy Phan (vợ Anh Dũng Quảng Nam)",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    content: "Cảm ơn đội ngũ NGUYỄN HẢI CO., LTD đã hỗ trợ 2 vc có được thiết kế ngôi nhà như ý. Chúc các anh chị luôn khoẻ mạnh và NGUYỄN HẢI CO., LTD ngày càng phát triển hơn",
-    link: "#"
+    name: "Chị Lan (Đà Nẵng)",
+    avatar: imgavatar1,
+    content:
+      "Cảm ơn đội ngũ NGUYỄN HẢI CO., LTD đã hỗ trợ vợ chồng tôi có được thiết kế ngôi nhà như ý. Chúc công ty ngày càng phát triển và thành công!",
   },
   {
-    name: "Anh Thành - Đồng Nai",
-    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
-    content: "Trả hàng cho anh em NGUYỄN HẢI CO., LTD, cảm ơn tất cả anh em NGUYỄN HẢI CO., LTD đã thiết kế, tư vấn và hỗ trợ gia đình trong suốt quá trình thi công để hoàn thành ngôi nhà mơ ước của gia đình mình!",
-    link: "#"
+    name: "Anh Nam (Huế)",
+    avatar: imgavatar2,
+    content:
+      "Gia đình tôi rất hài lòng với ngôi nhà được NGUYỄN HẢI CO., LTD thiết kế và thi công. Đội ngũ làm việc rất chuyên nghiệp và tận tâm.",
   },
   {
-    name: "Chị Hiền (Anh Phong - Hải Dương)",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
-    content: "Hôm nay là mình lên nhà mới, công việc cũng đã hoàn tất mình xin gửi lời cảm ơn đến toàn thể gđ NGUYỄN HẢI CO., LTD ạ! Thật sự thiết kế rất ưng ý vợ chồng mình",
-    link: "#"
+    name: "Chị Hồng (Quảng Ngãi)",
+    avatar: imgavatar3,
+    content:
+      "Hôm nay nhận nhà mới, thật sự rất vui và biết ơn NGUYỄN HẢI CO., LTD. Thiết kế đẹp, thi công đúng tiến độ và rất hợp ý gia đình tôi.",
   },
   {
-    name: "Anh Bình (Bình Dương)",
-    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
-    content: "Dịch vụ tuyệt vời, đội ngũ nhiệt tình và chuyên nghiệp. Tôi rất hài lòng với thiết kế của NGUYỄN HẢI CO., LTD!",
-    link: "#"
+    name: "Anh Minh (Quảng Nam)",
+    avatar: imgavatar4,
+    content:
+      "Tôi đánh giá cao phong cách làm việc chuyên nghiệp và thân thiện của đội ngũ NGUYỄN HẢI CO., LTD. Nhà đẹp, đúng như mong muốn.",
   },
   {
-    name: "Chị Mai (TP.HCM)",
-    avatar: "https://randomuser.me/api/portraits/women/51.jpg",
-    content: "Từ lúc tư vấn đến khi bàn giao nhà đều rất nhanh chóng và chuyên nghiệp. Cảm ơn NGUYỄN HẢI CO., LTD rất nhiều!",
-    link: "#"
-  }
+    name: "Chị Thảo (Nha Trang)",
+    avatar: imgavatar5,
+    content:
+      "Từ khâu tư vấn đến khi bàn giao nhà đều rất nhanh gọn và tận tâm. Cảm ơn NGUYỄN HẢI CO., LTD đã giúp tôi thực hiện được ngôi nhà mơ ước!",
+  },
 ];
 
 const settings = {
@@ -49,23 +55,26 @@ const settings = {
     {
       breakpoint: 992,
       settings: {
-        slidesToShow: 1
-      }
-    }
-  ]
+        slidesToShow: 1,
+      },
+    },
+  ],
 };
 
 const SliderCMT = () => {
   return (
     <div className="slider-cmt-wrapper">
+      <h1 className="slider-h1-wrapper">khách hàng nói gì về chúng tôi</h1>
       <div className="slider-cmt-container">
         <Slider {...settings}>
           {comments.map((item, index) => (
             <div className="comment-card" key={index}>
               <div className="comment-box">
-                <CommentOutlined style={{ fontSize: 24, color: '#fff' }} />
+                <CommentOutlined style={{ fontSize: 24, color: "#fff" }} />
                 <Paragraph className="comment-text">{item.content}</Paragraph>
-                <a href={item.link} className="comment-link">Xem thêm</a>
+                <a href={item.link} className="comment-link">
+                  Xem thêm
+                </a>
                 <div className="comment-arrow" />
               </div>
               <div className="comment-user">

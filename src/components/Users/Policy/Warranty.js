@@ -10,7 +10,9 @@ const HomePages = () => {
   return (
     <Layout>
       <HeaderHome />
-      <Content>{/* <WarrantyPolicy /> */}</Content>
+      <Content>
+        <WarrantyPolicy />
+      </Content>
       <FooterHome />
     </Layout>
   );

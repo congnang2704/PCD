@@ -13,7 +13,7 @@ const { useBreakpoint } = Grid;
 const headerStyle = {
   display: "flex",
   alignItems: "center",
-  backgroundColor: "white",
+  backgroundColor: "#096cb5",
   padding: "0 20px",
   position: "sticky",
   top: 0,
@@ -48,78 +48,107 @@ const HeaderHome = () => {
   const DesktopMenu = () => (
     <Menu
       mode="horizontal"
+      className="menu-desktop"
       style={desktopMenuStyle}
       selectedKeys={isSelected("/") ? ["trang-chu"] : []}
     >
-      <Menu.Item key="trang-chu" className="menu-home">
+      <Menu.Item key="trang-chu" className="menu-item menu-home">
         <Link to="/">TRANG CHỦ</Link>
       </Menu.Item>
 
       <SubMenu
         key="gioi-thieu"
-        title={<Link to="/gioi-thieu">GIỚI THIỆU</Link>}
-        className="menu-about"
+        className="menu-submenu menu-about"
+        title={
+          <Link className="menu-title" to="/gioi-thieu">
+            GIỚI THIỆU
+          </Link>
+        }
       >
-        <Menu.Item key="about:1" className="menu-about-item">
+        <Menu.Item key="about:1" className="menu-subitem menu-about-item">
           <Link to="/gioi-thieu">Về chúng tôi</Link>
         </Menu.Item>
-        <Menu.Item key="about:2" className="menu-about-item">
+        <Menu.Item key="about:2" className="menu-subitem menu-about-item">
           <Link to="/lich-su">Lịch sử</Link>
         </Menu.Item>
       </SubMenu>
 
       <SubMenu
         key="dich_vu"
-        title={<Link to="/dich-vu">DỊCH VỤ</Link>}
-        className="menu-services"
+        className="menu-submenu menu-services"
+        title={
+          <Link className="menu-title" to="/dich-vu">
+            DỊCH VỤ
+          </Link>
+        }
       >
-        <Menu.Item key="dich_vu:1" className="menu-services-item">
+        <Menu.Item key="dich_vu:1" className="menu-subitem menu-services-item">
           <Link to="/dich-vu/thiet-ke-kien-truc">Thiết kế kiến trúc</Link>
         </Menu.Item>
-        <Menu.Item key="dich_vu:2" className="menu-services-item">
+        <Menu.Item key="dich_vu:2" className="menu-subitem menu-services-item">
           <Link to="/dich-vu/thiet-ke-noi-that">Thiết kế nội thất</Link>
         </Menu.Item>
-        <Menu.Item key="dich_vu:3" className="menu-services-item">
+        <Menu.Item key="dich_vu:3" className="menu-subitem menu-services-item">
           <Link to="/dich-vu/thi-cong-tho">Thi công thô</Link>
         </Menu.Item>
-        <Menu.Item key="dich_vu:4" className="menu-services-item">
+        <Menu.Item key="dich_vu:4" className="menu-subitem menu-services-item">
           <Link to="/dich-vu/thi-cong-hoan-thien">Thi công hoàn thiện</Link>
         </Menu.Item>
-        <Menu.Item key="dich_vu:5" className="menu-services-item">
+        <Menu.Item key="dich_vu:5" className="menu-subitem menu-services-item">
           <Link to="/dich-vu/xay-nha-tron-goi">Xây nhà trọn gói</Link>
         </Menu.Item>
       </SubMenu>
 
       <SubMenu
         key="mau-nha-dep"
-        title={<Link to="/mau-nha-dep">MẪU NHÀ ĐẸP</Link>}
-        className="menu-projects"
+        className="menu-submenu menu-projects"
+        title={
+          <Link className="menu-title" to="/mau-nha-dep">
+            MẪU NHÀ ĐẸP
+          </Link>
+        }
       >
-        <Menu.Item key="mau-nha-dep:1" className="menu-projects-item">
+        <Menu.Item
+          key="mau-nha-dep:1"
+          className="menu-subitem menu-projects-item"
+        >
           <Link to="/mau-nha-dep/nha-2-tang">Nhà 2 tầng</Link>
         </Menu.Item>
-        <Menu.Item key="mau-nha-dep:2" className="menu-projects-item">
+        <Menu.Item
+          key="mau-nha-dep:2"
+          className="menu-subitem menu-projects-item"
+        >
           <Link to="/mau-nha-dep/nha-3-tang">Nhà 3 tầng</Link>
         </Menu.Item>
-        <Menu.Item key="mau-nha-dep:3" className="menu-projects-item">
+        <Menu.Item
+          key="mau-nha-dep:3"
+          className="menu-subitem menu-projects-item"
+        >
           <Link to="/mau-nha-dep/nha-5-tang">Nhà 5 tầng</Link>
         </Menu.Item>
-        <Menu.Item key="mau-nha-dep:4" className="menu-projects-item">
+        <Menu.Item
+          key="mau-nha-dep:4"
+          className="menu-subitem menu-projects-item"
+        >
           <Link to="/mau-nha-dep/biet-thu">Biệt thự</Link>
         </Menu.Item>
-        <Menu.Item key="mau-nha-dep:5" className="menu-projects-item">
+        <Menu.Item
+          key="mau-nha-dep:5"
+          className="menu-subitem menu-projects-item"
+        >
           <Link to="/mau-nha-dep/khach-san">Căn hộ, Khách sạn</Link>
         </Menu.Item>
       </SubMenu>
 
-      <Menu.Item key="tuyen-dung" className="menu-recruitment">
+      <Menu.Item key="tuyen-dung" className="menu-item menu-recruitment">
         <Link to="/tuyen-dung">TUYỂN DỤNG</Link>
       </Menu.Item>
-      <Menu.Item key="lien-he" className="menu-contact">
+
+      <Menu.Item key="lien-he" className="menu-item menu-contact">
         <Link to="/lien-he">LIÊN HỆ</Link>
       </Menu.Item>
 
-      <Menu.Item key="search" className="menu-search">
+      <Menu.Item key="search" className="menu-item menu-search">
         <Input
           prefix={<SearchOutlined />}
           placeholder="Tìm kiếm..."
@@ -133,7 +162,12 @@ const HeaderHome = () => {
     <Header style={headerStyle}>
       {!screens.lg && (
         <>
-          <Button type="text" onClick={showDrawer} icon={<MenuOutlined />} />
+          <Button
+            className="menu-button-mobile"
+            type="text"
+            onClick={showDrawer}
+            icon={<MenuOutlined />}
+          />
           <Drawer
             title={null}
             placement="left"
@@ -146,6 +180,7 @@ const HeaderHome = () => {
               openKeys={openKeys}
               onOpenChange={(keys) => setOpenKeys(keys)}
               style={{ border: "none" }}
+              className="mobile-menu-custom"
             >
               <Menu.Item key="home" onClick={closeDrawer}>
                 <Link to="/">TRANG CHỦ</Link>
@@ -188,9 +223,6 @@ const HeaderHome = () => {
                 <Menu.Item key="dich-vu:5" onClick={closeDrawer}>
                   <Link to="/dich-vu/xay-nha-tron-goi">Xây nhà trọn gói</Link>
                 </Menu.Item>
-                <Menu.Item key="mau-nha-dep:5" className="menu-projects-item">
-                  <Link to="/mau-nha-dep/khach-san">Căn hộ, Khách sạn</Link>
-                </Menu.Item>
               </Menu.SubMenu>
 
               <Menu.SubMenu
@@ -209,6 +241,9 @@ const HeaderHome = () => {
                 </Menu.Item>
                 <Menu.Item key="mau-nha-dep:4" onClick={closeDrawer}>
                   <Link to="/mau-nha-dep/biet-thu">Biệt thự</Link>
+                </Menu.Item>
+                <Menu.Item key="mau-nha-dep:5" className="menu-projects-item">
+                  <Link to="/mau-nha-dep/khach-san">Căn hộ, Khách sạn</Link>
                 </Menu.Item>
               </Menu.SubMenu>
 

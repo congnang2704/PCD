@@ -1,56 +1,111 @@
-.ant-menu-horizontal .menu-about > .ant-menu-submenu-title > a,
-.ant-menu-horizontal .menu-services > .ant-menu-submenu-title > a,
-.ant-menu-horizontal .menu-projects > .ant-menu-submenu-title > a,
-.ant-menu-horizontal .menu-recruitment > a,
-.ant-menu-horizontal .menu-contact > a {
+/* ========================
+=     MOBILE MENU STYLE   =
+======================== */
+
+/* Nền Drawer và menu */
+.ant-drawer .ant-menu {
+  background-color: #016bb4 !important;
+  color: white !important;
+  height: 100%;
+  border: none;
+}
+
+/* Menu item chữ trắng */
+.ant-drawer .ant-menu-item a,
+.ant-drawer .ant-menu-submenu-title {
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Hover trong mobile menu */
+.ant-drawer .ant-menu-item:hover,
+.ant-drawer .ant-menu-submenu-title:hover {
+  background-color: #005a99 !important;
+  color: white !important;
+}
+
+/* Mũi tên dropdown submenu mobile màu trắng */
+.ant-drawer .ant-menu-submenu-arrow {
+  color: white !important;
+}
+
+/* Mục con của submenu */
+.ant-drawer .ant-menu-submenu .ant-menu-sub {
+  background-color: #005a99 !important;
+}
+
+/* Padding trái cho item con */
+.ant-drawer .ant-menu-item {
+  padding-left: 24px !important;
+}
+
+/* Đảm bảo submenu hiển thị */
+.ant-drawer .ant-menu-submenu-open .ant-menu-sub {
+  display: block !important;
+}
+
+/* Nút menu (hamburger) màu trắng */
+.menu-button-mobile {
+  color: #fff !important;
+  font-size: 20px;
+}
+
+/* ========================
+=     DESKTOP MENU STYLE  =
+======================== */
+
+.menu-desktop {
+  background-color: #096cb5 !important;
+  border-bottom: none !important;
+  font-weight: 500;
+}
+
+/* Màu chữ mặc định */
+.menu-desktop .menu-item a,
+.menu-desktop .menu-submenu > .ant-menu-submenu-title .menu-title {
+  color: #ffffff !important;
+  font-size: 14px;
+}
+
+/* Hover trên menu chính */
+.menu-desktop .menu-item:hover a,
+.menu-desktop .menu-submenu:hover > .ant-menu-submenu-title .menu-title {
+  color: #ffd000 !important;
+}
+
+/* ========== SUBMENU DROPDOWN ========== */
+
+/* Nền dropdown */
+.menu-desktop .ant-menu-submenu-popup {
+  background-color: #ffffff !important;
+}
+
+/* Màu chữ item trong dropdown */
+.menu-desktop .menu-subitem a {
   color: #222 !important;
 }
 
-.ant-menu-horizontal .menu-about-item > a,
-.ant-menu-horizontal .menu-services-item > a,
-.ant-menu-horizontal .menu-projects-item > a {
-  color: #222 !important;
-}
-
-.ant-menu-horizontal > .ant-menu-item:hover,
-.ant-menu-horizontal > .ant-menu-submenu:hover > .ant-menu-submenu-title {
+/* Hover dropdown item */
+.menu-desktop .menu-subitem:hover a {
   color: #016bb4 !important;
 }
 
-.ant-menu-horizontal > .ant-menu-item::after,
-.ant-menu-horizontal > .ant-menu-submenu::after,
-.ant-menu-horizontal > .ant-menu-item-selected::after,
-.ant-menu-horizontal
-  > .ant-menu-submenu-selected
-  .ant-menu-submenu-title::after {
+/* ========== GỠ GẠCH DƯỚI ========== */
+.menu-desktop .ant-menu-item::after,
+.menu-desktop .ant-menu-submenu::after,
+.menu-desktop .ant-menu-item-selected::after,
+.menu-desktop .ant-menu-submenu-selected .ant-menu-submenu-title::after {
   border-bottom: none !important;
   transition: none !important;
 }
 
+/* ========================
+=       LOGO STYLE        =
+======================== */
 .logo-center-mobile {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-:where(.css-dev-only-do-not-override-7t2xvq) a {
-  color: #000 !important;
-}
-:where(.css-dev-only-do-not-override-7t2xvq) a:hover {
-  color: #016bb4 !important;
-}
-
-/* Mobile Submenu style */
-.ant-drawer .ant-menu-inline .ant-menu-submenu {
-  background-color: #fafafa;
-}
-
-.ant-drawer .ant-menu-item {
-  padding-left: 32px;
-}
-
-.ant-drawer .ant-menu-submenu-open .ant-menu-sub {
-  display: block !important;
 }
 
 @media (min-width: 768px) {

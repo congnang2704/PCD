@@ -6,9 +6,14 @@
 
 .form-container {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px #016cb48f;
   padding: 24px;
+}
+.form-contact {
+  border: 1px solid #016bb4;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px #016cb48f;
 }
 
 .form-image {
@@ -73,6 +78,7 @@
 }
 
 .form-title-h1 {
+  text-transform: uppercase;
   font-size: 32px;
   text-align: center;
   color: #016bb4;
@@ -86,10 +92,6 @@
     font-size: 26px;
     margin-bottom: 24px;
   }
-  .form-container {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-  }
 }
 
 /* Responsive cho mobile */
@@ -97,9 +99,5 @@
   .form-title-h1 {
     font-size: 22px;
     margin-bottom: 20px;
-  }
-  .form-container {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
   }
 }

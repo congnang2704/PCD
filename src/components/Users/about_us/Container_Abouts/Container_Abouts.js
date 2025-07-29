@@ -38,7 +38,7 @@ const Container_Abouts = () => {
         <ul>
           <li>Địa chỉ: 17 Nguyễn Cư Trinh, P. Hòa Cường, Tp. Đà Nẵng</li>
           <li>Điện thoại: 0905.402.989</li>
-          <li>Email: thicongnhadanang.vn@gmail.com</li>
+          <li>Email: nguyenhai.deco@gmail.com</li>
           <li>
             Website:{" "}
             <a href="http://thicongnhadanang.vn/">thicongnhadanang.vn</a>

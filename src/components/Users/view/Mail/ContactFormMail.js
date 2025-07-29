@@ -50,7 +50,7 @@ const ContactForm = () => {
     <div className="form-wrapper">
       <h1 className="form-title-h1">Liên hệ với chúng tôi</h1>
       <Row gutter={32} className="form-container">
-        <Col xs={24} md={12}>
+        <Col xs={24} md={12} className="form-contact">
           <Form form={form} layout="vertical" onFinish={onFinish}>
             <Form.Item
               name="name"
