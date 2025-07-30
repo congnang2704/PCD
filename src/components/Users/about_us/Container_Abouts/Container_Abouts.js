@@ -1,8 +1,8 @@
 import React from "react";
-import missionImg from "../../../../assets/anh_abouts/anh_banner.jpg";
-import about_us from "../../../../assets/anh_abouts/anh_cong_ty.jpg";
-import missionThietKeImg from "../../../../assets/anh_abouts/thiet_ke_nha.jpg";
-import missionThietKeImg1 from "../../../../assets/anh_services/homstay.jpg";
+import missionImg from "../../../../assets/anh_banner.jpg";
+import about_us from "../../../../assets/anh_cong_ty.jpg";
+import missionThietKeImg from "../../../../assets/thiet_ke_nha.jpg";
+import missionThietKeImg1 from "../../../../assets/homstay.jpg";
 import "./Container_Abouts.css";
 import ContactForm from "../../view/Mail/ContactFormMail";
 

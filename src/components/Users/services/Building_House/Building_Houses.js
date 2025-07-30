@@ -3,12 +3,12 @@
 import React from "react";
 import "./Building_Houses.css";
 
-import building1 from "../../../../assets/anh_services/nhatrongoi1.jpg";
-import building2 from "../../../../assets/anh_services/nhatrongoi2.jpg";
-import building3 from "../../../../assets/anh_services/nhatrongoi3.jpg";
-import building4 from "../../../../assets/anh_services/nhatrongoi4.jpg";
-import building5 from "../../../../assets/anh_services/nhatrongoi5.jpg";
-import building6 from "../../../../assets/anh_services/nhatrongoi6.jpg";
+import building1 from "../../../../assets/nhatrongoi1.jpg";
+import building2 from "../../../../assets/nhatrongoi2.jpg";
+import building3 from "../../../../assets/nhatrongoi3.jpg";
+import building4 from "../../../../assets/nhatrongoi4.jpg";
+import building5 from "../../../../assets/nhatrongoi5.jpg";
+import building6 from "../../../../assets/nhatrongoi6.jpg";
 import ContactForm from "../../view/Mail/ContactFormMail";
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
 

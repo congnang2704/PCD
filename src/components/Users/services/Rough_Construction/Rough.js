@@ -3,11 +3,11 @@ import "../Rough_Construction/Rough.css";
 import ContactForm from "../../view/Mail/ContactFormMail";
 
 // linh anh
-import thicongtho from "../../../../assets/anh_services/anh (1).jpg";
-import cttb1House from "../../../../assets/anh_services/anh (7).jpg";
-import cttb2House from "../../../../assets/anh_services/anh (2).jpg";
-import cttb3House from "../../../../assets/anh_services/anh (6).jpg";
-import cttb4House from "../../../../assets/anh_services/nhahoaxuan1.jpg";
+import thicongtho from "../../../../assets/anh (1).jpg";
+import cttb1House from "../../../../assets/anh (7).jpg";
+import cttb2House from "../../../../assets/anh (2).jpg";
+import cttb3House from "../../../../assets/anh (6).jpg";
+import cttb4House from "../../../../assets/nhahoaxuan1.jpg";
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
 
 const Rough = () => {

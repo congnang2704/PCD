@@ -3,11 +3,11 @@ import "./Architec.css";
 import ContactForm from "../../view/Mail/ContactFormMail";
 
 // linh anh
-import kasaiHouse from "../../../../assets/anh_services/MT4.png";
-import nhaHouse from "../../../../assets/anh_services/homstay.jpg";
-import cttb1House from "../../../../assets/anh_services/anhcttb.bmp";
-import cttb2House from "../../../../assets/anh_services/v1.png";
-import cttb3House from "../../../../assets/anh_services/v2.png";
+import House from "../../../../assets/MT4.png";
+import nhaHouse from "../../../../assets/homstay.jpg";
+import cttb1House from "../../../../assets/anhcttb.bmp";
+import cttb2House from "../../../../assets/v1.png";
+import cttb3House from "../../../../assets/v2.png";
 
 import {
   FaUserFriends,
@@ -92,7 +92,7 @@ const Architec_Designs = () => {
       <div className="architec-wrapper">
         <div className="architec-image-container">
           <img
-            src={kasaiHouse}
+            src={House}
             alt="Mẫu biệt thự hiện đại do PCD Nguyễn Hải thiết kế"
             className="architec-image"
           />
@@ -224,15 +224,15 @@ const Architec_Designs = () => {
 
       <div className="design-process-container">
         <h2 className="process-title">
-          Quy trình thiết kế chuyên nghiệp tại KASAI
+          Quy trình thiết kế chuyên nghiệp tại PCD Nguyễn Hải
         </h2>
 
         <div className="process-step">
           <h4>1. Tiếp nhận và tư vấn:</h4>
           <p>
-            Khách hàng liên hệ với KASAI qua hotline{" "}
+            Khách hàng liên hệ với PCD Nguyễn Hải qua hotline{" "}
             <span className="hotline">0905 402 989</span> hoặc Fanpage Facebook
-            “Xây Dựng KASAI”, để lại thông tin trên website. Nhân viên sẽ lắng
+            "Nguyễn Hải DECO”, để lại thông tin trên website. Nhân viên sẽ lắng
             nghe và tư vấn theo nhu cầu của khách hàng, từ đó định hướng được
             phong cách mà khách hàng muốn thiết kế cũng như mức giá mà khách
             hàng có thể đầu tư.
@@ -242,17 +242,17 @@ const Architec_Designs = () => {
         <div className="process-step">
           <h4>2. Báo giá chi tiết</h4>
           <p>
-            Sau khi thống nhất được ý tưởng KASAI sẽ tiến hành gửi báo giá kèm
-            quy trình làm việc đến khách hàng.
+            Sau khi thống nhất được ý tưởng PCD Nguyễn Hải sẽ tiến hành gửi báo
+            giá kèm quy trình làm việc đến khách hàng.
           </p>
         </div>
 
         <div className="process-step">
           <h4>3. Ký hợp đồng</h4>
           <p>
-            Khách hàng đồng ý với báo giá thiết kế kiến trúc của KASAI thì 2 bên
-            tiến hành ký hợp đồng và triển khai công việc theo hợp đồng đã cam
-            kết.
+            Khách hàng đồng ý với báo giá thiết kế kiến trúc của PCD Nguyễn Hải
+            thì 2 bên tiến hành ký hợp đồng và triển khai công việc theo hợp
+            đồng đã cam kết.
           </p>
         </div>
 
@@ -269,9 +269,9 @@ const Architec_Designs = () => {
         <div className="process-step">
           <h4>5. Bàn giao và quyết toán</h4>
           <p>
-            KASAI gửi hồ sơ <strong>thiết kế kiến trúc</strong> cho khách hàng
-            và thanh lý hợp đồng. Khách hàng thanh toán các khoản phí còn lại,
-            nhận hồ sơ thiết kế là hoàn thành.
+            PCD Nguyễn Hải gửi hồ sơ <strong>thiết kế kiến trúc</strong> cho
+            khách hàng và thanh lý hợp đồng. Khách hàng thanh toán các khoản phí
+            còn lại, nhận hồ sơ thiết kế là hoàn thành.
           </p>
         </div>
 

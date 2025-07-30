@@ -24,6 +24,9 @@ import House_Hotel from "./components/Users/Beautiful_House/House__Hotel";
 import Contact_Us from "./components/Users/Contact_Us/Contact_Us";
 //tuyển dụng
 import Recruitment from "./components/Users/Recruiitment/Recruiitment";
+import JobPost_KeToan from "./components/Users/Recruiitment/KeToan";
+import JobPost_KinhTeXD from "./components/Users/Recruiitment/KinhTeXD";
+import JobPost_Marketing from "./components/Users/Recruiitment/Marketing";
 // chính sách bảo mật
 import SecurityPolicy from "./components/Users/Policy/Security";
 // chính sách bảo hành
@@ -70,6 +73,18 @@ function App() {
       <Route path="/lien-he" element={<Contact_Us />} />
       {/* click here to see the tuyển dụng */}
       <Route path="/tuyen-dung" element={<Recruitment />} />
+      <Route
+        path="/tuyen-dung/pcd-nguyen-hai-tuyen-dung-ke-toan"
+        element={<JobPost_KeToan />}
+      />
+      <Route
+        path="/tuyen-dung/pcd-nguyen-hai-tuyen-dung-nhan-vien-kinh-te-xay-dung"
+        element={<JobPost_KinhTeXD />}
+      />
+      <Route
+        path="/tuyen-dung/pcd-nguyen-hai-tuyen-dung-nhan-vien-marketing"
+        element={<JobPost_Marketing />}
+      />
       {/* click chính sách bảo mật */}
       <Route path="/chinh-sach-bao-mat" element={<SecurityPolicy />} />
       {/* click chính sách bảo hành */}

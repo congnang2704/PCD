@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "../House.css";
 
 // Ảnh mẫu (thay đúng đường dẫn ảnh thật)
-import house1 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
-import house2 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
-import house3 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
-import house4 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
-import house5 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
-import house6 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
-import house7 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
-import house8 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
-import house9 from "../../../../assets/anh_services/nhacanhokhachsan.jpg";
+import house1 from "../../../../assets/nhacanhokhachsan.jpg";
+import house2 from "../../../../assets/nhacanhokhachsan.jpg";
+import house3 from "../../../../assets/nhacanhokhachsan.jpg";
+import house4 from "../../../../assets/nhacanhokhachsan.jpg";
+import house5 from "../../../../assets/nhacanhokhachsan.jpg";
+import house6 from "../../../../assets/nhacanhokhachsan.jpg";
+import house7 from "../../../../assets/nhacanhokhachsan.jpg";
+import house8 from "../../../../assets/nhacanhokhachsan.jpg";
+import house9 from "../../../../assets/nhacanhokhachsan.jpg";
 
 import ContactForm from "../../view/Mail/ContactFormMail";
 

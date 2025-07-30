@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 import HeaderHome from "../header/header_home";
 import FooterHome from "../footer/footer_home";
-import Container_Recruiitment from "./Home_Tuyen_Dung/Container_Recruiitment";
+import Container_KinhTeXD from "./NV_KinhTe_XD/NV_KinhTe_XD";
 
 const { Content } = Layout;
 
@@ -11,7 +11,7 @@ const HomePages = () => {
     <Layout>
       <HeaderHome />
       <Content>
-        <Container_Recruiitment />
+        <Container_KinhTeXD />
       </Content>
       <FooterHome />
     </Layout>

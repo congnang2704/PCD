@@ -1,11 +1,11 @@
 .container-abouts {
-  padding: 24px;
+  /* padding: 24px; */
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .container-abouts h2 {
-  font-size: 28px;
+  /* font-size: 28px; */
   font-weight: 700;
   margin-bottom: 20px;
 }

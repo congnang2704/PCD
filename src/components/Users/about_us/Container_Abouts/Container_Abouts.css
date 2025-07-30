@@ -1,16 +1,17 @@
 .container-abouts {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 30px;
-  font-family: "Lato", sans-serif;
-  color: #2c3e50;
-  line-height: 1.7;
-  background-color: #fdfdfd;
+  padding: 10px 10px;
+  color: #333;
+  line-height: 1.4;
+  /* background-color: #fdfdfd; */
+  text-align: justify;
 }
 
 .container-abouts h2 {
   font-size: 26px;
   color: #016bb4;
+  font-size: clamp(20px, 2vw, 32px);
   margin-bottom: 5px;
   border-left: 5px solid #016bb4;
   padding-left: 10px;
@@ -32,13 +33,13 @@
 .container-abouts ul li {
   margin-bottom: 8px;
   font-weight: 300;
-  text-shadow: 0 0 0.5px #000;
+  text-shadow: 0 0 0.5px #333;
 }
 
 .container-abouts p {
   margin-bottom: 16px;
   font-weight: 300;
-  text-shadow: 0 0 0.5px #000;
+  text-shadow: 0 0 0.5px #333;
 }
 
 .container-abouts strong {
@@ -48,7 +49,6 @@
 .image-with-caption {
   position: relative;
   text-align: center;
-  margin: 30px 0;
 }
 
 .responsive-image {
@@ -62,9 +62,11 @@
   color: #fff;
   font-style: italic;
   padding: 10px;
-  font-size: 18px;
+  font-size: clamp(11px, 2vw, 18px);
   font-weight: 500;
+  text-align: center;
 }
+
 strong {
   font-weight: normal !important;
 }
@@ -75,7 +77,7 @@ strong {
 }
 
 .contact-us-header {
-  background-image: url("../../../../assets/anh_abouts/anh_cong_ty.jpg");
+  background-image: url("../../../../assets/anh_cong_ty.jpg");
   background-size: cover;
   background-position: center;
   padding: 100px 20px 60px;

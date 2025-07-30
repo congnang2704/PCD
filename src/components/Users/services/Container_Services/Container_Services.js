@@ -10,32 +10,32 @@ const bannerImage =
 
 const posts = [
   {
-    img: require("../../../../assets/anh_services/anh (1).jpg"),
+    img: require("../../../../assets/anh (1).jpg"),
     title: "Công ty thiết kế thi công nội thất Thủ Đức uy tín và Báo giá",
     desc: "Bạn đang tìm kiếm một đơn vị thiết kế thi công nội thất Thủ Đức uy tín để hiện thực hóa không gian sống lý tưởng? Đủ là nhà...",
   },
   {
-    img: require("../../../../assets/anh_services/anh (2).jpg"),
+    img: require("../../../../assets/anh (2).jpg"),
     title: "Thiết kế thi công nội thất quận 10 uy tín và Báo giá",
     desc: "Đã có gần 7 năm kinh nghiệm, Nguyễn Hải là lựa chọn thiết kế thi công nội thất quận 10, hiện thực hóa ngôi...",
   },
   {
-    img: require("../../../../assets/anh_services/anh (3).jpg"),
+    img: require("../../../../assets/anh (3).jpg"),
     title: "Công ty thiết kế nội thất quận 8 và thi công trọn gói uy tín",
     desc: "Nguyễn Hải là lựa chọn đáng tin cậy cho những ai đang muốn kiến tạo không gian sống tại quận 8.",
   },
   {
-    img: require("../../../../assets/anh_services/anh (4).jpg"),
+    img: require("../../../../assets/anh (4).jpg"),
     title: "Thi công nội thất nhà phố tại Đà Nẵng chuyên nghiệp",
     desc: "Đội ngũ thi công giàu kinh nghiệm giúp hoàn thiện nhanh chóng và đạt chuẩn chất lượng cao.",
   },
   {
-    img: require("../../../../assets/anh_services/anh (5).jpg"),
+    img: require("../../../../assets/anh (5).jpg"),
     title: "Thiết kế nội thất biệt thự cao cấp tại TP.HCM",
     desc: "Mang đến phong cách sống đẳng cấp với thiết kế nội thất biệt thự sang trọng, tinh tế, đầy cảm hứng.",
   },
   {
-    img: require("../../../../assets/anh_services/anh (6).jpg"),
+    img: require("../../../../assets/anh (6).jpg"),
     title: "Dịch vụ thiết kế và thi công văn phòng hiện đại",
     desc: "Không gian làm việc sáng tạo, năng suất với dịch vụ thiết kế nội thất văn phòng toàn diện từ Nguyễn Hải.",
   },

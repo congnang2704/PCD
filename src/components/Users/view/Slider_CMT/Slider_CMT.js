@@ -4,11 +4,11 @@ import { Avatar, Typography } from "antd";
 import { CommentOutlined } from "@ant-design/icons";
 import "./Slider_CMT.css";
 
-import imgavatar1 from "../../../../assets/avatarcmt/anh-doanh-nhan-nu-min-1170x780.jpg.webp";
-import imgavatar2 from "../../../../assets/avatarcmt/Nam-11-min.jpg.webp";
-import imgavatar3 from "../../../../assets/avatarcmt/Doanh-nhan-nu-tre-13.jpg";
-import imgavatar4 from "../../../../assets/avatarcmt/Anh-CV-chuyen-nghiep-min-1.jpg.webp";
-import imgavatar5 from "../../../../assets/avatarcmt/Anh-doanh-nhan-nu-dep-16-min.jpg";
+import imgavatar1 from "../../../../assets/anh-doanh-nhan-nu-min-1170x780.jpg.webp";
+import imgavatar2 from "../../../../assets/Nam-11-min.jpg.webp";
+import imgavatar3 from "../../../../assets/Doanh-nhan-nu-tre-13.jpg";
+import imgavatar4 from "../../../../assets/Anh-CV-chuyen-nghiep-min-1.jpg.webp";
+import imgavatar5 from "../../../../assets/Anh-doanh-nhan-nu-dep-16-min.jpg";
 
 const { Paragraph } = Typography;
 

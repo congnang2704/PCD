@@ -1,0 +1,64 @@
+.job-container {
+  /* background-color: #f4f4f4; */
+  min-height: 100vh;
+  padding: 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.job-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.job-title {
+  font-size: clamp(20px, 2vw, 26px);
+  text-align: justify;
+  color: #0d47a1;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.job-meta p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.job-section {
+  margin-top: 25px;
+}
+
+.job-section h2 {
+  font-size: 18px;
+  color: rgb(9, 108, 181);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.job-section ul {
+  padding-left: 20px;
+  text-align: justify;
+  margin: 0;
+  color: #444;
+}
+
+.job-section ul li {
+  text-align: justify;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.job-footer {
+  margin-top: 30px;
+  font-weight: bold;
+  color: #0277bd;
+  text-align: justify;
+  text-align: center;
+  font-size: 16px;
+}

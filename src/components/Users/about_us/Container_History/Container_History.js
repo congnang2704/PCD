@@ -1,5 +1,5 @@
 import React from "react";
-import about_us from "../../../../assets/anh_abouts/anh_cong_ty.jpg";
+import about_us from "../../../../assets/anh_cong_ty.jpg";
 import ContactForm from "../../view/Mail/ContactFormMail";
 import "./Container_History.css";
 

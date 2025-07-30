@@ -4,11 +4,11 @@ import ContactForm from "../../view/Mail/ContactFormMail";
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
 
 // Hình ảnh minh họa
-import finishing1 from "../../../../assets/anh_services/thicongnhatho.jpg";
-import finishing2 from "../../../../assets/anh_services/thicongnhatho2.jpg";
-import finishing3 from "../../../../assets/anh_services/thicongnhatho3.jpg";
-import finishing4 from "../../../../assets/anh_services/thicongnhatho4.jpg";
-import finishing5 from "../../../../assets/anh_services/thicongnhatho5.jpg";
+import finishing1 from "../../../../assets/thicongnhatho.jpg";
+import finishing2 from "../../../../assets/thicongnhatho2.jpg";
+import finishing3 from "../../../../assets/thicongnhatho3.jpg";
+import finishing4 from "../../../../assets/thicongnhatho4.jpg";
+import finishing5 from "../../../../assets/thicongnhatho5.jpg";
 
 const Finishing_Constructions = () => {
   return (

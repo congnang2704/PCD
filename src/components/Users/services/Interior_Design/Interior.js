@@ -4,10 +4,10 @@ import "./Interior.css";
 import ContactForm from "../../view/Mail/ContactFormMail";
 
 // linh anh
-import noithat from "../../../../assets/anh_services/PK.png";
-import cttb1House from "../../../../assets/anh_services/PK3.png";
-import cttb2House from "../../../../assets/anh_services/PK1.png";
-import cttb3House from "../../../../assets/anh_services/PN1V1.png";
+import noithat from "../../../../assets/PK.png";
+import cttb1House from "../../../../assets/PK3.png";
+import cttb2House from "../../../../assets/PK1.png";
+import cttb3House from "../../../../assets/PN1V1.png";
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
 
 const Architec_Designs = () => {

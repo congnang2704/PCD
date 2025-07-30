@@ -2,12 +2,12 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 15px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  /* background-color: #fff; */
 }
 
 .faq-title {
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #016bb4;
   text-align: center;
   text-transform: uppercase;
@@ -17,7 +17,7 @@
 }
 
 .faq-item {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
   margin-bottom: 10px;
 }
 
@@ -25,13 +25,13 @@
   display: flex;
   align-items: center;
   padding: 16px 10px;
-  background-color: #fff;
+  /* background-color: #fff; */
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .faq-question:hover {
-  background-color: #f1f1f1;
+  background-color: #fff;
 }
 
 .faq-number {
@@ -65,5 +65,8 @@
   text-align: justify;
   font-size: 15px;
   color: #016bb4;
+  font-weight: 300;
   line-height: 1.6;
+  padding-top: 10px;
+  background-color: #fff;
 }
