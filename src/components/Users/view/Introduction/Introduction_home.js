@@ -10,7 +10,7 @@ import {
 } from "@ant-design/icons";
 
 const bannerImage =
-  "https://png.pngtree.com/background/20230516/original/pngtree-construction-cranes-at-a-construction-site-under-blue-sky-and-clouds-picture-image_2600880.jpg";
+  "https://thicongnhadanang.vn/wp-content/uploads/2025/07/nenNH-2048x1357.jpg";
 const mapImage =
   "https://www.shutterstock.com/image-photo/structural-engineer-architect-foreman-worker-600nw-2512597949.jpg";
 
@@ -28,16 +28,27 @@ const IntroductionHome = () => {
   return (
     <div className="intro-home">
       <Row>
-        <Col span={24}>
-          <Image
-            className="intro-banner responsive-banner"
-            width="100%"
-            height={screens.xs ? "auto" : "700px"}
-            src={bannerImage}
-            alt="Company Team"
-            preview={false}
-            style={{ display: "block", objectFit: "cover" }}
-          />
+        <Col span={24} style={{ overflowX: "hidden" }}>
+          <div
+            style={{
+              width: "100%",
+              height: screens.xs ? "auto" : "700px",
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              src={bannerImage}
+              preview={false}
+              alt="Banner"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center top",
+                display: "block",
+              }}
+            />
+          </div>
         </Col>
       </Row>
 

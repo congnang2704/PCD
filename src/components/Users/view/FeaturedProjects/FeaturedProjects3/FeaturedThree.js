@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Typography, Button } from "antd";
 import Slider from "react-slick";
 import "../FeaturedProjects.css";
+import image6 from "../../../../../assets/khách_1.png";
 
 const { Title, Paragraph } = Typography;
 
@@ -49,8 +50,7 @@ const projects = [
     title: "Góc thư giãn đọc sách tại nhà chị Dương – Đà Nẵng",
     description:
       "Một không gian nhỏ yên tĩnh được thiết kế tinh tế với kệ sách và ghế thư giãn, lý tưởng để đọc sách hay thư giãn cuối ngày.",
-    image:
-      "https://thicongnhadanang.vn/wp-content/uploads/2025/07/Duong-NA.2-e1753688223506.jpg",
+    image: image6,
     link: "/dich-vu/thiet-ke-noi-that",
   },
 ];
@@ -74,20 +74,20 @@ const Featured_Three = () => {
         paddingTop: "20px",
       }}
     >
-      <Col xs={24} lg={6} className="text-section">
+      <Col xs={24} lg={7} className="text-section">
         <Title
           level={3}
           style={{ color: "#016bb4", textTransform: "uppercase" }}
         >
-          Công trình thiết kế
+          thiết kế nội thất sân vườn
         </Title>
         <Paragraph style={{ color: "#016bb4", textAlign: "justify" }}>
-          Với phong cách thiết kế tinh tế, không gian nội thất do PCD Nguyễn Hải
+          Với phong cách thiết kế tinh tế, không gian nội thất do Nguyễn Hải
           thực hiện luôn toát lên vẻ sang trọng và đẳng cấp. Từng đường nét,
           chất liệu và bố cục đều được chăm chút kỹ lưỡng để hài hòa giữa công
           năng và thẩm mỹ. Dù bạn yêu thích sự hiện đại tối giản, nét nhẹ nhàng
-          của phong cách Bắc Âu, hay vẻ đẹp tinh tế của tân cổ điển, PCD Nguyễn
-          Hải đều có thể hiện thực hóa không gian sống mơ ước của bạn một cách
+          của phong cách Bắc Âu, hay vẻ đẹp tinh tế của tân cổ điển, Nguyễn Hải
+          đều có thể hiện thực hóa không gian sống mơ ước của bạn một cách
           chuyên nghiệp, sáng tạo và đầy dấu ấn cá nhân.
         </Paragraph>
         <Button
@@ -99,7 +99,7 @@ const Featured_Three = () => {
         </Button>
       </Col>
 
-      <Col xs={24} lg={18} className="image-section">
+      <Col xs={24} lg={17} className="image-section">
         <div className="project-list-desktop">
           <Row gutter={[16, 16]}>
             {projects.map((project, index) => (

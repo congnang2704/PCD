@@ -139,18 +139,18 @@ const FeaturedTwo = () => {
                 level={3}
                 style={{ color: "#016bb4", textTransform: "uppercase" }}
               >
-                Công trình thiết kế
+                thiết kế biệt thự
               </Title>
               <Paragraph style={{ color: "#016bb4", textAlign: "justify" }}>
-                Mỗi mẫu biệt thự do PCD Nguyễn Hải thiết kế và thi công đều mang
-                đến một không gian sống đẳng cấp, sang trọng và tiện nghi. Chúng
-                tôi chú trọng đến từng chi tiết kiến trúc, từ hình khối mạnh mẽ,
-                hài hòa đến vật liệu cao cấp và cách bố trí hợp lý. Dù là biệt
-                thự hiện đại, tân cổ điển hay mang phong cách châu Âu tinh tế,
-                mỗi công trình đều phản ánh gu thẩm mỹ riêng của gia chủ và đảm
-                bảo tỷ lệ hoàn thiện giống bản vẽ thiết kế lên đến 95%. Giải
-                pháp thi công được tối ưu hóa để đảm bảo độ bền vững và giá trị
-                lâu dài cho ngôi nhà.
+                Mỗi mẫu biệt thự do Nguyễn Hải thiết kế và thi công đều mang đến
+                một không gian sống đẳng cấp, sang trọng và tiện nghi. Chúng tôi
+                chú trọng đến từng chi tiết kiến trúc, từ hình khối mạnh mẽ, hài
+                hòa đến vật liệu cao cấp và cách bố trí hợp lý. Dù là biệt thự
+                hiện đại, tân cổ điển hay mang phong cách châu Âu tinh tế, mỗi
+                công trình đều phản ánh gu thẩm mỹ riêng của gia chủ và đảm bảo
+                tỷ lệ hoàn thiện giống bản vẽ thiết kế lên đến 95%. Giải pháp
+                thi công được tối ưu hóa để đảm bảo độ bền vững và giá trị lâu
+                dài cho ngôi nhà.
               </Paragraph>
               <Button
                 type="primary"

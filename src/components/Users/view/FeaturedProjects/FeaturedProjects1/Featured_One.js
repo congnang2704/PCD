@@ -2,34 +2,34 @@ import React from "react";
 import { Row, Col, Typography, Button } from "antd";
 import Slider from "react-slick";
 import "../FeaturedProjects.css";
+import image1 from "../../../../../assets/1.jpg";
 
 const { Title, Paragraph } = Typography;
 
 const projects = [
   {
-    title: "Nhà phố 3 tầng xanh mát, hiện đại tại Đà Nẵng",
+    title: "Nhà phố xanh mát, hiện đại tại Đà Nẵng",
     description:
-      "Thiết kế nhà 3 tầng tập trung vào việc tối ưu ánh sáng tự nhiên, gió trời và không gian xanh, mang đến trải nghiệm sống thoáng đãng và thư thái giữa lòng đô thị.",
-    image:
-      "https://thicongnhadanang.vn/wp-content/uploads/2020/10/CH-e1623381609830.jpg",
+      "Thiết kế nhà tập trung vào việc tối ưu ánh sáng tự nhiên, gió trời và không gian xanh, mang đến trải nghiệm sống thoáng đãng và thư thái giữa lòng đô thị.",
+    image: image1,
     link: "/mau-nha-dep/nha-3-tang",
   },
   {
-    title: "Nhà 3 tầng phong cách Nhật Bản tại Đà Nẵng",
+    title: "Nhà phố phong cách Nhật Bản tại Đà Nẵng",
     description:
       "Công trình mang hơi hướng Nhật Bản hiện đại, với thiết kế tối giản nhưng tinh tế, chú trọng đến sự yên tĩnh và hài hòa trong từng không gian sống.",
     image: "https://thicongnhadanang.vn/wp-content/uploads/2020/10/LQN.jpg",
     link: "/mau-nha-dep/nha-3-tang",
   },
   {
-    title: "Nhà phố 3 tầng thông thoáng, đón nắng gió tại Huế",
+    title: "Nhà phố thông thoáng, đón nắng gió tại Huế",
     description:
       "Căn nhà phố được thiết kế với khoảng mở linh hoạt, giúp đón gió và ánh sáng tự nhiên xuyên suốt ba tầng, đảm bảo sự thoải mái và tiết kiệm năng lượng.",
     image: "https://thicongnhadanang.vn/wp-content/uploads/2020/10/HQB.jpg",
     link: "/mau-nha-dep/nha-3-tang",
   },
   {
-    title: "Nhà 3 tầng sân vườn thoáng rộng tại Đồng Nai",
+    title: "Nhà phố sân vườn thoáng rộng tại Đồng Nai",
     description:
       "Thiết kế kết hợp giữa nhà phố và vườn cây xanh, giúp không gian sống chan hòa với thiên nhiên, tạo sự thư giãn và thoải mái cho gia đình nhiều thế hệ.",
     image:
@@ -37,14 +37,14 @@ const projects = [
     link: "/mau-nha-dep/nha-3-tang",
   },
   {
-    title: "Nhà 3 tầng kết hợp không gian làm việc tiện nghi",
+    title: "Nhà phố kết hợp không gian làm việc tiện nghi",
     description:
       "Mẫu nhà phố ba tầng được tích hợp văn phòng làm việc tại gia, đảm bảo tính riêng tư và hiệu quả, đồng thời vẫn giữ được nét ấm cúng của không gian sống.",
     image: "https://thicongnhadanang.vn/wp-content/uploads/2020/10/ATU.jpg",
     link: "/mau-nha-dep/nha-3-tang",
   },
   {
-    title: "Nhà phố 3 tầng ven biển với không gian mở",
+    title: "Nhà phố ven biển với không gian mở",
     description:
       "Thiết kế mở hướng biển giúp tối ưu tầm nhìn, đón gió và ánh sáng, mang lại cảm giác mát mẻ và sang trọng cho không gian sống ba tầng gần biển.",
     image: "https://thicongnhadanang.vn/wp-content/uploads/2020/10/TH.jpg",
@@ -76,16 +76,16 @@ const FeaturedOne = () => {
           level={3}
           style={{ color: "#016bb4", textTransform: "uppercase" }}
         >
-          Công trình thiết kế
+          Thiết kế nhà phố
         </Title>
         <Paragraph style={{ color: "#016bb4", textAlign: "justify" }}>
-          Mỗi năm, PCD Nguyễn Hải thực hiện hàng trăm công trình thiết kế nhà
-          phố 3 tầng ở khắp các tỉnh thành. Những mẫu nhà 3 tầng do PCD Nguyễn
-          Hải thiết kế mang phong cách hiện đại, tối giản, tiện nghi và luôn đảm
-          bảo sự thông thoáng trong không gian sống. Đặc biệt, mỗi công trình
-          đều được chăm chút tỉ mỉ theo ý tưởng và sở thích riêng của gia chủ,
-          tạo nên một ngôi nhà độc bản, đậm dấu ấn cá nhân và tối ưu công năng
-          sử dụng cho cả gia đình.
+          Mỗi năm, Nguyễn Hải thực hiện hàng trăm công trình thiết kế nhà phố ở
+          khắp các tỉnh thành. Những mẫu nhà phố do Nguyễn Hải thiết kế đa phong
+          cách ( phong cách hiện đại, cổ điển ) và luôn đảm bảo sự thông thoáng
+          trong không gian sống. Đặc biệt, mỗi công trình đều được chăm chút tỉ
+          mỉ theo ý tưởng và sở thích riêng của gia chủ, tạo nên một ngôi nhà
+          độc bản, đậm dấu ấn cá nhân và tối ưu công năng sử dụng cho cả gia
+          đình.
         </Paragraph>
         <Button
           type="primary"

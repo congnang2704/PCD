@@ -69,7 +69,7 @@ const HeaderHome = () => {
           <Link to="/gioi-thieu">Về chúng tôi</Link>
         </Menu.Item>
         <Menu.Item key="about:2" className="menu-subitem menu-about-item">
-          <Link to="/lich-su">Lịch sử</Link>
+          <Link to="/nhan-su">Nhân Sự Nguyễn Hải</Link>
         </Menu.Item>
       </SubMenu>
 
@@ -195,7 +195,7 @@ const HeaderHome = () => {
                   <Link to="/gioi-thieu">Về chúng tôi</Link>
                 </Menu.Item>
                 <Menu.Item key="about:2" onClick={closeDrawer}>
-                  <Link to="/lich-su">Lịch sử</Link>
+                  <Link to="/nhan-su">Nhân sự Nguyễn Hải</Link>
                 </Menu.Item>
               </Menu.SubMenu>
 

@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePages from "./pages/Pages_Home/home_pages";
 // giới thiệu
 import AboutUs from "./components/Users/about_us/about_us";
-import History from "./components/Users/about_us/history";
+import Nhan_Su from "./components/Users/about_us/Nhan_Su";
 // dịch vụ
 import Services from "./components/Users/services/Services";
 import Services_Architec from "./components/Users/services/Architec_Design";
@@ -42,7 +42,7 @@ function App() {
 
       {/* click here to see the about us page about us & history */}
       <Route path="/gioi-thieu" element={<AboutUs />} />
-      <Route path="/lich-su" element={<History />} />
+      <Route path="/nhan-su" element={<Nhan_Su />} />
 
       {/* click here to see the dịch vụ page & sub pages */}
       <Route path="/dich-vu" element={<Services />} />

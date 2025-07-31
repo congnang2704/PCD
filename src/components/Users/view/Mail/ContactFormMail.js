@@ -38,7 +38,7 @@ const ContactForm = () => {
           "🎉 Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm nhất."
         );
         form.resetFields();
-        setTimeout(() => setSuccessMessage(""), 15000); // 15 seconds
+        setTimeout(() => setSuccessMessage(""), 15000);
       })
       .catch((error) => {
         console.error("❗ EmailJS Error:", error);
@@ -101,23 +101,32 @@ const ContactForm = () => {
             </Form.Item>
 
             <Form.Item
-              label="Ngân sách (*)"
+              label={
+                <span style={{ color: "rgb(9, 108, 181)", fontWeight: 500 }}>
+                  Ngân sách
+                </span>
+              }
               name="budget"
-              rules={[{ required: true, message: "Vui lòng chọn ngân sách!" }]}
+              rules={[
+                {
+                  required: true,
+                  message: "Vui lòng chọn ngân sách thiết kế nội thất!",
+                },
+              ]}
             >
-              <Radio.Group style={{ width: "100%" }}>
+              <Radio.Group style={{ width: "100%", fontWeight: 500 }}>
                 <Row gutter={[10, 10]}>
-                  <Col span={12}>
-                    <Radio value="1.5 - 1.6 tỷ">1.5 - 1.6 tỷ</Radio>
+                  <Col span={6}>
+                    <Radio value="1.5 - 1.6 Tỷ">1.5 - 1.6 Tỷ</Radio>
                   </Col>
-                  <Col span={12}>
-                    <Radio value="1.7 - 1.9 tỷ">1.7 - 1.9 tỷ</Radio>
+                  <Col span={6}>
+                    <Radio value="1.7 - 1.9 Tỷ">1.7 - 1.9 Tỷ</Radio>
                   </Col>
-                  <Col span={12}>
-                    <Radio value="2 - 2.4 tỷ">2 - 2.4 tỷ</Radio>
+                  <Col span={6}>
+                    <Radio value="2 - 2.4 Tỷ">2 - 2.4 Tỷ</Radio>
                   </Col>
-                  <Col span={12}>
-                    <Radio value="Trên 2.5 tỷ">Trên 2.5 tỷ</Radio>
+                  <Col span={6}>
+                    <Radio value="Trên 2.5 Tỷ">Trên 2.5 Tỷ</Radio>
                   </Col>
                 </Row>
               </Radio.Group>

@@ -5,6 +5,8 @@ a:where(.css-dev-only-do-not-override-7t2xvq).ant-typography,
 }
 
 .footer-home {
+  width: 1900px;
+  max-width: 100%;
   background-color: #016bb4;
   padding: 40px 20px 20px 20px;
 }
@@ -24,7 +26,7 @@ a:where(.css-dev-only-do-not-override-7t2xvq).ant-typography,
 .footer-link {
   margin-bottom: 8px;
   display: block;
-  color: #fff;
+  color: #fff !important;
 }
 .footer-link:hover {
   color: #ffd000 !important;
@@ -43,7 +45,9 @@ a:where(.css-dev-only-do-not-override-7t2xvq).ant-typography,
 
 .footer-icon {
   color: #fff;
+  font-size: 15px;
   margin-top: 4px;
+  margin-right: 5px;
 }
 
 .footer-section {

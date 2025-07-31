@@ -1,6 +1,6 @@
 import React from "react";
 import missionImg from "../../../../assets/anh_banner.jpg";
-import about_us from "../../../../assets/anh_cong_ty.jpg";
+import about_us from "../../../../assets/nenNH.jpg";
 import missionThietKeImg from "../../../../assets/thiet_ke_nha.jpg";
 import missionThietKeImg1 from "../../../../assets/homstay.jpg";
 import "./Container_Abouts.css";
@@ -12,17 +12,70 @@ const Container_Abouts = () => {
       <div className="container-abouts">
         <h2>GIỚI THIỆU CÔNG TY TNHH MTV PCD NGUYỄN HẢI</h2>
         <p>
-          Công ty TNHH MTV PCD Nguyễn Hải được thành lập theo quyết định số
-          0401518783 ngày 22 tháng 11 năm 2011 của Sở Kế Hoạch và Đầu Tư thành
-          phố Đà Nẵng. Công ty hoạt động trong lĩnh vực Kiến Trúc & Xây Dựng
-          dưới hình thức là anh em cùng nhau làm và với mong muốn góp phần vào
-          công cuộc công nghiệp hóa, hiện đại hóa đất nước.
+          Công ty TNHH MTV PCD Nguyễn Hải được chính thức thành lập vào ngày 22
+          tháng 11 năm 2011 theo quyết định số 0401518783 do Sở Kế hoạch và Đầu
+          tư thành phố Đà Nẵng cấp. Khởi đầu với quy mô nhỏ và đội ngũ nhân sự
+          khiêm tốn, công ty đã từng bước xây dựng nền tảng vững chắc trong lĩnh
+          vực thiết kế kiến trúc và thi công xây dựng tại khu vực miền Trung.
+          Công ty hoạt động trong lĩnh vực Kiến Trúc & Xây Dựng dưới hình thức
+          là anh em cùng nhau làm và với mong muốn góp phần vào công cuộc công
+          nghiệp hóa, hiện đại hóa đất nước.
         </p>
+
         <p>
           Với đội ngũ Thạc sĩ, Kiến trúc sư, Kỹ sư giàu kinh nghiệm, công ty
           giải quyết hiệu quả các vấn đề khoa học kỹ thuật và công nghệ trong
           xây dựng Dân dụng, Công nghiệp, Cầu đường, Cảng biển, Cơ khí, Hạ tầng,
           v.v...
+        </p>
+        <p>
+          Những năm đầu hoạt động, PCD Nguyễn Hải chủ yếu đảm nhận các công
+          trình nhà dân dụng quy mô vừa và nhỏ. Tuy nhiên, với định hướng phát
+          triển rõ ràng và chiến lược đầu tư bài bản, công ty đã nhanh chóng tạo
+          được uy tín trên thị trường nhờ vào sự chuyên nghiệp, chất lượng thi
+          công và tinh thần trách nhiệm trong từng dự án.
+        </p>
+
+        <p>
+          Giai đoạn từ <strong>2015 đến 2020</strong> đánh dấu bước chuyển mình
+          mạnh mẽ của công ty. PCD Nguyễn Hải đã mở rộng quy mô hoạt động, đồng
+          thời nâng cao năng lực đội ngũ nhân sự thông qua việc tuyển dụng thêm
+          nhiều kiến trúc sư, kỹ sư, chuyên gia quy hoạch dày dạn kinh nghiệm.
+          Công ty bắt đầu tiếp cận các công trình quy mô lớn như biệt thự, tòa
+          nhà văn phòng, khách sạn, công trình công cộng, và các khu đô thị quy
+          hoạch mới.
+        </p>
+
+        <p>
+          Song song đó, PCD Nguyễn Hải cũng không ngừng đầu tư vào công nghệ –
+          từ phần mềm thiết kế kiến trúc hiện đại cho đến ứng dụng các công nghệ
+          thi công tiên tiến – nhằm tối ưu chất lượng và tiến độ dự án. Công ty
+          đã xây dựng hệ thống quản lý dự án chuyên nghiệp, đảm bảo quy trình
+          làm việc khoa học, hiệu quả và minh bạch với đối tác, khách hàng.
+        </p>
+
+        <p>
+          Bước sang <strong>giai đoạn 2021 đến nay</strong>, công ty tiếp tục
+          khẳng định vị thế trên thị trường xây dựng, từng bước vươn ra thị
+          trường quốc tế thông qua các hợp đồng tư vấn thiết kế với đối tác từ
+          Mỹ, Hàn Quốc và Nhật Bản. Đồng thời, PCD Nguyễn Hải cũng mở rộng lĩnh
+          vực hoạt động sang tư vấn đầu tư, quản lý dự án, khảo sát và quy hoạch
+          xây dựng với quy mô toàn quốc.
+        </p>
+
+        <p>
+          Đến thời điểm hiện tại, PCD Nguyễn Hải tự hào là đơn vị thiết kế và
+          xây dựng chuyên nghiệp, uy tín tại Việt Nam, với hàng trăm công trình
+          đã hoàn thiện và đi vào sử dụng. Mỗi công trình là một dấu ấn, là sự
+          kết tinh của sáng tạo, tâm huyết và tinh thần trách nhiệm cao với
+          khách hàng và cộng đồng.
+        </p>
+
+        <p>
+          Trong tương lai, PCD Nguyễn Hải sẽ tiếp tục nỗ lực phát triển, nâng
+          cao năng lực cạnh tranh, hội nhập sâu rộng vào thị trường quốc tế và
+          không ngừng đổi mới để xứng đáng với sự tin tưởng của khách hàng và
+          đối tác trong suốt hơn một thập kỷ qua.
         </p>
         <p>
           Ngoài kinh doanh, công ty còn chú trọng phát triển bền vững, thể hiện
@@ -83,21 +136,38 @@ const Container_Abouts = () => {
       <div className="container-abouts">
         <h3>Tầm nhìn</h3>
         <p>
-          Trong những năm tới, Công ty TNHH MTV PCD Nguyễn Hải đặt mục tiêu trở
-          thành doanh nghiệp hàng đầu trong lĩnh vực tư vấn thiết kế, tư vấn
-          giám sát, tư vấn đấu thầu, quản lý dự án và thi công công trình xây
-          dựng.
+          Trong những năm tới, Công ty TNHH MTV PCD Nguyễn Hải định hướng trở
+          thành tập đoàn đa ngành hàng đầu tại miền Trung, tiên phong trong lĩnh
+          vực tư vấn thiết kế, giám sát, đấu thầu, quản lý dự án và thi công
+          công trình xây dựng. Chúng tôi không ngừng đổi mới để kiến tạo những
+          giá trị bền vững, hướng tới chất lượng vượt trội trong từng công
+          trình.
         </p>
         <p>
-          Từ năm 2025, công ty định hướng chuyển đổi mô hình hoạt động sang
-          Nguyễn Hải Group – mô hình đa ngành nghề, đa lĩnh vực, đặc biệt mở
-          rộng sang lĩnh vực quản lý và đầu tư vốn.
+          Bắt đầu từ năm 2025, công ty đặt mục tiêu chuyển đổi thành Nguyễn Hải
+          Group – mô hình doanh nghiệp đa lĩnh vực, mở rộng sang các ngành đầu
+          tư tài chính, quản lý vốn và phát triển hệ sinh thái bất động sản, tạo
+          nền tảng phát triển vững chắc, mang lại giá trị lâu dài cho cộng đồng
+          và cổ đông.
         </p>
         <p>
-          Để hiện thực hóa tầm nhìn này, công ty đã và đang xây dựng trụ sở
-          chính quy mô 7 tầng, tích hợp Showroom, nhiều phòng ban chức năng và
-          không gian làm việc mở nhằm phục vụ tốt nhất cho toàn bộ nhân viên và
-          khách hàng.
+          Với khát vọng trở thành biểu tượng của sự phát triển bền vững gắn liền
+          với con người và địa phương, chúng tôi không chỉ xây dựng những công
+          trình chất lượng, mà còn xây dựng một tương lai ổn định cho người lao
+          động miền Trung, để ai cũng có thể làm việc và phát triển ngay tại quê
+          hương mình.
+        </p>
+        <p>
+          Năm 2020, dịch bệnh COVID xuất hiện và kéo theo nhiều hệ lụy khác cho
+          toàn xã hội. Nhìn những đoàn người lao động từ miền Nam lần lượt kéo
+          nhau về giữa tâm điểm dịch bệnh, chúng tôi đã đặt ra câu hỏi: Tại sao
+          người miền Trung lại phải vất vả đi làm ăn xa nhiều như thế? Phải làm
+          gì để giải quyết phần nào nhu cầu lao động cho người dân địa phương?
+          Từ trăn trở đó, NGUYỄN HẢI CO., LTD đặt thêm một sứ mệnh mới lên mình,
+          đó là tạo môi trường làm việc lớn để giúp nhiều người dân địa phương
+          có việc làm tại quê nhà. Tất cả mọi người trong cộng đồng NGUYỄN HẢI
+          CO., LTD sẽ có một công việc phù hợp, một môi trường phát triển ngay
+          tại quê hương mình, từ đó có một cuộc sống đủ đầy và hạnh phúc.
         </p>
         <div className="image-with-caption">
           <img
@@ -109,21 +179,6 @@ const Container_Abouts = () => {
             TẦM NHÌN - SỨ MỆNH CỦA PCD NGUYỄN HẢI CO., LTD
           </div>
         </div>
-      </div>
-
-      <div className="container-abouts">
-        <p>
-          Năm 2020, dịch bệnh COVID xuất hiện và kéo theo nhiều hệ lụy khác cho
-          toàn xã hội. Nhìn những đoàn người lao động từ miền Nam lũ lượt kéo
-          nhau về giữa tâm điểm dịch bệnh, chúng tôi đã đặt ra câu hỏi: Tại sao
-          người miền Trung lại phải vất vả đi làm ăn xa nhiều như thế? Phải làm
-          gì để giải quyết phần nào nhu cầu lao động cho người dân địa phương?
-          Từ trăn trở đó, NGUYỄN HẢI CO., LTD đặt thêm một sứ mệnh mới lên mình,
-          đó là tạo môi trường làm việc lớn để giúp nhiều người dân địa phương
-          có việc làm tại quê nhà. Tất cả mọi người trong cộng đồng NGUYỄN HẢI
-          CO., LTD sẽ có một công việc phù hợp, một môi trường phát triển ngay
-          tại quê hương mình, từ đó có một cuộc sống đủ đầy và hạnh phúc.
-        </p>
       </div>
 
       <div className="container-abouts">
@@ -206,7 +261,31 @@ const Container_Abouts = () => {
           chóng và đáp ứng đầy đủ yêu cầu kỹ thuật – pháp lý cho các công trình
           từ nhỏ đến quy mô lớn.
         </p>
-        <div className="image-with-caption">
+        <div className="three-columns">
+          <div className="column-item">
+            <img
+              src="https://thicongnhadanang.vn/wp-content/uploads/2020/10/H.jpg"
+              alt="Ảnh 1"
+            />
+            <p className="caption">Khảo sát thi công</p>
+          </div>
+          <div className="column-item">
+            <img
+              src="https://thicongnhadanang.vn/wp-content/uploads/2020/10/H.jpg"
+              alt="Ảnh 2"
+            />
+            <p className="caption">Khảo sát cải tạo</p>
+          </div>
+          <div className="column-item">
+            <img
+              src="https://thicongnhadanang.vn/wp-content/uploads/2020/10/H.jpg"
+              alt="Ảnh 3"
+            />
+            <p className="caption">Khảo sát quá trình thi công</p>
+          </div>
+        </div>
+
+        {/* <div className="image-with-caption">
           <img
             src={missionThietKeImg}
             alt="Khảo sát xây dựng của Nguyễn Hải"
@@ -215,7 +294,7 @@ const Container_Abouts = () => {
           <div className="caption">
             KHẢO SÁT XÂY DỰNG – PCD NGUYỄN HẢI CO., LTD
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="container-abouts">
@@ -227,11 +306,8 @@ const Container_Abouts = () => {
         <h3>Dịch vụ thiết kế</h3>
         <p>Dịch vụ thiết kế của PCD Nguyễn Hải bao gồm:</p>
         <ul>
-          <li>Thiết kế kiến trúc</li>
+          <li>Thiết kế kiến trúc kết cấu điện nước</li>
           <li>Thiết kế nội thất</li>
-          <li>
-            Thiết kế trọn gói gồm thiết kế kiến trúc và thiết kế nội thất.
-          </li>
         </ul>
         <p>
           Các mẫu thiết kế nhà phố và biệt thự, khách sạn của PCD Nguyễn Hải nổi
@@ -247,7 +323,7 @@ const Container_Abouts = () => {
           cung cấp các dịch vụ gồm:
         </p>
         <ul>
-          <li>Thi công thô</li>
+          <li>Thi công phần thô</li>
           <li>Thi công hoàn thiện</li>
           <li>Xây dựng trọn gói</li>
         </ul>

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Container_Services.css";
-import { Row, Col, Image, Grid, Button } from "antd";
+import { Row, Col, Image, Grid, Button, Pagination } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import ContactForm from "../../view/Mail/ContactFormMail";
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
@@ -45,9 +45,15 @@ const { useBreakpoint } = Grid;
 
 const Services = () => {
   const screens = useBreakpoint();
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6;
+
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const currentPosts = posts.slice(startIndex, startIndex + postsPerPage);
+
   return (
     <div className="services-page">
-      {/* banner */}
+      {/* Banner */}
       <Row>
         <Col span={24}>
           <Image
@@ -57,12 +63,12 @@ const Services = () => {
             src={bannerImage}
             alt="Banner"
             preview={false}
-            style={{ display: "block", objectFit: "cover" }}
+            style={{ display: "block", objectFit: "cover", maxWidth: "100%" }}
           />
         </Col>
       </Row>
 
-      {/* services highlight */}
+      {/* Highlight */}
       <div className="services-highlight">
         <h2 className="services-title">DỊCH VỤ</h2>
         <p className="services-desc">
@@ -72,10 +78,10 @@ const Services = () => {
         </p>
       </div>
 
-      {/* services list */}
+      {/* Post List */}
       <div className="services-grid">
         <Row gutter={[24, 24]}>
-          {posts.map((post, index) => (
+          {currentPosts.map((post, index) => (
             <Col xs={24} sm={12} md={8} key={index}>
               <div className="post-card">
                 <img src={post.img} alt={post.title} className="post-image" />
@@ -94,12 +100,37 @@ const Services = () => {
             </Col>
           ))}
         </Row>
+
+        {/* Pagination */}
+        <Pagination
+          current={currentPage}
+          pageSize={postsPerPage}
+          total={posts.length}
+          onChange={(page) => setCurrentPage(page)}
+          showSizeChanger={false}
+          itemRender={(page, type, originalElement) => {
+            if (type === "prev") {
+              return <button className="custom-pagination-btn">« Trước</button>;
+            }
+            if (type === "next") {
+              return <button className="custom-pagination-btn">Tiếp »</button>;
+            }
+            return (
+              <button
+                className={`custom-pagination-btn number-btn ${
+                  page === currentPage ? "active" : ""
+                }`}
+              >
+                {page}
+              </button>
+            );
+          }}
+          className="custom-pagination"
+        />
       </div>
 
-      {/* các câu hỏi thường gặp */}
+      {/* FAQ + Contact */}
       <FAQComponent />
-
-      {/* form liên hệ */}
       <ContactForm />
     </div>
   );

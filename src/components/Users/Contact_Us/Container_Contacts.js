@@ -4,9 +4,13 @@ import {
   FacebookFilled,
   YoutubeFilled,
   TikTokOutlined,
+  MailOutlined,
+  GlobalOutlined,
 } from "@ant-design/icons";
 import emailjs from "emailjs-com";
 import "./Contact_Us.css";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const Container_Contacts = () => {
   const [form] = Form.useForm();
@@ -48,27 +52,30 @@ const Container_Contacts = () => {
 
       <div className="contact-us-body">
         <div className="contact-us-center">
-          <h2>PCD NGUYỄN HẢI</h2>
+          <h2>NGUYỄN HẢI</h2>
           <p className="contact-us-description">
-            Địa chỉ uy tín hàng đầu nhiều năm nay mà bạn có thể tham khảo và tìm
-            đến đó là công ty tư vấn thiết kế PCD NGUYỄN HẢI. Nói đến các công
-            ty Thiết kế thi công trọn gói thì PCD NGUYỄN HẢI luôn là một trong
-            những đơn vị dẫn đầu. Với nhiều năm kinh nghiệm, PCD NGUYỄN HẢI luôn
-            mong muốn mang lại cho khách hàng những mẫu kiến trúc sang trọng và
-            những công trình được xây dựng tốt nhất với chi phí rẻ nhất.
+            Nói đến các công ty Thiết kế thi công trọn gói thì NGUYỄN HẢI luôn
+            là một trong những đơn vị uy tín dẫn đầu tại Miền Trung. Với nhiều
+            năm kinh nghiệm, NGUYỄN HẢI luôn mong muốn mang lại cho khách hàng
+            giá trị đích thực, phù hợp kiến trúc tại địa phương với tính thẩm mỹ
+            và chất lượng xây dựng với chi phí hợp lí.
           </p>
           <p className="contact-us-address">
             <strong>VĂN PHÒNG LÀM VIỆC:</strong>
-            <br /> Địa chỉ: 17 Nguyễn Cư Trinh, P. Hòa Cường, Tp. Đà Nẵng
-            <br /> Điện thoại: 0905.402.989
-            <br /> Email:{" "}
+            <br />
+            <FaLocationDot className="footer-icon" /> Địa chỉ: 17 Nguyễn Cư
+            Trinh, P. Hòa Cường, Tp. Đà Nẵng
+            <br />
+            <FaPhoneAlt className="footer-icon" /> Điện thoại: 0905.402.989
+            <br /> <MailOutlined className="footer-icon" /> Email:{" "}
             <a
               className="contact-us-email"
-              href="mailto:thicongnhadanang.vn@gmail.com"
+              href="mailto:nguyenhai.deco@gmail.com"
             >
               thicongnhadanang.vn@gmail.com
             </a>
-            <br /> Website:{" "}
+            <br />
+            <GlobalOutlined className="footer-icon" /> Website:{" "}
             <a
               className="contact-us-website"
               href="https://thicongnhadanang.vn"
@@ -77,7 +84,8 @@ const Container_Contacts = () => {
             >
               thicongnhadanang.vn
             </a>
-            <br /> Website:{" "}
+            <br />
+            <GlobalOutlined className="footer-icon" /> Website:{" "}
             <a
               className="contact-us-website"
               href="https://nguyenhai.com.vn"
@@ -117,10 +125,7 @@ const Container_Contacts = () => {
         </div>
 
         <div className="contact-us-right">
-          <h2 className="form-title">
-            Để lại thông tin, kiến trúc sư PCD Nguyễn Hải sẽ tư vấn cho bạn
-            nhanh nhất!
-          </h2>
+          <h2 className="form-title">Thông tin tư vấn khách hàng</h2>
 
           <Form
             name="contactForm"
@@ -178,22 +183,32 @@ const Container_Contacts = () => {
             </Form.Item>
 
             <Form.Item
+              label={
+                <span style={{ color: "rgb(9, 108, 181)", fontWeight: 500 }}>
+                  Ngân sách
+                </span>
+              }
               name="budget"
-              rules={[{ required: true, message: "Vui lòng chọn ngân sách!" }]}
+              rules={[
+                {
+                  required: true,
+                  message: "Vui lòng chọn ngân sách thiết kế nội thất!",
+                },
+              ]}
             >
               <Radio.Group className="budget-radio-group">
                 <Row gutter={[10, 10]}>
-                  <Col span={12}>
-                    <Radio value="1.5 - 1.6 tỷ">1.5 - 1.6 tỷ</Radio>
+                  <Col span={6}>
+                    <Radio value="1.5 - 1.6 Tỷ">1.5 - 1.6 Tỷ</Radio>
                   </Col>
-                  <Col span={12}>
-                    <Radio value="1.7 - 1.9 tỷ">1.7 - 1.9 tỷ</Radio>
+                  <Col span={6}>
+                    <Radio value="1.7 - 1.9 Tỷ">1.7 - 1.9 Tỷ</Radio>
                   </Col>
-                  <Col span={12}>
-                    <Radio value="2 - 2.4 tỷ">2 - 2.4 tỷ</Radio>
+                  <Col span={6}>
+                    <Radio value="2 - 2.4 Tỷ">2 - 2.4 Tỷ</Radio>
                   </Col>
-                  <Col span={12}>
-                    <Radio value="Trên 2.5 tỷ">Trên 2.5 tỷ</Radio>
+                  <Col span={6}>
+                    <Radio value="Trên 2.5 Tỷ">Trên 2.5 Tỷ</Radio>
                   </Col>
                 </Row>
               </Radio.Group>

@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { Form, Input, Button, message, Row, Col, Grid, Radio } from "antd";
+import {
+  FacebookFilled,
+  YoutubeFilled,
+  TikTokOutlined,
+} from "@ant-design/icons";
+import emailjs from "emailjs-com";
 import "./Architec.css";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import FAQComponent from "../../view/FAQComponent/FAQComponent";
 
 // linh anh
 import House from "../../../../assets/MT4.png";
@@ -16,7 +23,6 @@ import {
   FaDraftingCompass,
   FaCheckCircle,
 } from "react-icons/fa";
-import FAQComponent from "../../view/FAQComponent/FAQComponent";
 
 const steps = [
   {
@@ -52,6 +58,41 @@ const steps = [
 ];
 
 const Architec_Designs = () => {
+  const [form] = Form.useForm();
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const onFinish = (values) => {
+    const templateParams = {
+      name: values.name,
+      phone: values.phone,
+      email: values.email,
+      area: values.area,
+      location: values.location,
+      budget: values.budget,
+      note: values.note || "",
+    };
+
+    emailjs
+      .send(
+        "service_i4rltcy",
+        "template_hhuh2rd",
+        templateParams,
+        "54eQlmIQbspQwiCm4"
+      )
+      .then(() => {
+        setSuccessMessage(
+          "🎉 Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm nhất."
+        );
+        form.resetFields();
+        setTimeout(() => setSuccessMessage(""), 15000);
+      })
+      .catch((error) => {
+        console.error("❗ EmailJS Error:", error);
+        message.error("🚫 Đã có lỗi xảy ra khi gửi yêu cầu!");
+      });
+  };
   return (
     <div className="architec-container">
       {/* text */}
@@ -220,7 +261,172 @@ const Architec_Designs = () => {
       </div>
 
       {/* form liên hệ */}
-      <ContactForm />
+      <div className="form-wrapper">
+        <h1 className="form-title-h1">Liên hệ với chúng tôi</h1>
+        <Row gutter={32} className="form-container">
+          <Col xs={24} md={12} className="form-contact">
+            <Form form={form} layout="vertical" onFinish={onFinish}>
+              <Form.Item
+                name="name"
+                rules={[
+                  { required: true, message: "Vui lòng nhập họ và tên!" },
+                ]}
+              >
+                {" "}
+                <Input placeholder="Họ và tên" />{" "}
+              </Form.Item>
+              <Form.Item
+                name="phone"
+                rules={[
+                  { required: true, message: "Vui lòng nhập số điện thoại!" },
+                ]}
+              >
+                {" "}
+                <Input placeholder="Số điện thoại" />{" "}
+              </Form.Item>
+              <Form.Item
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    type: "email",
+                    message: "Vui lòng nhập email hợp lệ!",
+                  },
+                ]}
+              >
+                {" "}
+                <Input placeholder="Email" />{" "}
+              </Form.Item>
+              <Form.Item
+                name="area"
+                rules={[
+                  {
+                    required: true,
+                    message: "Vui lòng nhập diện tích và số tầng!",
+                  },
+                ]}
+              >
+                {" "}
+                <Input placeholder="Diện tích đất và số tầng muốn xây" />{" "}
+              </Form.Item>
+              <Form.Item
+                name="location"
+                rules={[
+                  { required: true, message: "Vui lòng nhập địa phương!" },
+                ]}
+              >
+                {" "}
+                <Input placeholder="Địa phương muốn xây" />{" "}
+              </Form.Item>
+              <Form.Item
+                label={
+                  <span style={{ color: "rgb(9, 108, 181)", fontWeight: 500 }}>
+                    Ngân sách thiết kế kiến trúc
+                  </span>
+                }
+                name="budget"
+                rules={[
+                  {
+                    required: true,
+                    message: "Vui lòng chọn ngân sách thiết kế nội thất!",
+                  },
+                ]}
+              >
+                <Radio.Group style={{ width: "100%", fontWeight: 500 }}>
+                  <Row gutter={[10, 10]}>
+                    <Col span={6}>
+                      <Radio value="Dưới 50 Triệu">Dưới 50 Triệu</Radio>
+                    </Col>
+                    <Col span={6}>
+                      <Radio value="50 - 100 Triệu">50 - 100 Triệu</Radio>
+                    </Col>
+                    <Col span={6}>
+                      <Radio value="100 - 150 Triệu">100 - 150 Triệu</Radio>
+                    </Col>
+                    <Col span={6}>
+                      <Radio value="Trên 150 Triệu">Trên 150 Triệu</Radio>
+                    </Col>
+                  </Row>
+                </Radio.Group>
+              </Form.Item>
+              <Form.Item name="note">
+                {" "}
+                <Input.TextArea
+                  rows={2}
+                  placeholder="Yêu cầu chi tiết nếu có!"
+                />{" "}
+              </Form.Item>
+              {successMessage && (
+                <div
+                  style={{
+                    marginBottom: 16,
+                    backgroundColor: "#f6ffed",
+                    border: "1px solid #52c41a",
+                    color: "#389e0d",
+                    padding: "10px 16px",
+                    borderRadius: "6px",
+                    fontSize: "15px",
+                    textAlign: "center",
+                  }}
+                >
+                  {successMessage}
+                </div>
+              )}
+              <Form.Item>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  block
+                  style={{ background: "#016bb4", border: "none" }}
+                >
+                  Gửi yêu cầu!
+                </Button>
+              </Form.Item>
+            </Form>
+          </Col>
+
+          {screens.md && (
+            <Col xs={24} md={12} className="image-container">
+              <div style={{ position: "relative" }}>
+                <img
+                  src="https://cafebiz.cafebizcdn.vn/thumb_w/600/162123310254002176/2021/2/16/photo1613453220800-1613453220972454302062.png"
+                  alt="Representative"
+                  className="form-image"
+                />
+                <div className="social-buttons">
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-icon fb"
+                  >
+                    {" "}
+                    <FacebookFilled style={{ fontSize: "18px" }} />{" "}
+                  </a>
+                  <a
+                    href="https://youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-icon yt"
+                  >
+                    {" "}
+                    <YoutubeFilled style={{ fontSize: "18px" }} />{" "}
+                  </a>
+                  <a
+                    href="https://tiktok.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-icon tt"
+                  >
+                    {" "}
+                    <TikTokOutlined style={{ fontSize: "18px" }} />{" "}
+                  </a>
+                </div>
+              </div>
+            </Col>
+          )}
+        </Row>
+      </div>
 
       <div className="design-process-container">
         <h2 className="process-title">
@@ -294,41 +500,18 @@ const Architec_Designs = () => {
             Các công trình tiêu biểu của PCD Nguyễn Hải
           </h1>
         </div>
-        {/* cttb1House */}
-        <div className="architec-image-container-tb">
-          <img
-            src={cttb1House}
-            alt="Mẫu Nhà trẻ do PCD Nguyễn Hải thiết kế"
-            className="architec-image-tb"
-          />
-          <div className="architec-caption-imgtb">
-            <em>Mẫu Nhà trẻ do PCD Nguyễn Hải thiết kế</em>
+        {[cttb1House, cttb2House, cttb3House].map((img, index) => (
+          <div className="architec-image-container-tb" key={index}>
+            <img
+              src={img}
+              alt={`Công trình ${index + 1}`}
+              className="architec-image-tb"
+            />
+            <div className="architec-caption-imgtb">
+              <em>Công trình {index + 1} do PCD Nguyễn Hải thiết kế</em>
+            </div>
           </div>
-        </div>
-
-        {/* cttb2House */}
-        <div className="architec-image-container-tb">
-          <img
-            src={cttb2House}
-            alt="Mẫu Nhà biệt thự do PCD Nguyễn Hải thiết kế"
-            className="architec-image-tb"
-          />
-          <div className="architec-caption-imgtb">
-            <em>Mẫu Nhà biệt thự do PCD Nguyễn Hải thiết kế</em>
-          </div>
-        </div>
-
-        {/* cttb3House */}
-        <div className="architec-image-container-tb">
-          <img
-            src={cttb3House}
-            alt="Mẫu Nhà biệt thự do PCD Nguyễn Hải thiết kế"
-            className="architec-image-tb"
-          />
-          <div className="architec-caption-imgtb">
-            <em>Mẫu Nhà biệt thự do PCD Nguyễn Hải thiết kế</em>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

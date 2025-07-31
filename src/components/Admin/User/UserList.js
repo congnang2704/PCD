@@ -1,16 +1,13 @@
-// src/components/admin/UserList.js
 import React, { useEffect, useState } from "react";
 
 function UserList() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "mongodb+srv://adminHai:pcdnguyenhai@doancongnang.kex4okd.mongodb.net/database_PCD/users"
-    )
+    fetch("http://localhost:5000/users") // đúng cổng và endpoint
       .then((res) => res.json())
       .then((data) => setUsers(data))
-      .catch((err) => console.error("Lỗi gọi API:", err));
+      .catch((err) => console.error("❌ Lỗi khi gọi API:", err));
   }, []);
 
   return (
