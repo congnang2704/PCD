@@ -1,0 +1,99 @@
+.slider-cmt-wrapper {
+  padding: 10px 0;
+}
+
+.slider-h1-wrapper {
+  text-transform: uppercase;
+  font-size: clamp(18px, 1.5vw, 24px) !important;
+  text-align: center;
+  color: #016bb4;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.slider-cmt-container {
+  max-width: 1200px; /* gọn gàng hơn 1400 */
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Quan trọng: ẩn tràn & chuẩn hóa padding slide */
+.slider-cmt-container .slick-list {
+  overflow: hidden; /* tránh lộ viền xanh mép trái */
+  margin: 0 -12px; /* triệt tiêu padding slide */
+}
+.slider-cmt-container .slick-slide > div {
+  padding: 0 12px; /* padding đều cho từng item */
+}
+
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-box {
+  background-color: #016bb4;
+  border-radius: 10px;
+  padding: 16px 18px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Cho nội dung tự giãn, không khóa cứng height */
+  min-height: 150px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-text {
+  text-align: justify;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+}
+
+.comment-arrow {
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #016bb4;
+}
+
+.comment-user {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.comment-name {
+  margin-left: 10px;
+  color: #016bb4;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Ẩn text "Previous"/"Next" nếu theme chưa load đúng (backup) */
+.slick-prev,
+.slick-next {
+  z-index: 2;
+}
+.slick-prev:before,
+.slick-next:before {
+  /* nếu đã import theme.css thì không cần; để đây như fallback */
+  color: #016bb4;
+  font-size: 26px;
+}
+
+/* Mobile tweak */
+@media (max-width: 576px) {
+  .comment-box {
+    padding: 14px;
+  }
+}

@@ -1,0 +1,929 @@
+/* ==========================================================
+   DỊCH VỤ XIN GIẤY PHÉP XÂY DỰNG – NGUYỄN HẢI
+   ========================================================== */
+
+:root {
+  --permit-primary: #096cb5;
+  --permit-primary-deep: #064eac;
+  --permit-accent: #d4b263;
+  --permit-bg: #ffffff;
+  --permit-soft: #f8f5f0;
+  --permit-ink: #0f172a;
+  --permit-muted: #64748b;
+  --permit-border: #e5e7eb;
+
+  --permit-radius-card: 22px;
+  --permit-shadow-soft: 0 6px 22px rgba(0, 0, 0, 0.05);
+  --permit-shadow-card: 0 10px 30px rgba(10, 44, 80, 0.12);
+}
+
+/* PAGE WRAPPER */
+
+.permit-page {
+  background: var(--permit-bg);
+  color: var(--permit-ink);
+}
+
+/* Nếu project CHƯA có .container / .section / .section-title
+   thì giữ đoạn dưới; nếu đã có global style rồi thì có thể bỏ bớt */
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-soft {
+  background: var(--permit-soft);
+}
+
+.section-title-per {
+  text-align: center;
+  font-size: clamp(20px, 2vw, 30px);
+  font-weight: 700;
+  color: var(--permit-primary);
+  margin-bottom: 12px;
+}
+
+.section-intro-per {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  color: var(--permit-muted);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.permit-hero {
+  background: radial-gradient(circle at 0% 0%, #eaf2ff 0%, #ffffff 60%);
+  padding: 90px 0 70px;
+}
+
+.permit-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.permit-hero-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #e6efff;
+  color: var(--permit-primary-deep);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.permit-hero-text h1 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--permit-primary);
+}
+
+.permit-hero-slogan {
+  font-weight: 700;
+  color: var(--permit-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.permit-hero-desc {
+  color: var(--permit-muted);
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.permit-hero-benefits {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.permit-hero-benefits li + li {
+  margin-top: 4px;
+}
+
+.permit-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.permit-btn-primary,
+.permit-btn-ghost {
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.permit-btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--permit-primary),
+    var(--permit-primary-deep)
+  );
+  color: #ffffff;
+  box-shadow: var(--permit-shadow-card);
+  text-decoration: none;
+}
+
+.permit-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(10, 44, 80, 0.25);
+}
+
+.permit-btn-ghost {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: var(--permit-border);
+  color: var(--permit-ink);
+  backdrop-filter: blur(4px);
+}
+
+.permit-btn-ghost:hover {
+  background: #ffffff;
+  border-color: var(--permit-primary);
+}
+
+.permit-hero-hotline-note {
+  font-size: 13px;
+  color: var(--permit-primary);
+  margin-top: 4px;
+}
+
+/* HERO SIDE CARD */
+
+.permit-hero-side {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.permit-hero-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 18px 20px;
+  border: 1px solid #dbeafe;
+  box-shadow: var(--permit-shadow-card);
+  max-width: 360px;
+}
+
+.permit-hero-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--permit-primary);
+}
+
+.permit-hero-card-desc {
+  font-size: 14px;
+  color: var(--permit-primary);
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   CHECK – CÓ CẦN XIN PHÉP KHÔNG
+   ========================================================== */
+
+.permit-check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.permit-check-card {
+  background: #ffffff;
+  border-radius: var(--permit-radius-card);
+  padding: 22px 20px;
+  border: 1px solid var(--permit-border);
+  box-shadow: var(--permit-shadow-soft);
+}
+
+.permit-check-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--permit-primary);
+}
+
+.permit-check-card ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.7;
+}
+
+.permit-note {
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--permit-muted);
+  text-align: center;
+  text-align: justify;
+}
+
+.permit-note a {
+  color: var(--permit-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.permit-note a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================
+   ĐIỀU KIỆN
+   ========================================================== */
+
+.permit-conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.permit-condition-card {
+  background: #ffffff;
+  border-radius: var(--permit-radius-card);
+  padding: 20px 18px;
+  border: 1px solid var(--permit-border);
+  box-shadow: var(--permit-shadow-soft);
+}
+
+.permit-condition-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--permit-primary);
+}
+
+.permit-condition-card p {
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* ==========================================================
+   HỒ SƠ
+   ========================================================== */
+
+.permit-doc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.permit-doc-card {
+  background: #ffffff;
+  border-radius: var(--permit-radius-card);
+  padding: 22px 20px;
+  border: 1px solid var(--permit-border);
+  box-shadow: var(--permit-shadow-soft);
+}
+
+.permit-doc-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--permit-primary);
+}
+
+.permit-doc-card ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   LỖI THƯỜNG GẶP
+   ========================================================== */
+
+.permit-errors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.permit-error-card {
+  background: #ffffff;
+  border-radius: var(--permit-radius-card);
+  padding: 20px 18px;
+  border: 1px solid var(--permit-border);
+  box-shadow: var(--permit-shadow-soft);
+}
+
+.permit-error-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--permit-primary);
+}
+
+.permit-error-card p {
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   QUY TRÌNH
+   ========================================================== */
+
+.permit-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.permit-process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px 14px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--permit-border);
+  box-shadow: var(--permit-shadow-soft);
+}
+
+.permit-step-number {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    var(--permit-primary),
+    var(--permit-primary-deep)
+  );
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.permit-step-text {
+  margin: 0;
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   SO SÁNH
+   ========================================================== */
+
+.permit-compare-table {
+  margin-top: 26px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--permit-border);
+  background: #ffffff;
+  box-shadow: var(--permit-shadow-card);
+  font-size: 14px;
+}
+
+.permit-compare-header,
+.permit-compare-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1.2fr 1.2fr;
+}
+
+.permit-compare-header > div {
+  padding: 12px 14px;
+  font-weight: 600;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.permit-compare-row > div {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: justify;
+}
+
+.permit-compare-row:last-child > div {
+  border-bottom: none;
+}
+
+/* ==========================================================
+   CASE STUDY
+   ========================================================== */
+
+.permit-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.permit-case-card {
+  background: #ffffff;
+  border-radius: var(--permit-radius-card);
+  padding: 20px 18px;
+  border: 1px solid var(--permit-border);
+  box-shadow: var(--permit-shadow-soft);
+}
+
+.permit-case-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--permit-primary);
+}
+
+.permit-case-card p {
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* ==========================================================
+   GÓI DỊCH VỤ
+   ========================================================== */
+
+.permit-packages-slider {
+  position: relative;
+  margin-top: 26px;
+}
+
+/* Track mặc định: desktop / tablet = 3 cột */
+.permit-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Card */
+.permit-package-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--permit-radius-card);
+  padding: 22px 20px 22px;
+  border: 1px solid var(--permit-border);
+  box-shadow: var(--permit-shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  cursor: pointer;
+  min-height: 420px; /* đảm bảo đủ chiều cao desktop & tablet */
+}
+
+.permit-package-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--permit-primary);
+}
+
+.permit-package-card p {
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.7;
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+.permit-package-card ul {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.7;
+}
+
+/* Card đang active (ở giữa slider) */
+.permit-package-card-active {
+  transform: translateY(-4px);
+  border-color: var(--permit-primary);
+  box-shadow: var(--permit-shadow-card);
+}
+
+.permit-package-highlight {
+  border-color: var(--permit-accent);
+  box-shadow: var(--permit-shadow-card);
+}
+
+.permit-package-label {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--permit-accent);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* CTA button trong packages */
+
+.permit-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #dbeafe;
+  background: #f9fafb;
+  color: var(--permit-primary);
+  transition: 0.2s ease;
+}
+
+.permit-cta-phone {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.permit-cta-btn:hover {
+  background: #eff6ff;
+  border-color: var(--permit-primary);
+}
+
+/* Nút điều hướng trái/phải – chỉ bật trên mobile */
+.permit-packages-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  display: none; /* mobile mới hiện */
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.permit-packages-nav-prev {
+  left: 8px;
+}
+
+.permit-packages-nav-next {
+  right: 8px;
+}
+
+/* ==========================================================
+   RESPONSIVE (giữ các phần cũ, chỉ chỉnh phần packages)
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .permit-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .permit-hero-side {
+    justify-content: flex-start;
+  }
+
+  .permit-conditions-grid,
+  .permit-doc-grid,
+  .permit-errors-grid,
+  .permit-process-grid,
+  .permit-cases-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .permit-packages-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .permit-compare-header,
+  .permit-compare-row {
+    grid-template-columns: 1.4fr 1.3fr 1.3fr;
+  }
+}
+
+/* Mobile – chuyển packages thành slider ngang, thò 2 bên như hình ní vẽ */
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .permit-hero {
+    padding: 64px 0 40px;
+  }
+
+  .permit-hero-text {
+    text-align: center;
+  }
+
+  .permit-hero-actions {
+    justify-content: center;
+  }
+
+  .permit-hero-side {
+    justify-content: center;
+  }
+
+  .permit-hero-card {
+    max-width: 100%;
+  }
+
+  .permit-check-grid,
+  .permit-conditions-grid,
+  .permit-doc-grid,
+  .permit-errors-grid,
+  .permit-process-grid,
+  .permit-cases-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Slider gói dịch vụ */
+  .permit-packages-slider {
+    margin-top: 26px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .permit-packages-grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    min-height: 470px; /* đảm bảo đủ chiều cao cho slider */
+    align-items: center;
+  }
+
+  .permit-packages-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .permit-package-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+
+  .permit-packages-nav {
+    display: flex;
+  }
+
+  .permit-compare-header,
+  .permit-compare-row {
+    grid-template-columns: 1.2fr 1.1fr 1.1fr;
+  }
+
+  .permit-cta-final-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .permit-cta-final-right {
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.permit-faq-list {
+  max-width: 820px;
+  margin: 24px auto 0;
+}
+
+.permit-faq-item {
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 10px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: var(--permit-shadow-soft);
+  transition: 0.2s;
+}
+
+.permit-faq-item-active {
+  border-color: var(--permit-primary);
+  box-shadow: var(--permit-shadow-card);
+}
+
+.permit-faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: var(--permit-primary);
+}
+
+.permit-faq-toggle {
+  font-size: 18px;
+  color: var(--permit-primary-deep);
+  margin-left: 10px;
+}
+
+.permit-faq-answer {
+  padding: 0 16px 14px;
+  font-size: 14px;
+  color: var(--permit-muted);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* ==========================================================
+   CTA CUỐI TRANG
+   ========================================================== */
+
+.permit-cta-final {
+  background: linear-gradient(
+    135deg,
+    rgba(9, 108, 181, 0.08),
+    rgba(9, 108, 181, 0.18)
+  );
+  padding: 40px 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.permit-cta-final-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.permit-cta-final-left {
+  max-width: 560px;
+}
+
+.permit-cta-final-sub {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 4px;
+  color: var(--permit-primary-deep);
+}
+
+.permit-cta-final-title {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--permit-primary);
+}
+
+.permit-cta-final-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--permit-muted);
+  text-align: justify;
+}
+
+.permit-cta-final-right {
+  text-align: right;
+}
+
+.permit-cta-phone-big {
+  padding: 11px 26px;
+  font-size: 15px;
+}
+
+.permit-cta-final-note {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--permit-muted);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .permit-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .permit-hero-side {
+    justify-content: flex-start;
+  }
+
+  .permit-conditions-grid,
+  .permit-doc-grid,
+  .permit-errors-grid,
+  .permit-process-grid,
+  .permit-cases-grid,
+  .permit-packages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .permit-compare-header,
+  .permit-compare-row {
+    grid-template-columns: 1.4fr 1.3fr 1.3fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-intro-per {
+    text-align: justify;
+  }
+
+  .permit-hero {
+    padding: 64px 0 40px;
+  }
+
+  .permit-hero-text {
+    text-align: center;
+  }
+
+  .permit-hero-actions {
+    justify-content: center;
+  }
+
+  .permit-hero-side {
+    justify-content: center;
+  }
+
+  .permit-hero-card {
+    max-width: 100%;
+  }
+
+  .permit-check-grid,
+  .permit-conditions-grid,
+  .permit-doc-grid,
+  .permit-errors-grid,
+  .permit-process-grid,
+  .permit-cases-grid,
+  .permit-packages-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .permit-compare-header,
+  .permit-compare-row {
+    grid-template-columns: 1.2fr 1.1fr 1.1fr;
+  }
+
+  .permit-cta-final-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .permit-cta-final-right {
+    text-align: center;
+  }
+}

@@ -1,0 +1,453 @@
+/* Body text: Verdana Now */
+body,
+p,
+a,
+li,
+span {
+  font-family: "Verdana Now", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Heading: Verdana Now Bold */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title,
+.nh-about-title,
+.nh-founder-title {
+  font-family: "Verdana Now", sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Sub heading / nhấn mạnh */
+h4,
+.nh-about-sub,
+.nh-founder-sub {
+  font-family: "Verdana Now", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-align: justify;
+}
+
+.intro-paragraph {
+  text-align: justify;
+}
+
+.col {
+  padding: 0 !important;
+}
+
+/* herder */
+
+/* FONT CHỮ TRÊN HÌNH BANNER */
+/* Desktop / màn hình lớn → font H1 */
+.home-hero__intro-title {
+  line-height: 1.2;
+  font-weight: 700;
+}
+.banner p {
+  text-align: center !important;
+}
+
+/* Mobile ≤ 767px → giảm xuống như H4 */
+@media (max-width: 767px) {
+  .home-hero__intro-title {
+    font-size: 1.25rem !important;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+}
+
+/* giới thiệu sếp */
+/* ===== Founder block ===== */
+.founder-row .col-inner {
+  padding: 0 !important;
+}
+.founder-row {
+  margin: 0 !important;
+}
+
+/* Ảnh cao 50% màn hình */
+.founder-left .founder-img img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.founder-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50vh;
+  padding: 40px 60px;
+}
+
+.founder-title {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.founder-desc {
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.founder-row,
+.founder-row .row,
+.founder-row .col {
+  display: flex;
+}
+.founder-row .col {
+  flex: 1 1 0;
+}
+.founder-row .col .col-inner {
+  display: flex;
+  width: 100%;
+}
+
+/* bên trái chỉ là nền cover */
+.founder-left {
+  min-height: 520px;
+}
+
+/* panel phải: căn giữa dọc + padding responsive */
+.founder-right .col-inner {
+  align-items: center; /* center theo trục dọc */
+  padding: 48px 56px; /* desktop */
+  background: #121212;
+  color: #fff;
+}
+
+/* typo */
+.founder-title {
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+.founder-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #d8d8d8;
+  margin: 0 0 18px;
+}
+.founder-btn {
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 18px;
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
+  border-radius: 10px;
+}
+.founder-btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .founder-left {
+    min-height: 400px;
+  }
+  .founder-right .col-inner {
+    padding: 32px 36px;
+  }
+  .founder-title {
+    font-size: 28px;
+  }
+}
+
+/* Mobile: xếp ảnh trên – text dưới */
+@media (max-width: 767px) {
+  .founder-row {
+    flex-direction: column;
+  } /* stack cột */
+  .founder-left {
+    min-height: 300px;
+  }
+  .founder-right .col-inner {
+    padding: 20px 22px;
+  }
+  .founder-title {
+    font-size: 24px;
+  }
+  .founder-desc {
+    font-size: 15px;
+  }
+}
+
+/* Kho Tư Liệu Số */
+.archives-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #096cb5; /* màu chủ đạo Nguyễn Hải */
+  margin-bottom: 10px;
+}
+
+.archives-sub {
+  font-size: 18px;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.archives-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.archives-images img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* giới thiệu công ty và map */
+/* ====== Contact Card – Nguyễn Hải ====== */
+:root {
+  --nh-brand: #096cb5;
+  --nh-text: #222;
+  --nh-muted: #6b7280; /* xám nhạt */
+  --nh-border: #e5e7eb;
+}
+
+.contact-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 0 8px;
+  color: var(--nh-text);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+.contact-title {
+  margin: 0 0 14px;
+  font-size: 22px;
+  letter-spacing: 0.3px;
+  color: var(--nh-brand);
+  text-transform: uppercase;
+  text-align: justify;
+}
+
+/* List thông tin */
+.contact-list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+.contact-list li {
+  display: block;
+  padding: 6px 0;
+  text-align: justify;
+  border-bottom: 1px dashed var(--nh-border);
+}
+.contact-list li:last-child {
+  border-bottom: 0;
+}
+
+.contact-list .label {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--nh-muted);
+}
+
+/* Link */
+.contact-list a {
+  color: var(--nh-brand);
+  text-decoration: none;
+}
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* Hàng TRUY CẬP map */
+.contact-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.icon-loc {
+  color: var(--nh-brand);
+  display: inline-flex;
+}
+
+.contact-map a {
+  color: var(--nh-brand);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+}
+.contact-map a:hover {
+  opacity: 0.9;
+}
+
+/* Responsive tinh tế */
+@media (max-width: 640px) {
+  .contact-card {
+    padding: 8px 0;
+    font-size: 15px;
+  }
+  .contact-title {
+    font-size: 20px;
+  }
+  .contact-list .label {
+    min-width: 90px;
+  }
+  .contact-map a::after {
+    width: 72px;
+  }
+}
+
+/* ===== Căn giữa layout Dự án/Blog/Category ===== */
+.archive .row.row-large.row-divided,
+.blog .row.row-large.row-divided,
+.category .row.row-large.row-divided {
+  max-width: 1500px;
+  margin: 0 auto !important;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Xóa margin âm mặc định */
+.archive .row.row-large.row-divided,
+.blog .row.row-large.row-divided,
+.category .row.row-large.row-divided {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Các cột bên trong giữ khoảng cách đều */
+.archive .row.row-large.row-divided > .col,
+.blog .row.row-large.row-divided > .col,
+.category .row.row-large.row-divided > .col {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  box-sizing: border-box;
+}
+
+.box {
+  padding: 5px;
+}
+
+/* header menu màu nền */
+.off-canvas.mfp-ready.mfp-bg,
+.off-canvas-left .mfp-content,
+.off-canvas-right .mfp-content,
+.off-canvas .mfp-content {
+  background-color: #0b6eed !important;
+}
+
+.off-canvas .nav-sidebar li a {
+  color: #fff !important;
+}
+.off-canvas .nav-sidebar li a:hover {
+  color: #ffd700 !important;
+}
+
+.nh-about-kicker {
+  font-size: 38px;
+  letter-spacing: 0.1em;
+  color: #c0c6cc;
+  font-weight: 300;
+}
+.nh-about-sub {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+.nh-about-title {
+  margin: 24px 0 16px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0b6eed;
+}
+.nh-about-text p {
+  margin: 8px 0;
+  line-height: 1.8;
+  color: #1f2937;
+}
+
+.nh-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 12px 0;
+  padding: 14px 20px;
+  border: 2px solid #0b6eed;
+  color: #0b6eed;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nh-cta:hover {
+  background: #0b6eed;
+  color: #fff;
+}
+.nh-cta i {
+  flex: 1;
+  margin-left: 20px;
+  border-bottom: 2px solid currentColor;
+}
+
+.page-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* chuyên môn của chúng tôi */
+/* CSS dùng chung cho tất cả box */
+.nh-box {
+  background: #f6f8fb;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  padding: 0 0 18px;
+  margin-bottom: 24px;
+  height: 100%; /* ép box cao 100% theo cột */
+  display: flex;
+  flex-direction: column;
+}
+
+.nh-title {
+  color: #fff;
+  margin: 0 0 12px;
+  padding: 10px 18px;
+  border-radius: 12px 12px 0 0;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.nh-content {
+  padding: 0 18px;
+  flex: 1; /* nội dung co giãn cho đều chiều cao */
+}
+
+.nh-content p {
+  margin: 6px 0;
+  color: #1f2d3d;
+  line-height: 1.5em;
+}
+
+@media (max-width: 549px) {
+  .nh-title {
+    font-size: 16px;
+  }
+  .nh-content {
+    padding: 0 14px;
+  }
+}

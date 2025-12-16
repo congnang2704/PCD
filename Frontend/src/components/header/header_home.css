@@ -1,0 +1,252 @@
+/* ========================
+=        HEADER BAR       =
+======================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: #096cb5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  min-height: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========================
+=         LOGO            =
+======================== */
+.header-logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 140px;
+}
+.header-logo img {
+  height: 44px;
+  width: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* center menu */
+.header-center {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* right cluster */
+.header-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ========================
+=     DESKTOP MENU        =
+======================== */
+.menu-desktop {
+  background: transparent !important;
+  border-bottom: none !important;
+  margin-right: 12px;
+}
+.menu-desktop .ant-menu-overflow {
+  justify-content: flex-end;
+}
+.menu-desktop .ant-menu-item a,
+.menu-desktop .ant-menu-submenu > .ant-menu-submenu-title .menu-title {
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.menu-desktop .ant-menu-item:hover a,
+.menu-desktop .ant-menu-submenu:hover > .ant-menu-submenu-title .menu-title {
+  color: #ffd000 !important;
+}
+.menu-desktop .ant-menu-item::after,
+.menu-desktop .ant-menu-submenu::after,
+.menu-desktop .ant-menu-item-selected::after,
+.menu-desktop .ant-menu-submenu-selected .ant-menu-submenu-title::after {
+  border-bottom: none !important;
+}
+
+/* ===== Popup (dropdown) nền trắng ===== */
+.menu-desktop .ant-menu-submenu-popup {
+  background: #fff !important;
+}
+
+/* ===== Popup DỊCH VỤ: nhóm theo cột có tiêu đề ===== */
+.menu-desktop .ant-menu-submenu-popup {
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  max-height: 380px;
+  overflow: auto;
+}
+.menu-desktop .ant-menu-submenu-popup .ant-menu {
+  background: #fff !important;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 12px 18px;
+  width: 720px;
+  padding: 8px !important;
+}
+
+/* ItemGroup title */
+.menu-desktop .ant-menu-item-group {
+  margin: 0;
+  background: #fff;
+  border-radius: 10px;
+}
+.menu-desktop .ant-menu-item-group-title {
+  font-weight: 800;
+  color: #0b3f6b;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  padding: 8px 10px 4px;
+}
+.menu-desktop .ant-menu-item-group-list {
+  padding: 4px 0 8px 0;
+}
+
+/* Items trong nhóm */
+.menu-desktop .ant-menu-item-group .ant-menu-item {
+  margin: 2px 0;
+  padding: 8px 10px !important;
+  border-radius: 8px;
+  line-height: 1.2;
+}
+.menu-desktop .ant-menu-item-group .ant-menu-item a {
+  color: #222 !important;
+}
+.menu-desktop .ant-menu-item-group .ant-menu-item:hover {
+  background: #f3f7fb !important;
+}
+.menu-desktop .ant-menu-item-group .ant-menu-item:hover a {
+  color: #016bb4 !important;
+}
+
+/* Tablet thu 2 cột */
+@media (max-width: 1280px) {
+  .menu-desktop .ant-menu-submenu-popup .ant-menu {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    width: 520px;
+  }
+}
+
+/* ========================
+=     MOBILE DRAWER       =
+======================== */
+.ant-drawer .ant-menu {
+  background-color: #016bb4 !important;
+  color: #fff !important;
+  height: 100%;
+  border: none;
+}
+.ant-drawer .ant-menu-item a,
+.ant-drawer .ant-menu-submenu-title {
+  color: #fff !important;
+  font-weight: 700;
+}
+.ant-drawer .ant-menu-item:hover,
+.ant-drawer .ant-menu-submenu-title:hover {
+  background-color: #005a99 !important;
+  color: #fff !important;
+}
+.ant-drawer .ant-menu-submenu-arrow {
+  color: #fff !important;
+}
+.ant-drawer .ant-menu-submenu .ant-menu-sub {
+  background-color: #005a99 !important;
+}
+.ant-drawer .ant-menu-item {
+  padding-left: 24px !important;
+}
+.ant-drawer .ant-menu-submenu-open .ant-menu-sub {
+  display: block !important;
+}
+
+/* hamburger */
+.menu-button-mobile {
+  color: #fff !important;
+  font-size: 20px;
+}
+
+/* account icon / search */
+.Menu-UserOutlined {
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.16);
+  line-height: 1;
+}
+.header-search {
+  width: 220px;
+}
+
+/* responsive */
+.site-header.ant-layout-header {
+  padding: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .header-center,
+  .header-search {
+    display: none;
+  }
+  .header-inner {
+    justify-content: space-between;
+  }
+  .header-logo {
+    min-width: auto;
+  }
+  .header-logo img {
+    height: 50px;
+  }
+}
+@media (min-width: 992px) {
+  .mobile-right-icons {
+    display: none;
+  }
+}
+@media (max-width: 1199px) {
+  .header-center,
+  .header-search {
+    display: none;
+  }
+  .header-inner {
+    justify-content: space-between;
+  }
+  .header-logo {
+    min-width: auto;
+  }
+  .header-logo img {
+    height: 50px;
+  }
+  .mobile-right-icons {
+    display: flex;
+  }
+}
+@media (min-width: 1200px) {
+  .mobile-right-icons {
+    display: none;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1366px) {
+  .header-search {
+    width: 180px;
+  }
+}

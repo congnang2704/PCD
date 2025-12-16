@@ -1,0 +1,208 @@
+:root {
+  --primary: #096cb5;
+  --text: #333;
+  --muted: #555;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* Chiều cao banner */
+  --banner-desktop: 680px;
+  --banner-mobile: clamp(160px, 32vh, 220px);
+  --content-max: 900px;
+}
+
+/* ========== KHUNG CHUNG ========== */
+
+.intro-home {
+  background-color: #fff;
+}
+
+/* container nội dung */
+.intro-container {
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Tiêu đề + slogan */
+.home-hero__intro-title {
+  margin: 0 0 4px 0;
+  color: #096cb5;
+  font-weight: 600;
+  font-size: clamp(22px, 3.2vw, 32px);
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
+
+.home-hero__intro-subtitle {
+  margin: 0 0 12px 0;
+  font-size: clamp(15px, 1.7vw, 17px);
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #096cb5;
+  opacity: 0.95;
+}
+
+/* Đoạn văn */
+.intro-paragraph {
+  color: #334e68;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+  max-width: var(--content-max);
+  margin: 8px 0;
+}
+
+/* Khối “Xem thêm/Thu gọn” */
+.intro-paragraph-more {
+  max-width: var(--content-max);
+  margin: 10px 0 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.2s ease, visibility 0.2s;
+}
+
+.intro-paragraph-more.hide {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-paragraph-more.show {
+  max-height: 1200px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Nút toggle */
+.intro-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 18px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  background: #096cb5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.intro-toggle:hover {
+  filter: brightness(0.95);
+}
+
+/* Feature items (icon + title + text) */
+.intro-features {
+  margin-top: 10px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 12px 10px;
+}
+
+.feature-icon {
+  font-size: 30px;
+  color: #096cb5;
+  margin-bottom: 6px;
+}
+
+.feature-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #096cb5;
+  text-transform: uppercase;
+}
+
+.feature-paragraph {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334e68;
+  /* text-align: justify; */
+}
+
+/* Mobile padding gọn lại */
+@media (max-width: 991.98px) {
+  .intro-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ========== BANNER HERO – ẢNH LCP ========== */
+
+.intro-slider-wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-slide {
+  position: relative;
+  width: 100%;
+}
+
+/* Ảnh LCP – giữ tỷ lệ, không quá cao để load nhanh hơn */
+.intro-slide-image {
+  width: 100%;
+  height: auto;
+  max-height: var(--banner-desktop);
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 16 / 7; /* tương đối với 1580x691 */
+}
+
+/* Mobile: thấp hơn để đỡ “dài” và cảm giác nhanh hơn */
+@media (max-width: 991px) {
+  .intro-slide-image {
+    max-height: var(--banner-mobile);
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Caption nếu dùng sau này */
+.intro-slide-caption {
+  position: absolute;
+  bottom: 22px;
+  left: 28px;
+  color: #fff;
+  font-size: clamp(1rem, 2.4vw, 1.8rem);
+  font-weight: bold;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+  max-width: 60%;
+  min-height: 48px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.slick-active .intro-slide-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .intro-slide-caption {
+    left: 12px;
+    bottom: 12px;
+    max-width: 90%;
+  }
+  .intro-hero-main {
+    max-width: 360px;
+    max-height: 260px;
+  }
+}
+
+/* ========== ẢNH BÊN PHẢI ========== */
+
+.intro-image-img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+}

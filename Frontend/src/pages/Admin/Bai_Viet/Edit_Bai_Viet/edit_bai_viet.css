@@ -1,0 +1,45 @@
+/* Container chung nếu muốn căn khoảng cách */
+.btn-publish,
+.btn-unpublish {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Publish */
+.btn-publish {
+  background: linear-gradient(135deg, #016cb5, #0288d1);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(1, 108, 181, 0.3);
+}
+.btn-publish:hover {
+  background: linear-gradient(135deg, #0288d1, #016cb5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(1, 108, 181, 0.5);
+}
+
+/* Unpublish */
+.btn-unpublish {
+  background: linear-gradient(135deg, #e53935, #ff5252);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(229, 57, 53, 0.3);
+}
+.btn-unpublish:hover {
+  background: linear-gradient(135deg, #ff5252, #e53935);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(229, 57, 53, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn-publish,
+  .btn-unpublish {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+  }
+}

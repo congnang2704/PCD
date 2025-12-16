@@ -1,0 +1,554 @@
+/* ============ TOKENS ============ */
+:root {
+  --primary: #0b6eed;
+  --primary-600: #0a5ed0;
+  --ink: #0f172a;
+  --sub: #475569;
+  --muted: #7b8794;
+  --border: #e6ecf4;
+  --bg: #f7f9fc;
+  --white: #fff;
+  --shadow-sm: 0 4px 14px rgba(2, 8, 23, 0.06);
+  --radius-lg: 14px;
+  --radius-md: 12px;
+}
+
+/* ============ WRAPPER ============ */
+.nhp-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 16px 56px;
+  color: var(--ink);
+}
+.nhp-title {
+  margin: 8px 0 20px;
+  text-align: center;
+  font-weight: 800;
+  color: #096cb5;
+  font-size: clamp(18px, 2vw, 30px);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* Section pill (centered) */
+.nhp-section-cap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: max-content;
+  margin: 20px auto 12px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #fff;
+  background: #096cb5;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ============ TABLE SHELL ============ */
+.nhp-table-wrap {
+  margin: 10px 0 22px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+}
+.nhp-table-scroller {
+  overflow: auto;
+}
+
+/* Compact preset */
+.nhp-table-wrap.nhp-compact .nhp-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+.nhp-table-wrap.nhp-compact .nhp-table td {
+  padding: 10px 12px;
+  text-align: center;
+}
+
+/* ============ TABLE (desktop base) ============ */
+.nhp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
+  color: #111;
+}
+.nhp-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #096cb5;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 14px 12px;
+  border-bottom: 1px solid #096cb5;
+}
+.nhp-table th:first-child {
+  border-top-left-radius: 6px;
+}
+.nhp-table th:last-child {
+  border-top-right-radius: 6px;
+}
+.nhp-table tbody tr:nth-child(even) td {
+  background: #fbfdff;
+}
+.nhp-table tbody tr:hover td {
+  background: #f6f9ff;
+}
+.nhp-table td {
+  border-top: 1px solid #e7e7e7;
+  padding: 36px 14px 12px;
+  position: relative;
+  text-align: left;
+  overflow: visible;
+} /* <— không cắt tooltip */
+.nhp-table td:not(:last-child),
+.nhp-table th:not(:last-child) {
+  border-right: 1px solid #e7e7e7;
+}
+/* cột liên hệ bảo đảm nổi lên trên các ô bên cạnh */
+.nhp-table td:last-child {
+  position: relative;
+  z-index: 10;
+}
+
+/* First col style + bullets + notes */
+.nhp-table td:first-child strong {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #096cb5;
+  line-height: 1.35;
+}
+.nhp-muted {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 12px;
+}
+.nhp-bullet {
+  margin: 0;
+  padding-left: 18px;
+}
+.nhp-bullet li {
+  margin: 6px 0;
+  text-align: left;
+}
+.nhp-bullet li::marker {
+  color: var(--primary);
+}
+.nhp-note-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 12px 0 18px;
+}
+.nhp-note-grid > div {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+}
+.nhp-note-title {
+  margin: 4px 0 8px;
+  color: #096cb5;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* Contact button + tooltip */
+.nhp-contact-btn {
+  --size: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #cfe2ff;
+  box-shadow: 0 6px 16px rgba(11, 110, 237, 0.12);
+  cursor: pointer;
+  transition: 0.16s;
+  position: relative;
+  z-index: 20;
+}
+.nhp-contact-btn:hover {
+  transform: translateY(-1px);
+  background: #f3f8ff;
+}
+.nhp-contact-icon {
+  width: 18px;
+  height: 18px;
+  fill: #096cb5;
+}
+
+.nhp-contact-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, 6px) scale(0.96);
+  transform-origin: bottom center;
+  background: #fff;
+  color: #0b6eed;
+  border: 1px solid rgba(2, 8, 23, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(2, 8, 23, 0.14);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.2px;
+  padding: 8px 12px;
+  white-space: nowrap;
+  max-width: min(240px, 80vw);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, left 0.18s ease;
+  z-index: 9999;
+}
+.nhp-contact-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #fff;
+  filter: drop-shadow(0 1px 0 rgba(2, 8, 23, 0.06));
+}
+.nhp-contact-btn:hover .nhp-contact-tooltip,
+.nhp-contact-btn:focus-visible .nhp-contact-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nhp-contact-tooltip {
+    transition: opacity 0.01s linear;
+    transform: none;
+  }
+  .nhp-contact-btn:hover .nhp-contact-tooltip,
+  .nhp-contact-btn:focus-visible .nhp-contact-tooltip {
+    transform: none;
+  }
+}
+@media (hover: none) {
+  .nhp-contact-tooltip {
+    display: none !important;
+  }
+}
+
+/* Price rows (in “Đơn giá”) */
+.nhp-price-call {
+  display: grid;
+  gap: 8px;
+}
+.nhp-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.nhp-price-row span {
+  font-weight: 700;
+  color: #096cb5;
+}
+
+/* Sticky first col on desktop */
+@media (min-width: 992px) {
+  .nhp-table td:first-child,
+  .nhp-table th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-shadow: 1px 0 0 #e7e7e7;
+  }
+}
+
+/* Compact width ratio (desktop) */
+@media (min-width: 900px) {
+  .nhp-table-wrap.nhp-compact .nhp-table th:nth-child(1),
+  .nhp-table-wrap.nhp-compact .nhp-table td:nth-child(1) {
+    width: 50%;
+    text-align: left;
+  }
+  .nhp-table-wrap.nhp-compact .nhp-table th:nth-child(2),
+  .nhp-table-wrap.nhp-compact .nhp-table td:nth-child(2),
+  .nhp-table-wrap.nhp-compact .nhp-table th:nth-child(3),
+  .nhp-table-wrap.nhp-compact .nhp-table td:nth-child(3) {
+    width: 25%;
+    text-align: center;
+  }
+}
+.nhp-table-wrap.nhp-compact .nhp-table th,
+.nhp-table-wrap.nhp-compact .nhp-table td {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 640px) {
+  .nhp-note-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Base: tables become cards */
+  .nhp-table thead {
+    display: none;
+  }
+  .nhp-table,
+  .nhp-table tbody,
+  .nhp-table tr,
+  .nhp-table td {
+    display: block;
+    width: 100%;
+  }
+  .nhp-table tr {
+    margin: 0 0 16px;
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+  }
+  .nhp-table td {
+    border-top: 1px solid #e7e7e7;
+    padding: 40px 14px 12px;
+    position: relative;
+    overflow: visible !important;
+    z-index: auto;
+    text-align: center;
+  }
+  .nhp-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 8px 0;
+    background: #f9fafb;
+    color: #6b7280;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    pointer-events: none;
+  }
+
+  /* Header strip “HẠNG MỤC” */
+  .nhp-table tr::before {
+    content: "HẠNG MỤC";
+    display: block;
+    text-align: center;
+    background: #f0f3f9;
+    color: #666;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-bottom: 1px solid #e7e7e7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== A) Bảng chính (nhp-main): label trái ===== */
+  .nhp-table-wrap.nhp-main .nhp-table tr::before {
+    display: none;
+  }
+  .nhp-table-wrap.nhp-main .nhp-table td {
+    padding: 12px 14px 12px 44% !important;
+    text-align: left !important;
+  }
+  .nhp-table-wrap.nhp-main .nhp-table td::before {
+    left: 14px !important;
+    top: 12px !important;
+    transform: none !important;
+    width: 38% !important;
+    background: transparent !important;
+    border: 0 !important;
+    text-align: left !important;
+  }
+  .nhp-table-wrap.nhp-main .nhp-table td:first-child {
+    border: none;
+    padding: 14px !important;
+    text-align: center !important;
+    background: #fff;
+  }
+  .nhp-table-wrap.nhp-main .nhp-table td:first-child::before {
+    content: none !important;
+  }
+  .nhp-table-wrap.nhp-main .nhp-price-call {
+    gap: 10px;
+  }
+
+  /* ===== B) Hai bảng hệ số: GIỮ DẠNG BẢNG 3 CỘT ===== */
+  .nhp-phantho-heso .nhp-table,
+  .nhp-finish-heso .nhp-table {
+    display: table !important;
+    width: 100%;
+    min-width: 720px;
+    table-layout: fixed;
+  }
+  .nhp-phantho-heso .nhp-table thead,
+  .nhp-finish-heso .nhp-table thead {
+    display: table-header-group !important;
+  }
+  .nhp-phantho-heso .nhp-table tbody,
+  .nhp-finish-heso .nhp-table tbody {
+    display: table-row-group !important;
+  }
+  .nhp-phantho-heso .nhp-table tr,
+  .nhp-finish-heso .nhp-table tr {
+    display: table-row !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  .nhp-phantho-heso .nhp-table th,
+  .nhp-phantho-heso .nhp-table td,
+  .nhp-finish-heso .nhp-table th,
+  .nhp-finish-heso .nhp-table td {
+    display: table-cell !important;
+    padding: 12px !important;
+  }
+  .nhp-phantho-heso .nhp-table td::before,
+  .nhp-phantho-heso .nhp-table tr::before,
+  .nhp-finish-heso .nhp-table td::before,
+  .nhp-finish-heso .nhp-table tr::before {
+    content: none !important;
+    display: none !important;
+  }
+  .nhp-phantho-heso .nhp-table th:nth-child(1),
+  .nhp-phantho-heso .nhp-table td:nth-child(1),
+  .nhp-finish-heso .nhp-table th:nth-child(1),
+  .nhp-finish-heso .nhp-table td:nth-child(1) {
+    width: 50% !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+  .nhp-phantho-heso .nhp-table th:nth-child(2),
+  .nhp-phantho-heso .nhp-table td:nth-child(2),
+  .nhp-phantho-heso .nhp-table th:nth-child(3),
+  .nhp-phantho-heso .nhp-table td:nth-child(3),
+  .nhp-finish-heso .nhp-table th:nth-child(2),
+  .nhp-finish-heso .nhp-table td:nth-child(2),
+  .nhp-finish-heso .nhp-table th:nth-child(3),
+  .nhp-finish-heso .nhp-table td:nth-child(3) {
+    width: 25% !important;
+    text-align: center !important;
+  }
+  .nhp-phantho-heso .nhp-table-scroller,
+  .nhp-finish-heso .nhp-table-scroller {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ===== C) Nội thất: card, label trái, icon phone giữa ô ĐƠN GIÁ ===== */
+  .nhp-interior .nhp-table thead {
+    display: none !important;
+  }
+  .nhp-interior .nhp-table,
+  .nhp-interior .nhp-table tbody,
+  .nhp-interior .nhp-table tr,
+  .nhp-interior .nhp-table td {
+    display: block !important;
+    width: 100% !important;
+  }
+  .nhp-interior .nhp-table tr {
+    margin: 0 0 16px;
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+  }
+  .nhp-interior .nhp-table tr::before {
+    content: "HẠNG MỤC";
+    display: block;
+    text-align: center;
+    background: #f0f3f9;
+    color: #666;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-bottom: 1px solid #e7e7e7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .nhp-interior .nhp-table td {
+    border-top: 1px solid #e7e7e7;
+    padding: 12px 14px 12px 48%;
+    position: relative;
+    text-align: center;
+    background: #fff;
+  }
+  .nhp-interior .nhp-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38%;
+    font-weight: 700;
+    font-size: 12px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    text-align: left;
+    pointer-events: none;
+  }
+  .nhp-interior .nhp-table td:first-child {
+    border: none;
+    padding: 14px;
+    text-align: center;
+    color: #096cb5;
+    font-weight: 800;
+  }
+  .nhp-interior .nhp-table td:first-child::before {
+    content: none !important;
+  }
+
+  /* Ô ĐƠN GIÁ – icon giữa ô */
+  .nhp-interior .nhp-table td[data-label="ĐƠN GIÁ"],
+  .nhp-interior .nhp-table td[data-label="ĐƠN GIÁ (m²)"] {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0 !important; */
+    min-height: 56px;
+  }
+  .nhp-interior .nhp-table td[data-label="ĐƠN GIÁ"]::before,
+  .nhp-interior .nhp-table td[data-label="ĐƠN GIÁ (m²)"]::before {
+    content: "ĐƠN GIÁ";
+    left: 14px;
+    top: 12px;
+    transform: none;
+    width: auto;
+  }
+}
+/* Ghi chú cuối bảng */
+.nhp-note-bottom {
+  list-style: disc;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.nhp-note-bottom li::marker {
+  color: var(--primary);
+  font-size: 13px;
+}

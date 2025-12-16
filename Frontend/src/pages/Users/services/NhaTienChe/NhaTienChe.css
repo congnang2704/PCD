@@ -1,0 +1,510 @@
+/* ========= Design Tokens ========= */
+:root {
+  /* brand */
+  --brand: #096cb5;
+  --brand-2: #096cb5;
+
+  /* text */
+  --ink: #0f172a; /* slate-900 */
+  --ink-2: #1f2937; /* gray-800 */
+  --muted: #475569; /* slate-600 */
+  --subtle: #64748b; /* slate-500 */
+  --inf: #fff;
+  --in0: #333;
+
+  /* surfaces */
+  --bg: #ffffff;
+  --bg-2: #f7fafc; /* section alt */
+  --line: #e2e8f0;
+
+  /* effects */
+  --radius: 16px;
+  --radius-lg: 22px;
+  --shadow-1: 0 8px 24px rgba(2, 6, 23, 0.08);
+  --shadow-2: 0 12px 36px rgba(2, 6, 23, 0.12);
+  --ring: 0 0 0 6px rgba(34, 211, 238, 0.18);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --bg-2: #0f172a;
+    --ink: #e5e7eb;
+    --ink-2: #e5e7eb;
+    --muted: #cbd5e1;
+    --subtle: #94a3b8;
+    --line: rgba(255, 255, 255, 0.08);
+    color-scheme: dark;
+  }
+}
+
+/* ========= Base ========= */
+.ntc-root {
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.ntc-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: clamp(16px, 2vw, 28px);
+}
+
+.ntc-section {
+  padding-block: clamp(48px, 7vw, 84px);
+}
+
+.ntc-section-gray {
+  background: var(--bg-2);
+}
+
+.ntc-section-gradient {
+  background: linear-gradient(var(--bg), var(--bg-2));
+}
+
+/* fluid grids */
+.ntc-grid-2 {
+  display: grid;
+  gap: clamp(18px, 3vw, 28px);
+  grid-template-columns: 1fr;
+}
+.ntc-grid-3 {
+  display: grid;
+  gap: clamp(14px, 2.2vw, 22px);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .ntc-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ntc-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ========= Type ========= */
+.ntc-h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: clamp(18px, 1.5vw, 24px);
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.ntc-h3 {
+  font-weight: 700;
+  color: var(--brand);
+  font-size: clamp(18px, 2.2vw, 20px);
+}
+.ntc-p {
+  margin-top: 10px;
+  line-height: 1.7;
+  color: var(--in0);
+}
+.ntc-list {
+  margin-top: 12px;
+  padding-left: 18px;
+  line-height: 1.7;
+  color: var(--in0);
+}
+.ntc-mt24 {
+  margin-top: 24px;
+}
+.ntc-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--subtle);
+}
+
+/* ========= Buttons (modern) ========= */
+.ntc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease;
+  will-change: transform;
+}
+.ntc-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.ntc-btn-primary {
+  color: var(--inf);
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  box-shadow: var(--shadow-1);
+}
+.ntc-btn-primary:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.ntc-btn-ghost {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: saturate(140%) blur(6px);
+}
+.ntc-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ntc-btn-dark {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: var(--shadow-1);
+}
+.ntc-btn-dark:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.ntc-btn-outline {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+.ntc-btn-outline:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* ========= HERO (gradient + soft glow) ========= */
+.ntc-hero {
+  position: relative;
+  color: #fff;
+  padding: clamp(56px, 8vw, 96px) 0 clamp(72px, 10vw, 120px);
+  overflow: clip;
+
+  /* nền chính xanh blue brand */
+  background: radial-gradient(
+      1000px 520px at 78% -8%,
+      rgba(255, 255, 255, 0.15),
+      transparent 62%
+    ),
+    linear-gradient(180deg, #0d74c0, #096cb5 60%, #0b4a8a);
+}
+
+/* để chữ trong hero hài hòa hơn với Option B */
+.ntc-hero-desc {
+  opacity: 0.95;
+  color: var(--inf);
+}
+.ntc-btn-ghost {
+  color: var(--inf);
+  border-color: rgba(11, 18, 32, 0.25);
+}
+
+.ntc-hero-title {
+  font-weight: 700;
+  line-height: 1.05;
+  font-size: clamp(34px, 6.2vw, 64px);
+  letter-spacing: -0.02em;
+}
+.ntc-hero-highlight {
+  background: linear-gradient(180deg, #ffffff, #082538);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* để ẩn màu gốc, chỉ hiển thị gradient */
+}
+
+.ntc-hero-desc {
+  max-width: 720px;
+  margin-top: 14px;
+  opacity: 0.95;
+  font-size: clamp(15px, 1.9vw, 17px);
+}
+.ntc-hero-cta {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ntc-hero-glow {
+  position: absolute;
+  inset: -20% -10% auto auto;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(
+    closest-side,
+    rgba(34, 211, 238, 0.16),
+    transparent 70%
+  );
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* ========= Cards (glass & lift) ========= */
+.ntc-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(16px, 2.2vw, 20px);
+  box-shadow: var(--shadow-1);
+  backdrop-filter: saturate(160%) blur(8px);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+.ntc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+  border-color: rgba(34, 211, 238, 0.35);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ntc-card,
+  .ntc-btn,
+  .ntc-price {
+    transition: none;
+  }
+}
+
+/* list bullets with brand dot */
+.ntc-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+.ntc-bullets li {
+  display: flex;
+  gap: 10px;
+  line-height: 1.7;
+  color: var(--in0);
+}
+.ntc-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  margin-top: 10px;
+}
+
+/* ========= Pricing ========= */
+.ntc-price {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: var(--shadow-1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.ntc-price:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+.ntc-price-header {
+  background: linear-gradient(180deg, #096cb5, #096cb5);
+  color: #fff;
+  font-weight: 900;
+  padding: 16px 18px;
+  letter-spacing: 0.2px;
+}
+.ntc-price-body {
+  list-style: none;
+  margin: 0;
+  padding: 12px 16px;
+}
+.ntc-price-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--line);
+  color: var(--in0);
+}
+.ntc-price-row strong {
+  color: var(--brand);
+  font-weight: 900;
+}
+.ntc-price-row:last-child {
+  border-bottom: none;
+}
+
+/* ========= Steps ========= */
+.ntc-step {
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 1000;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ========= FAQ ========= */
+.ntc-faq {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: var(--shadow-1);
+}
+.ntc-faq-item {
+  padding: 18px;
+  border-top: 1px solid var(--line);
+}
+.ntc-faq-item:first-child {
+  border-top: none;
+}
+.ntc-faq-q {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 900;
+  position: relative;
+  padding-right: 26px;
+  color: var(--brand);
+}
+.ntc-faq-plus {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0.5;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.ntc-faq-item:hover .ntc-faq-plus {
+  opacity: 0.9;
+}
+.ntc-faq-item[open] .ntc-faq-plus {
+  transform: rotate(45deg);
+}
+.ntc-faq-a {
+  margin-top: 10px;
+  color: var(--in0);
+  line-height: 1.7;
+}
+
+/* ========= Contact / Form ========= */
+.ntc-contact {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 2.6vw, 26px);
+  box-shadow: var(--shadow-1);
+}
+.ntc-form {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+.ntc-col-2 {
+  grid-column: span 1;
+}
+@media (min-width: 768px) {
+  .ntc-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ntc-col-2 {
+    grid-column: span 2;
+  }
+}
+.ntc-input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  outline: none;
+  font: inherit;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease,
+    background 0.15s ease;
+}
+.ntc-input::placeholder {
+  color: var(--subtle);
+}
+.ntc-input:focus {
+  border-color: var(--brand);
+  box-shadow: var(--ring);
+  background: #fff;
+}
+.ntc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ========= Utilities ========= */
+@media (max-width: 480px) {
+  .ntc-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============ Projects Grid ============ */
+.ntc-proj-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); */
+  gap: clamp(14px, 2.2vw, 22px);
+}
+
+.ntc-proj-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.ntc-proj-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+  border-color: color-mix(in srgb, var(--brand) 35%, transparent);
+}
+
+.ntc-proj-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.ntc-proj-card:hover .ntc-proj-img {
+  transform: scale(1.02);
+}
+
+.ntc-proj-cap {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--subtle);
+  padding: 10px 12px 14px;
+}
+
+/* thẻ “điểm nhấn” rộng 2 cột */
+@media (min-width: 1024px) {
+  .ntc-proj-card.is-wide {
+    grid-column: span 2;
+  }
+  .ntc-proj-card.is-wide .ntc-proj-img {
+    height: 600px;
+  }
+}
+
+/* ======= (Tuỳ chọn) Caption overlay khi hover =======
+   Bật overlay: thêm class 'ntc-proj-overlay' vào figure
+   <figure class="ntc-proj-card ntc-proj-overlay">…</figure>
+*/
+.ntc-proj-overlay {
+  position: relative;
+}
+.ntc-proj-overlay .ntc-proj-cap {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 12px 14px;
+  color: var(--inf);
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.55) 60%);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  text-align: left;
+  font-weight: 600;
+}
+.ntc-proj-overlay:hover .ntc-proj-cap {
+  transform: translateY(0);
+  opacity: 1;
+}

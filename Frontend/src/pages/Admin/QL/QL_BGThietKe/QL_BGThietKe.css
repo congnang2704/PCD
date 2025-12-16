@@ -1,0 +1,332 @@
+:root {
+  --ink: #0f172a;
+  --sub: #475569;
+  --border: #e6ecf4;
+  --bg: #f7f9fc;
+  --white: #fff;
+  --primary: #0b6eed;
+  --shadow: 0 10px 30px rgba(2, 8, 23, 0.08);
+  --radius: 12px;
+}
+
+/* layout */
+.bgtk {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 16px 56px;
+  color: var(--ink);
+}
+.bgtk__sidebar {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 12px;
+  height: fit-content;
+}
+
+/* fields */
+.bgtk__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.bgtk__label {
+  font-size: 12px;
+  color: var(--sub);
+}
+.bgtk__input,
+.bgtk__textarea,
+.bgtk__select {
+  border: 1px solid #838383;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  background: #fff;
+}
+.bgtk__textarea {
+  resize: vertical;
+}
+
+.bgtk__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 10px;
+}
+.bgtk__checkbox {
+  font-size: 13px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bgtk__link {
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+}
+.bgtk__actions .bgtk__btn {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+}
+.bgtk__btn--danger {
+  background: #fff4f4;
+  border-color: #ffd1d1;
+  color: #d90429;
+}
+
+/* document wrapper */
+.bgtk__paper {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.bgtk__title {
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 6px 0 14px;
+}
+.bgtk__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.bgtk__headRight {
+  white-space: nowrap;
+}
+.bgtk__dot {
+  padding: 0 4px;
+}
+
+/* generic text */
+.bgtk__p {
+  margin: 4px 0;
+  line-height: 1.55;
+}
+
+/* checklist */
+.bgtk__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 18px;
+  font-size: 14px;
+}
+.bgtk__li {
+  margin-left: 0;
+}
+@media (max-width: 900px) {
+  .bgtk__checklist {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* table */
+.bgtk__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 4px;
+}
+.bgtk__table th {
+  background: #f1f5f9;
+  border: 1px solid #e5e7eb;
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.bgtk__table td {
+  border: 1px solid #eceff4;
+  padding: 6px 8px;
+}
+.bgtk__cell {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 4px 6px;
+}
+.bgtk__cell--center {
+  text-align: center;
+}
+.bgtk__cell--right {
+  text-align: right;
+}
+.bgtk__td-right {
+  text-align: right;
+}
+.bgtk__sum td {
+  font-weight: 600;
+  background: #fafafa;
+}
+.bgtk__grand td {
+  font-weight: 800;
+  background: #f6f9ff;
+}
+
+/* note + sign */
+.bgtk__note {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.bgtk__mt8 {
+  margin-top: 8px;
+}
+.bgtk__rules {
+  margin: 4px 0 0 18px;
+}
+
+/* === SIGNATURE AREA (match screenshot) === */
+.bgtk__sign {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+  margin-top: 24px;
+  padding-top: 6px;
+  min-height: 150px; /* khoảng trống để ký */
+}
+.bgtk__signCol {
+  flex: 1;
+  text-align: center;
+}
+.bgtk__sub {
+  color: var(--sub);
+  font-size: 13px;
+  margin-bottom: 100px;
+}
+.bgtk__line {
+  margin-top: 100px;
+  width: 240px;
+  height: 0;
+  border-bottom: 1.5px dotted #9aa4b2;
+  margin: 36px auto 6px; /* auto -> nằm giữa cột */
+}
+.bgtk__signCol:last-child .bgtk__line {
+  display: none;
+}
+.bgtk__name {
+  margin-top: 100px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* print */
+/* ================= PRINT —  bgtk__* ================= */
+
+/* Font khi in */
+@media print {
+  body,
+  .bgtk,
+  .bgtk * {
+    font-family: "Times New Roman", Times, serif !important;
+  }
+}
+
+@media print {
+  /* Khổ A4 + lề: trên 1.5, phải 1.5, dưới 1.5, trái 2.5 (cm) */
+  @page {
+    size: A4;
+    margin: 1.5cm 1.5cm 1.5cm 2.5cm;
+  }
+
+  /* Ẩn toàn bộ ngoài vùng cần in */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Chỉ in phần giấy báo giá */
+  .bgtk__paper,
+  .bgtk__paper * {
+    visibility: visible;
+  }
+
+  .bgtk__paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  /* Hiển thị vùng giấy, ẩn sidebar */
+  .bgtk {
+    display: block;
+  }
+  .bgtk__sidebar {
+    display: none !important;
+  }
+
+  /* Ẩn các chi tiết không cần in (nếu có gắn class này) */
+  .bgtk-print-hide {
+    display: none !important;
+  }
+
+  /* Input/textarea/select hiển thị như text cho gọn */
+  .bgtk__cell,
+  .bgtk__input,
+  .bgtk__textarea,
+  .bgtk__select {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    color: #0f172a !important;
+  }
+
+  /* Giữ căn lề số */
+  .bgtk__cell--right,
+  .bgtk__td-right {
+    text-align: right !important;
+  }
+  .bgtk__cell--center {
+    text-align: center !important;
+  }
+
+  /* Bảng & chữ ký không bị ngắt xấu */
+  .bgtk__table thead {
+    display: table-header-group;
+  }
+  .bgtk__table tr,
+  .bgtk__table td,
+  .bgtk__table th {
+    page-break-inside: avoid;
+  }
+  .bgtk__sum,
+  .bgtk__grand,
+  .bgtk__sign {
+    page-break-inside: avoid;
+  }
+
+  /* In giữ màu các vùng được đánh dấu */
+  .bgtk__section-high {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

@@ -1,0 +1,79 @@
+.vl-landing {
+  display: grid;
+  gap: 16px;
+}
+.vl-landing__head h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+}
+.vl-landing__head .muted {
+  color: #6b7280;
+}
+
+.vl-landing__grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 1200px) {
+  .vl-landing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .vl-landing__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(2, 6, 23, 0.04);
+}
+.card__title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+}
+.card__desc {
+  color: #6b7280;
+  min-height: 44px;
+}
+.card__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.15s ease;
+}
+.btn.primary {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.18);
+}
+.btn.primary:hover {
+  filter: brightness(1.05);
+}
+.btn.outline {
+  background: #fff;
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
+}
+.muted {
+  color: #6b7280;
+}

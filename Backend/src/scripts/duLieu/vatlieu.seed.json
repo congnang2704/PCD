@@ -1,0 +1,19 @@
+{
+  "phan": [
+    { "ten": "Hoàn thiện", "slug": "hoan-thien", "thuTu": 1 },
+    { "ten": "Nội thất",  "slug": "noi-that",   "thuTu": 2 }
+  ],
+  "nhom": [
+    { "phan": "hoan-thien", "ten": "Gạch",     "slug": "gach",     "thuTu": 1 },
+    { "phan": "hoan-thien", "ten": "Sàn gỗ",   "slug": "san-go",   "thuTu": 2 }
+  ],
+  "hangMuc": [
+    { "nhom": "gach", "ten": "Kimgress", "slug": "kimgress", "loai": "thuong-hieu", "thuTu": 1 },
+    { "nhom": "gach", "ten": "Eurotile", "slug": "eurotile", "loai": "thuong-hieu", "thuTu": 2 }
+  ],
+  "vatLieu": [
+    { "hangMuc": "kimgress", "ma": "A62YE4DR" },
+    { "hangMuc": "kimgress", "ma": "AJ62AAF1DR" },
+    { "hangMuc": "eurotile", "ma": "M01-M06 MMI" }
+  ]
+}

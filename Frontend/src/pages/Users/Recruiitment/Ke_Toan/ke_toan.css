@@ -1,0 +1,199 @@
+/* === TUYỂN DỤNG – KẾ TOÁN NỘI BỘ (PCD Nguyễn Hải) === */
+/* Reset nhẹ */
+.ke-toan * {
+  box-sizing: border-box;
+}
+.ke-toan {
+  --brand: #0d69b3;
+  --brand-2: #096cb5;
+  --accent: #ceaa4f;
+  --bg: #f8f9fb;
+  --text: #0f172a;
+  --muted: #475569;
+}
+
+/* Section */
+.ke-toan {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
+  padding: 32px 16px;
+}
+
+.ke-toan .container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(13, 105, 179, 0.08);
+}
+
+/* Header */
+.ke-toan .eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  color: var(--brand);
+  background: rgba(13, 105, 179, 0.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.4px;
+}
+
+.ke-toan .title {
+  margin: 12px 0 6px;
+  font-size: clamp(20px, 3.2vw, 28px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.ke-toan .subtitle {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+/* Grid */
+.ke-toan .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 900px) {
+  .ke-toan .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+/* Cards */
+.ke-toan .card {
+  background: #fff;
+  border: 1px solid #e7eaf0;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.ke-toan .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(2, 6, 23, 0.06);
+}
+
+.ke-toan .card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin: 0 0 10px;
+  color: var(--brand-2);
+}
+
+.ke-toan .list {
+  margin: 0;
+  padding-left: 20px;
+  color: #0f172a;
+}
+.ke-toan .list li {
+  margin: 7px 0;
+  line-height: 1.55;
+}
+
+/* CTA block */
+.ke-toan .cta {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 700px) {
+  .ke-toan .cta {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+.ke-toan .contact {
+  font-size: 14px;
+  color: var(--muted);
+}
+.ke-toan .contact a {
+  color: var(--brand-2);
+  text-decoration: none;
+}
+.ke-toan .contact a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.ke-toan .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.08s ease, box-shadow 0.2s ease, background 0.2s ease;
+  user-select: none;
+}
+.ke-toan .btn:active {
+  transform: translateY(1px);
+}
+
+.ke-toan .btn-primary {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(13, 105, 179, 0.25);
+}
+.ke-toan .btn-primary:hover {
+  background: #095995;
+}
+
+.ke-toan .btn-outline {
+  background: #fff;
+  color: var(--brand);
+  border-color: #cfe4f6;
+}
+.ke-toan .btn-outline:hover {
+  background: #f0f7ff;
+}
+
+/* Footer strip */
+.ke-toan .strip {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px dashed #e5e7eb;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  color: #334155;
+  font-size: 14px;
+}
+
+.ke-toan .badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f6f7fb;
+  border: 1px solid #edf0f6;
+}
+
+/* Small helper for icons (emoji size align) */
+.ke-toan .ico {
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.job-title {
+  font-size: clamp(14px, 2.2vw, 26px);
+  color: #096cb5;
+  font-weight: 700;
+}

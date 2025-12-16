@@ -1,0 +1,13 @@
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}

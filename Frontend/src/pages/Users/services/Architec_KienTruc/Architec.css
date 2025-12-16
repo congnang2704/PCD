@@ -1,0 +1,8 @@
+/* Nền tổng thể trang kiến trúc – phần còn lại dùng Tailwind */
+.architec-gradient-bg {
+  background: radial-gradient(circle at top left, #e5f0ff 0, #ffffff 46%);
+}
+
+.architec-cta-final {
+  margin-top: 3rem;
+}

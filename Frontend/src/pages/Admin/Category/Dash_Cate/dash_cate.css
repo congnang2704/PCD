@@ -1,0 +1,189 @@
+.dash-cate-container {
+  padding: 20px;
+}
+
+.dash-cate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dash-cate-header h2 {
+  color: #096cb5;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.cate-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cate-actions input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cate-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.cate-table th {
+  color: #096cb5;
+}
+
+.cate-table th,
+.cate-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.cate-table th {
+  background-color: #f0f0f0;
+}
+
+.status.active {
+  color: green;
+  font-weight: bold;
+}
+
+.status.inactive {
+  color: red;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: orange;
+  color: white;
+}
+
+.delete-btn {
+  background-color: crimson;
+  color: white;
+}
+
+.add-btn {
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-btn:hover {
+  background-color: #15803d;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.add-btn:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Responsive cho tablet & mobile */
+@media (max-width: 768px) {
+  .dash-cate-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dash-cate-header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .cate-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cate-actions input {
+    width: 100%;
+  }
+
+  .cate-table thead {
+    display: none;
+  }
+
+  .cate-table,
+  .cate-table tbody,
+  .cate-table tr,
+  .cate-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .cate-table tr {
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 10px 12px;
+  }
+
+  .cate-table td {
+    text-align: center;
+    padding: 10px 14px;
+    border: none;
+    position: relative;
+  }
+
+  .cate-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 6px 0;
+    text-align: center;
+  }
+}

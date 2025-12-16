@@ -1,0 +1,103 @@
+.recruitment-wrapper {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recruitment-heading {
+  font-size: 22px;
+  color: #016bb4;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.recruitment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.recruitment-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.recruitment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.recruitment-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.recruitment-info {
+  padding: 16px 20px;
+}
+
+.recruitment-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #016bb4;
+  margin-bottom: 6px;
+  min-height: 48px;
+}
+
+.recruitment-desc {
+  font-size: 14px;
+  color: #444;
+  margin-top: 4px;
+}
+/* Badge trạng thái */
+.recruitment-media {
+  position: relative;
+}
+.recruitment-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  color: #fff;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.badge-open {
+  background: #16a34a;
+} /* xanh lá */
+.badge-closed {
+  background: #9ca3af;
+} /* xám */
+
+/* Card đóng tuyển: làm mờ ảnh + desaturate + khóa hover */
+.recruitment-card.is-closed .recruitment-image {
+  filter: grayscale(100%) brightness(0.9);
+}
+.recruitment-card.is-closed .recruitment-title,
+.recruitment-card.is-closed .recruitment-desc {
+  color: #6b7280; /* xám hơn */
+}
+.recruitment-card.is-closed {
+  pointer-events: none; /* nếu bạn muốn vẫn click để xem thông báo, xóa dòng này */
+  opacity: 0.92;
+}
+
+/* (tuỳ) hover cho card còn tuyển */
+.recruitment-card:not(.is-closed):hover .recruitment-image {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+.recruitment-image {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}

@@ -1,0 +1,191 @@
+/* ================================================
+   File: src/components/Admin/Dashboard/Dashboard_Admin.css
+   ================================================ */
+:root {
+  --primary: #096cb5;
+  --primary-600: #0b84d4;
+  --primary-700: #0a5f92;
+  --bg: #f5f7fb;
+  --text: #0f172a;
+}
+
+/* Layout shell */
+.admin-dashboard {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Header */
+.admin-header {
+  background: linear-gradient(180deg, var(--primary), #085b98);
+  color: #fff;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  box-shadow: 0 8px 24px rgba(9, 108, 181, 0.25);
+}
+.menu-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  display: none;
+}
+.admin-logo-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.admin-logo-img {
+  width: 180px;
+  max-height: 40px;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.3));
+}
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* User pill */
+.admin-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.05s;
+}
+.admin-user-pill:hover {
+  filter: brightness(1.05);
+}
+.admin-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.admin-user-name {
+  font-weight: 700;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.admin-user-role {
+  color: #e0f2ff;
+  font-size: 11px;
+}
+
+/* Body */
+.admin-body {
+  display: flex;
+  height: calc(100vh - 64px);
+  margin-top: 64px;
+}
+
+/* Sider */
+.admin-sidebar {
+  background: linear-gradient(180deg, #0d2a44, #0a1e31);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.04);
+}
+.sider-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 74px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.sider-logo img {
+  width: 150px;
+  opacity: 0.95;
+}
+
+/* Menu */
+.admin-menu {
+  background: transparent;
+  padding: 8px;
+}
+.admin-menu .ant-menu-item {
+  height: 44px;
+  border-radius: 10px;
+  margin: 6px 8px;
+  color: #cfe6ff;
+}
+.admin-menu .ant-menu-item .anticon {
+  font-size: 16px;
+}
+.admin-menu .ant-menu-item-selected {
+  background: linear-gradient(180deg, var(--primary-600), var(--primary));
+  color: #fff;
+}
+.admin-menu .ant-menu-item:hover {
+  background: rgba(9, 108, 181, 0.22);
+  color: #fff;
+}
+
+/* Content */
+.admin-layout {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--bg);
+}
+.admin-content {
+  padding: 24px;
+}
+
+/* Drawer */
+.admin-drawer .ant-drawer-body {
+  background: linear-gradient(180deg, #0d2a44, #0a1e31);
+}
+.drawer-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.drawer-header img {
+  width: 160px;
+}
+
+/* Utility */
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  padding: 16px;
+}
+.section-title {
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .menu-toggle-btn {
+    display: inline-block;
+  }
+}
+@media (max-width: 576px) {
+  .admin-content {
+    padding: 14px;
+  }
+  .admin-logo-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

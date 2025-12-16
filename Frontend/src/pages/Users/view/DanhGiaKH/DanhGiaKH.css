@@ -1,0 +1,154 @@
+/* Container form */
+.form-container-danhgia {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+.form-container-danhgia h2 {
+  color: #096cb5;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* Form layout */
+.form-danhgia label {
+  display: block;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #096cb5;
+}
+
+/* Input & textarea */
+.form-danhgia input[type="text"],
+.form-danhgia textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.form-danhgia input[type="text"]:focus,
+.form-danhgia textarea:focus {
+  border-color: #096cb5;
+  outline: none;
+}
+
+/* Rating label + stars wrapper */
+.rating-label-danhgia {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Star rating container */
+.star-rating-danhgia {
+  display: flex;
+  gap: 8px;
+}
+
+/* Each star */
+.star {
+  font-size: 2.4rem;
+  cursor: pointer;
+  color: #e4e5e9;
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+/* Button */
+.btn.submit-btn-danhgia {
+  width: 100%;
+  margin-top: 15px;
+  background-color: #096cb5;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.submit-btn-danhgia:disabled {
+  background-color: #719ac9;
+  cursor: not-allowed;
+}
+
+.btn.submit-btn-danhgia:hover:not(:disabled) {
+  background-color: #0d84d6;
+}
+
+/* Error message */
+.error-text-danhgia {
+  color: #d32f2f;
+  background-color: #f9d6d5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Modal overlay */
+.modal-overlay-danhgia {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1500;
+}
+
+/* Modal box */
+.modal-content-danhgia {
+  background: white;
+  padding: 32px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #096cb5;
+  max-width: 360px;
+  user-select: none;
+}
+
+/* Modal close button */
+.btn.close-btn-danhgia {
+  margin-top: 25px;
+  padding: 10px 26px;
+  background-color: #096cb5;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.close-btn-danhgia:hover {
+  background-color: #0d84d6;
+}

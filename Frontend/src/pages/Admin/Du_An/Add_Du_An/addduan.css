@@ -1,0 +1,200 @@
+/* Container chính */
+.addduan-container {
+  /* max-width: 600px; */
+  margin: 30px auto;
+  padding: 30px 35px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+/* Tiêu đề */
+.addduan-title {
+  text-align: center;
+  color: #096cb5;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  user-select: none;
+}
+
+/* Form chính */
+.addduan-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mỗi nhóm label + input/textarea/select */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 22px; */
+}
+
+/* Label */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #34495e;
+  user-select: none;
+}
+
+/* Input text */
+.form-input {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 7px #2980b9;
+}
+
+/* Textarea */
+.form-textarea {
+  padding: 12px 16px;
+  min-height: 100px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 7px #2980b9;
+}
+
+/* Select multiple */
+.form-select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  /* height: 120px; */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 7px #2980b9;
+}
+
+/* Nút bấm */
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Nút tạo dự án */
+.btn-submit {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-grow: 1;
+  max-width: 250px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #219150;
+}
+
+/* Nút hủy */
+.btn-cancel {
+  background-color: #bdc3c7;
+  color: #2c3e50;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-grow: 1;
+  max-width: 250px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #95a5a6;
+}
+
+/* Responsive */
+
+/* Mobile (dưới 600px) */
+@media (max-width: 600px) {
+  .addduan-container {
+    margin: 20px 12px;
+    padding: 20px 20px;
+  }
+
+  .addduan-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-submit,
+  .btn-cancel {
+    max-width: 100%;
+    flex-grow: unset;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+}
+
+/* Tablet (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .addduan-container {
+    max-width: 500px;
+    padding: 25px 25px;
+  }
+
+  .addduan-title {
+    font-size: 1.8rem;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: 1rem;
+  }
+
+  .btn-submit,
+  .btn-cancel {
+    max-width: 100%;
+    flex-grow: 1;
+  }
+}

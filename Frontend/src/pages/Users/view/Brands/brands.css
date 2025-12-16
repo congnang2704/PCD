@@ -1,0 +1,106 @@
+/* =========================
+   PREMIUM BRAND SLIDER 2025
+   ========================= */
+
+:root {
+  --brand-bg: #f4f7fb;
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(255, 255, 255, 0.35);
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --radius-lg: 20px;
+  --text-main: #0052aa;
+}
+
+/* Section */
+.home-brands {
+  padding: 50px 20px;
+  text-align: center;
+  /* background: var(--brand-bg); */
+}
+
+.home-brands__title {
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-main);
+  letter-spacing: 0.6px;
+}
+
+.home-brands__title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #0a6ad6, #8ab6ff);
+  margin: 10px auto 0;
+  border-radius: 6px;
+}
+
+/* Viewport */
+.home-brands__viewport {
+  width: 1350px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 6px 0;
+}
+.home-brands__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track */
+.home-brands__track {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 28px;
+  padding: 20px 10px;
+}
+
+/* Card – premium glass style */
+.brand-card {
+  width: clamp(170px, 20vw, 240px);
+  scroll-snap-align: center;
+}
+
+.brand-card__media {
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: var(--shadow-soft);
+  transition: all 0.25s ease;
+}
+
+.brand-card__media:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* Logo */
+.brand-card__img {
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.18));
+  transition: transform 0.25s ease;
+}
+
+.brand-card__media:hover .brand-card__img {
+  transform: scale(1.06);
+}
+
+/* Tên brand (ẩn – chỉ hiện khi hover) */
+.brand-card__overlay {
+  display: none;
+}

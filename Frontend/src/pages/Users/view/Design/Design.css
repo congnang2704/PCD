@@ -1,0 +1,123 @@
+/* Section khung */
+.dp-wrap {
+  padding: 40px 20px;
+}
+.dp-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ===== Tabs ===== */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 28px;
+  max-width: 620px;
+  position: relative;
+  border-radius: 8px;
+  background: #e5f1fb; /* nền nhóm tabs */
+  padding: 4px; /* tạo inner radius */
+}
+.tab-btn {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #0b5da0;
+  cursor: pointer;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.04s ease;
+}
+.tab-btn:hover {
+  color: #084b82;
+}
+.tab-btn.active {
+  background: #016bb4; /* tab đang chọn */
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(1, 107, 180, 0.18);
+}
+.tab-btn:focus-visible {
+  outline: 2px solid #9bd0ff;
+  outline-offset: 2px;
+}
+
+/* Bo tròn hai đầu (giữ giống code cũ) */
+.tab-btn.left {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.tab-btn.right {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Mobile: xếp dọc */
+@media (max-width: 600px) {
+  .tab-buttons {
+    flex-direction: column;
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+  }
+  .tab-btn {
+    background: #e5f1fb;
+    border-radius: 8px !important;
+  }
+  .tab-btn.active {
+    background: #016bb4;
+    color: #fff;
+  }
+}
+
+/* ===== Step Card ===== */
+.step-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid #e9eef5;
+  border-radius: 14px;
+  padding: 18px 14px;
+  box-shadow: 0 10px 24px rgba(2, 48, 71, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.08s ease, box-shadow 0.2s ease;
+}
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(2, 48, 71, 0.12);
+}
+
+.step-icon {
+  font-size: 34px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.step-title {
+  margin: 0;
+  color: #016bb4 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.step-desc {
+  margin: 0;
+  color: #2a3c4b !important;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 26ch; /* hạn chế độ dài, nhìn gọn */
+}
+
+/* Giãn cách hợp lý hơn trên mobile */
+@media (max-width: 768px) {
+  .step-card {
+    padding: 16px 12px;
+  }
+  .step-desc {
+    max-width: 32ch;
+  }
+}

@@ -1,0 +1,309 @@
+/* src/pages/admin/blogs/add_bai_viet.css */
+.bv-form-container {
+  padding: 16px;
+}
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.form-header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* ==== Container ==== */
+.gap {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.bv-form .grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+.bv-form label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 6px;
+}
+.bv-form input,
+.bv-form textarea,
+.bv-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+.cover-preview {
+  margin-top: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cover-preview img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+.switch {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.helper {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #475569;
+}
+.cate-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.cate-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  cursor: pointer;
+}
+.btn.primary {
+  background: #2563eb;
+  color: #fff;
+  border-color: #1d4ed8;
+}
+.btn.ghost {
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .bv-form .grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==== Nút Quay lại ==== */
+.btn-quay-lai {
+  background: transparent;
+  border: 2px solid #016cb5;
+  color: #016cb5;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-quay-lai:hover {
+  background: #016cb5;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(1, 108, 181, 0.3);
+}
+
+/* ==== Nút Lưu ==== */
+.btn-luu {
+  background: linear-gradient(135deg, #016cb5, #0288d1);
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(1, 108, 181, 0.3);
+}
+
+.btn-luu:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0288d1, #016cb5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(1, 108, 181, 0.5);
+}
+
+.btn-luu:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .gap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .gap button {
+    width: 100%;
+    text-align: center;
+  }
+}
+.header-title-h1 {
+  font-size: 24px;
+  color: #1e40af;
+  margin: 0;
+}
+/* ===== Rich Editor ===== */
+.re {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+.re-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.re-group {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.re-select {
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+.re-btn {
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+.re-btn:hover {
+  background: #f1f5f9;
+}
+.re-hidden {
+  display: none;
+}
+
+.re-dropdown {
+  position: relative;
+}
+.re-dropdown .re-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 160px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
+  padding: 6px;
+  z-index: 10;
+}
+.re-dropdown:hover .re-menu {
+  display: block;
+}
+.re-dropdown .re-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: 0;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.re-dropdown .re-menu button:hover {
+  background: #f8fafc;
+}
+
+.re-editor {
+  min-height: 320px;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #0f172a;
+  outline: none;
+}
+.re-editor p {
+  margin: 0 0 12px;
+}
+.re-editor img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.06);
+}
+.re-editor blockquote {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-left: 4px solid #c7d2fe;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+.re-help {
+  font-size: 12px;
+  color: #64748b;
+  padding: 8px 12px 12px;
+}
+
+/* Shortcodes */
+.sc-note {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #eef6ff;
+  border: 1px solid #bfdbfe;
+}
+.sc-warn {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fff7ed;
+  border: 1px solid #fcd34d;
+}
+.sc-tip {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+}
+
+/* Table in editor */
+.re-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.re-table td {
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+}

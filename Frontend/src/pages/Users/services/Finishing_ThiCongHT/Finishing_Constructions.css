@@ -1,0 +1,99 @@
+/* ===== Shell: khóa trang 1000px & căn giữa ===== */
+.finishing-container {
+  width: 100%;
+  max-width: 1000px; /* yêu cầu: toàn trang 1000px */
+  margin: 0 auto;
+  padding: 24px 16px;
+  color: #0f172a;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+}
+
+.finishing-wrapper {
+  width: 100%;
+}
+
+/* ===== Tiêu đề ===== */
+.finishing-title {
+  text-align: center;
+  color: #016bb4;
+  text-transform: uppercase;
+  font-size: clamp(16px, 2.2vw, 26px);
+  margin: 0 0 16px;
+}
+
+/* ===== Khối mô tả (card nhẹ) ===== */
+.finishing-description {
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  border: 1px solid #e6eef5;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.06);
+  padding: 16px 14px;
+  margin: 16px auto;
+}
+
+.finishing-text,
+.finishing-text-description {
+  margin: 0 0 12px;
+  font-size: 17.2px;
+  line-height: 1.9;
+  color: #334155;
+  text-align: justify;
+}
+
+.finishing-subtitle {
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 800;
+  color: #016bb4;
+  margin: 8px 0 10px;
+  text-align: left;
+}
+
+/* ===== Highlight ===== */
+.highlight-blue {
+  color: #016bb4;
+  font-weight: 700;
+}
+.highlight-nghien {
+  color: #016bb4;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+/* ===== Ảnh & caption: full trong khung 1000px, căn giữa ===== */
+.finishing-image-container {
+  max-width: 1000px; /* khớp shell */
+  margin: 22px auto;
+  text-align: center;
+}
+
+.finishing-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px 14px 0 0;
+  border: 1px solid #e5eaf1;
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
+}
+
+.finishing-caption {
+  width: 100%;
+  background-color: #016bb4;
+  color: #fff;
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+  padding: 8px 12px;
+}
+
+/* ===== Responsive nhẹ ===== */
+@media (max-width: 560px) {
+  .finishing-container {
+    padding: 16px 12px;
+  }
+  .finishing-text,
+  .finishing-text-description {
+    font-size: 16.6px;
+    line-height: 1.85;
+  }
+}

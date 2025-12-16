@@ -1,0 +1,838 @@
+/* =========================
+   NguyenHai Renovation (nhr)
+   ========================= */
+.nhr {
+  --brand: #0a6ad6;
+  --brand-2: #064eac;
+  --accent: #d4b263;
+  --ink: #0f172a;
+  --ink-2: #1e293b;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --bg: #ffffff;
+  --bg-alt: #f6f7fb;
+
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis-weight: none;
+}
+
+.nhr *,
+.nhr *::before,
+.nhr *::after {
+  box-sizing: border-box;
+}
+
+.nhr .nhr-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========== HERO ========== */
+.nhr .nhr-hero {
+  position: relative;
+  min-height: 70vh;
+  padding: 112px 0 88px;
+  overflow: hidden;
+}
+
+.nhr .nhr-hero-bg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr; /* chỉ còn 1 ảnh hero */
+}
+
+.nhr .nhr-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70% !important;
+  filter: grayscale(0.15) contrast(1.05) brightness(0.9);
+}
+
+.nhr .nhr-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      1200px 500px at 15% 10%,
+      rgba(212, 178, 99, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(180deg, rgba(7, 17, 28, 0.55), rgba(7, 17, 28, 0.75));
+}
+
+.nhr .nhr-hero-inner {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.nhr .nhr-eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #cfe5ff;
+  opacity: 0.95;
+  margin-bottom: 10px;
+  font-size: clamp(11px, 0.9vw, 12px);
+}
+
+.nhr .nhr-eyebrow.nhr-light {
+  color: #e9f2ff;
+}
+
+.nhr .nhr-hero-title {
+  font-size: clamp(28px, 5.2vw, 52px);
+  line-height: 1.05;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.nhr .nhr-hero-title span {
+  background: linear-gradient(90deg, #fff, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nhr .nhr-hero-sub {
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.75;
+  max-width: 760px;
+  color: #eaf3ffcc;
+  margin: 0 0 22px;
+}
+
+.nhr .nhr-hero-cta {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+/* BUTTONS */
+.nhr .nhr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease,
+    border-color 0.18s;
+}
+
+.nhr .nhr-btn:active {
+  transform: translateY(1px);
+}
+
+.nhr .nhr-btn-primary {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(10, 106, 214, 0.25);
+}
+
+.nhr .nhr-btn-primary:hover {
+  filter: brightness(0.98);
+}
+
+.nhr .nhr-btn-glass {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.nhr .nhr-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.nhr .nhr-btn-block {
+  width: 100%;
+}
+
+/* HERO STATS */
+.nhr .nhr-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.nhr .nhr-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.28),
+    rgba(255, 255, 255, 0.18)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+}
+
+.nhr .nhr-hero-stats > div {
+  padding: 16px 18px;
+  color: #f7fbff;
+  text-align: center;
+}
+
+.nhr .nhr-stat-num {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.nhr .nhr-stat-label {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* ========== SECTIONS ========== */
+.nhr .nhr-section {
+  padding: 72px 0;
+  background: var(--bg);
+}
+
+.nhr .nhr-section.nhr-alt {
+  background: var(--bg-alt);
+}
+
+.nhr .nhr-sec-title {
+  font-size: clamp(18px, 1.6vw, 24px);
+  color: #096cb5;
+  line-height: 1.25;
+  margin: 0 0 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.nhr .nhr-lead {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--ink-2);
+  opacity: 0.92;
+  margin: 0 0 16px;
+}
+
+.nhr .nhr-muted {
+  color: var(--muted);
+}
+
+.nhr .nhr-grid-2 {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 26px;
+}
+
+.nhr .nhr-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.nhr .nhr-grid-2 > .nhr-note {
+  place-self: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+/* ===== CARD ===== */
+.nhr .nhr-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.nhr .nhr-card.nhr-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.55)
+  );
+  backdrop-filter: blur(6px);
+}
+
+.nhr .nhr-card-title {
+  font-size: clamp(14px, 1.2vw, 18px);
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #096cb5;
+}
+
+.nhr .nhr-note {
+  border-left: 4px solid var(--brand);
+}
+
+.nhr .nhr-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nhr .nhr-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(6, 78, 172, 0.15);
+}
+
+/* BULLETS */
+.nhr .nhr-bullet-list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.nhr .nhr-bullet-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  background: #fff;
+  font-size: clamp(13px, 1.1vw, 15px);
+}
+
+.nhr .nhr-bullet-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-top: 6px;
+  background: conic-gradient(from 0deg, var(--accent), var(--brand));
+}
+
+/* ===== CALLOUT ===== */
+.nhr .nhr-callout {
+  margin-top: 18px;
+  border-left: 6px solid var(--brand);
+  border-radius: 16px;
+  box-shadow: 0 8px 26px rgba(9, 108, 181, 0.06);
+}
+
+.nhr .nhr-subtitle {
+  font-weight: 700;
+  margin: 14px 0 8px;
+  color: #096cb5;
+}
+
+.nhr .nhr-checks,
+.nhr .nhr-bullets {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.nhr .nhr-checks li {
+  list-style: "✓  ";
+  margin: 6px 0;
+}
+
+.nhr .nhr-bullets--dot li {
+  list-style: "•  ";
+  margin: 4px 0;
+}
+
+.nhr .nhr-mt8 {
+  margin-top: 8px;
+}
+
+/* ===== ACCORDION ===== */
+.nhr .nhr-accordion {
+  display: grid;
+  gap: 12px;
+  color: #096cb5;
+}
+
+.nhr .nhr-acc-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.nhr .nhr-acc-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.nhr .nhr-acc-ico {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform 0.2s;
+}
+
+.nhr .nhr-acc-item.open .nhr-acc-ico {
+  transform: rotate(180deg);
+}
+
+.nhr .nhr-acc-body {
+  display: none;
+  padding: 0 18px 16px 18px;
+  color: var(--ink-2);
+  line-height: 1.75;
+}
+
+.nhr .nhr-acc-item.open .nhr-acc-body {
+  display: block;
+}
+
+/* TABLE */
+.nhr .nhr-table-wrap {
+  overflow: auto;
+  border-radius: 16px;
+}
+
+.nhr .nhr-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+}
+
+.nhr .nhr-table th,
+.nhr .nhr-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.nhr .nhr-table thead th {
+  background: linear-gradient(90deg, #eef6ff, #f6fbff);
+  color: #0b3f6b;
+  font-weight: 700;
+}
+
+.nhr .nhr-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.nhr-form-fallback {
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* STEPS */
+.nhr .nhr-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  counter-reset: stp;
+}
+
+.nhr .nhr-steps li {
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+}
+
+.nhr .nhr-steps li h4 {
+  font-size: clamp(14px, 1.15vw, 16px);
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: #096cb5;
+}
+
+.nhr .nhr-steps li::before {
+  counter-increment: stp;
+  content: counter(stp);
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  box-shadow: 0 10px 24px rgba(10, 106, 214, 0.25);
+}
+
+/* STEPS INLINE */
+.nhr .nhr-steps--inline {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+
+.nhr .nhr-steps--inline li {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 14px 12px 14px;
+  box-shadow: 0 6px 16px rgba(9, 108, 181, 0.06);
+}
+
+.nhr .nhr-steps--inline li::before {
+  top: -8px;
+  left: -8px;
+  width: 26px;
+  height: 26px;
+  box-shadow: 0 6px 14px rgba(10, 106, 214, 0.2);
+}
+
+/* TAGS */
+.nhr .nhr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nhr .nhr-tag {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-weight: 600;
+  font-size: clamp(12px, 1.05vw, 14px);
+}
+
+.nhr .nhr-tag:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* CTA */
+.nhr .nhr-cta {
+  background-color: #096cb5;
+  color: #fff;
+}
+
+.nhr .nhr-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nhr .nhr-cta .nhr-sec-title {
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.nhr .nhr-cta-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* SERVICE GRID */
+.nhr-service-head {
+  margin-bottom: 28px;
+}
+
+.nhr-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 8px 0;
+}
+
+.nhr-service-card {
+  border-radius: 18px;
+  padding: 18px 18px 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  background: #ffffff;
+}
+
+.nhr-service-card:hover {
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+  transform: translateY(-4px);
+}
+
+.nhr-service-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #eaf3ff;
+  color: #096cb5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.nhr-service-card .nhr-card-title {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.nhr-service-card p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* GALLERY */
+#villa-works {
+  padding: 72px 0 80px;
+  background: #f3f4f6;
+  min-height: 480px;
+}
+
+.villa-works-wrapper {
+  margin: 0 auto;
+}
+
+.villa-works-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #096cb5;
+  margin-bottom: 4px;
+}
+
+.villa-works-intro {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+  margin-bottom: 18px;
+  max-width: 720px;
+}
+
+.villa-works-slider {
+  margin-top: 10px;
+}
+
+.villa-works-item {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #020617;
+  cursor: pointer;
+  transform: translateY(8px) scale(0.96);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+.swiper-slide-active .villa-works-item,
+.swiper-slide-next .villa-works-item {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.villa-works-img-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.villa-works-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.villa-works-item:hover .villa-works-img {
+  transform: scale(1.06);
+}
+
+.villa-works-overlay {
+  background: transparent;
+}
+
+.villa-works-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  z-index: 1;
+}
+
+.villa-works-caption p {
+  margin: 0;
+  font-size: 13px;
+  color: #f9fafb;
+  font-weight: 500;
+  line-height: 1.5;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.villa-works-slider .swiper-pagination-bullets {
+  margin-top: 18px;
+  position: static;
+  text-align: center;
+}
+
+.villa-works-slider .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #cbd5f5;
+  opacity: 1;
+  margin: 0 4px !important;
+}
+
+.villa-works-slider .swiper-pagination-bullet-active {
+  background: #0a6ad6;
+  width: 18px;
+  border-radius: 999px;
+}
+
+/* ========== LIGHTBOX v2 ========== */
+
+.nhr-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: nhrFade 0.25s ease;
+}
+
+@keyframes nhrFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nhr-lightbox-inner {
+  position: relative;
+  max-width: 92%;
+  max-height: 92%;
+}
+
+.nhr-lightbox-img {
+  width: 100%;
+  max-height: 86vh;
+  border-radius: 16px;
+  object-fit: contain;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  animation: nhrFade 0.3s ease;
+}
+
+.nhr-lightbox-caption {
+  margin-top: 14px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Nút Prev / Next */
+.nhr-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  padding: 12px 16px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  transition: 0.2s;
+  z-index: 100000;
+}
+
+.nhr-lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.nhr-lightbox-prev {
+  left: 24px;
+}
+
+.nhr-lightbox-next {
+  right: 24px;
+}
+
+@media (max-width: 640px) {
+  .nhr-lightbox-nav {
+    font-size: 28px;
+    padding: 10px 12px;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1120px) {
+  .nhr .nhr-hero-title {
+    font-size: clamp(28px, 5vw, 44px);
+  }
+}
+
+@media (max-width: 960px) {
+  .nhr .nhr-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .nhr .nhr-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .nhr .nhr-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nhr .nhr-steps--inline {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nhr .nhr-hero {
+    padding: 96px 0 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nhr .nhr-steps,
+  .nhr .nhr-steps--inline {
+    grid-template-columns: 1fr;
+  }
+
+  .nhr .nhr-hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nhr .nhr-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #villa-works {
+    padding: 56px 0 52px;
+    min-height: 480px;
+  }
+
+  .villa-works-img {
+    max-height: 360px;
+  }
+
+  .villa-works-wrapper {
+    padding: 0 8px;
+  }
+}
+/* =========================
+   END NguyenHai Renovation (nhr)
+   ========================= */

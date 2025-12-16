@@ -1,0 +1,135 @@
+/* Nền xanh giữ như cũ, chữ trắng */
+.footer-home {
+  background: #096cb5;
+  color: #fff;
+  padding: 32px 0 20px;
+}
+
+/* Container căn giữa & giới hạn bề rộng */
+.footer-container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
+/* Cột chung */
+.footer-col {
+  min-width: 240px;
+}
+
+/* Logo */
+.footer-logo {
+  height: 58px;
+  border-radius: 8px;
+}
+
+/* Heading & text */
+.footer-heading {
+  margin-top: 10px;
+  font-size: clamp(14px, 2.5vw, 18px);
+  line-height: 1.4;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.footer-subtitle {
+  color: #fff;
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 600;
+  margin: 4px 0 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-text {
+  color: #fff;
+  font-size: clamp(12px, 1.8vw, 14px);
+  text-decoration: underline;
+  opacity: 0.95;
+  line-height: 1.6;
+  text-decoration-color: #ffffff;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* Danh sách thông tin liên hệ */
+.footer-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 6px;
+}
+.footer-item {
+  gap: 10px;
+}
+.footer-icon {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+.footer-link-text {
+  color: #fff;
+  opacity: 0.95;
+}
+
+/* Link & anchor */
+.footer-links {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+.footer-link,
+.footer-anchor {
+  color: #fff !important;
+  opacity: 0.95;
+  text-decoration: none;
+  transition: opacity 0.15s ease, text-decoration-color 0.15s ease;
+}
+.footer-link:hover,
+.footer-anchor:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Đáy footer */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  margin-top: 20px;
+  padding-top: 12px;
+  text-align: center;
+}
+.footer-bottom-text {
+  color: #fff;
+  opacity: 0.95;
+  font-size: 13.5px;
+}
+
+/* Giảm “xa cách”: chỉnh khoảng cách nội bộ cho cột trái */
+.footer-stack {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    width: min(1100px, 94vw);
+  }
+}
+@media (max-width: 768px) {
+  .footer-home {
+    padding: 26px 0 18px;
+  }
+  .footer-container {
+    width: 92vw;
+  }
+  .footer-col {
+    min-width: 100%;
+  }
+  .footer-logo {
+    height: 52px;
+  }
+  .footer-bottom-text {
+    font-size: 13px;
+  }
+}
