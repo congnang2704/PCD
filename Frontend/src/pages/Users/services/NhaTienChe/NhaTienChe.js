@@ -1,6 +1,6 @@
 import React from "react";
 import "./NhaTienChe.css";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 import ntc from "../../../../assets/ntc.png";
 import ntc1 from "../../../../assets/ntc1.png";
 import ntc2 from "../../../../assets/ntc2.png";

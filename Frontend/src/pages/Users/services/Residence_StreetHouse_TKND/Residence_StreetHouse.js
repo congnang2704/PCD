@@ -1,7 +1,7 @@
 // src/components/Users/services/Residence_StreetHouse/Residence_StreetHouse.js
 import React, { useEffect, useState } from "react";
 import "./residence-streethouse.css";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 // ảnh hero
 import heroMain from "../../../../assets/streethouse/banner-TKNP.webp";
 import MTKTC1 from "../../../../assets/streethouse/unnamed.webp";

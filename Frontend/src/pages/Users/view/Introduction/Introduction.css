@@ -10,6 +10,10 @@
   --content-max: 900px;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 /* ========== KHUNG CHUNG ========== */
 
 .intro-home {
@@ -136,32 +140,53 @@
 
 /* ========== BANNER HERO – ẢNH LCP ========== */
 
+.intro-slide-image,
+.intro-image-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .intro-slider-wrap {
   width: 100%;
-  position: relative;
-  overflow: hidden;
 }
 
 .intro-slide {
-  position: relative;
   width: 100%;
 }
 
-/* Ảnh LCP – giữ tỷ lệ, không quá cao để load nhanh hơn */
+.intro-more {
+  overflow: hidden;
+  will-change: max-height;
+  transition: max-height 200ms ease;
+}
+
+.intro-more.closed {
+  max-height: 0;
+}
+
+.intro-more.open {
+  max-height: 600px;
+}
+
+.intro-more__inner {
+  padding-top: 8px;
+}
+
+/* ✅ LCP image: cố định chiều cao hiển thị + giữ ratio đúng ảnh 1580/691 */
 .intro-slide-image {
   width: 100%;
-  height: auto;
-  max-height: var(--banner-desktop);
+  height: var(--banner-desktop); /* ✅ quan trọng: cố định khung */
   object-fit: cover;
   display: block;
-  aspect-ratio: 16 / 7; /* tương đối với 1580x691 */
+  aspect-ratio: 1580 / 691; /* ✅ đúng tỷ lệ ảnh thật */
+  /* contain-intrinsic-size: 1580px 691px; */
 }
 
-/* Mobile: thấp hơn để đỡ “dài” và cảm giác nhanh hơn */
+/* ✅ Mobile: chỉ giảm height, KHÔNG đổi ratio */
 @media (max-width: 991px) {
   .intro-slide-image {
-    max-height: var(--banner-mobile);
-    aspect-ratio: 16 / 9;
+    height: var(--banner-mobile);
   }
 }
 

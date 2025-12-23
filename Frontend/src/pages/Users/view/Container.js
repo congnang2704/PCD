@@ -9,12 +9,14 @@ const FeaturedProjects = React.lazy(() =>
   import("./FeaturedProjects/FeaturedProjects")
 );
 const SliderCMT = React.lazy(() => import("./Slider_CMT/Slider_CMT"));
-const ContactForm = React.lazy(() => import("./Mail/ContactFormMail"));
+const ContactForm = React.lazy(() =>
+  import("../../../components/Mail/ContactFormMail/ContactFormMail")
+);
 const FAQComponent = React.lazy(() => import("./FAQComponent/FAQComponent"));
 const Brands = React.lazy(() => import("./Brands/brands"));
 
 export default React.memo(function Container() {
-  const s1 = useNearScreen("700px"); // sau fold 1 chút
+  const s1 = useNearScreen("700px");
   const s2 = useNearScreen("700px");
   const s3 = useNearScreen("700px");
   const s4 = useNearScreen("700px");

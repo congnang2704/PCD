@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import "../House.css";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 import { Link } from "react-router-dom";
 
 // 5 category name cần lấy

@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 import HeaderHome from "../../../components/header/header_home";
 import FooterHome from "../../../components/footer/footer_home";
-import Container_Contacts from "./Container_Contacts";
+import ContactUsForm from "../../../components/Mail/Contact_Us/Contact_Us";
 
 const { Content } = Layout;
 
@@ -11,7 +11,7 @@ const HomePages = () => {
     <Layout>
       <HeaderHome />
       <Content>
-        <Container_Contacts />
+        <ContactUsForm />
       </Content>
       <FooterHome />
     </Layout>

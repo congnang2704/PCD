@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import "./Container_Services.css";
 import { Row, Col, Image, Grid, Button, Pagination, Space } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
 import bannerImage from "../../../../assets/banner/2.webp";
 import { useNavigate } from "react-router-dom";

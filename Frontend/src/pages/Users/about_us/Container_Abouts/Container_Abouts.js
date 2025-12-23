@@ -6,7 +6,7 @@ import missionImg from "../../../../assets/tnsm.jpg";
 import about_us from "../../../../assets/nenNH.jpg";
 import missionThietKeImg1 from "../../../../assets/3-ste.jpg";
 import "./Container_Abouts.css";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 import khaosatthicongImg from "../../../../assets/khaosatthicong.jpg";
 import khaosatcaitaoImg from "../../../../assets/khaosatcaitao.jpg";
 import quatrinhthicongImg from "../../../../assets/quatrinhthicong.jpg";

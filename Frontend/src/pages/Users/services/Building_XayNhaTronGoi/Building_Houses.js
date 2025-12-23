@@ -14,7 +14,9 @@ import building7 from "../../../../assets/XNTG/5.webp";
 /**
  * 🚀 TỐI ƯU: Lazy-load Form + FAQ
  */
-const ContactForm = lazy(() => import("../../view/Mail/ContactFormMail"));
+const ContactForm = lazy(() =>
+  import("../../../../components/Mail/ContactFormMail/ContactFormMail")
+);
 const FAQComponent = lazy(() => import("../../view/FAQComponent/FAQComponent"));
 
 /**

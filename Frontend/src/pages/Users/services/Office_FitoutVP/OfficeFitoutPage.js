@@ -7,7 +7,7 @@ import prj2 from "../../../../assets/VP-TK_TC2.jpg";
 import prj1 from "../../../../assets/VP-TK_TC3.jpg";
 import prj3 from "../../../../assets/VP-TK_TC4.jpg";
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 import DuAnTC from "../../view/DuAnTC/duantc";
 
 /* ============== CONFIG (đổi theo brand của bạn) ============== */

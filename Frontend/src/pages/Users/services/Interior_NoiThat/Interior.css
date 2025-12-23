@@ -146,16 +146,6 @@ img {
   border-color: #096cb5;
 }
 
-.interior-hero-hotline {
-  font-size: 13.8px;
-  color: #4b5563;
-  margin-top: 4px;
-}
-.interior-hero-hotline a {
-  color: #0b63b6;
-  font-weight: 600;
-}
-
 /* HERO image */
 .interior-hero-right {
   display: flex;
@@ -211,26 +201,6 @@ img {
   color: #4b5563;
   line-height: 1.9;
   margin-bottom: 10px;
-}
-
-/* ===== Ảnh & caption (nếu dùng riêng ảnh full) ===== */
-.interior-image {
-  width: 100%;
-  max-width: 1000px;
-  margin: 16px auto 22px;
-  text-align: center;
-}
-.interior-image-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
-}
-.interior-image-cap {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #64748b;
 }
 
 /* ===== Dịch vụ nội thất (cards + hotline) ===== */
@@ -667,166 +637,6 @@ img {
   }
 }
 
-/* ===== FORM ===== */
-.interior-form {
-  width: 100%;
-  max-width: 1000px;
-  margin: 18px auto;
-  padding: 18px;
-  background: #fff;
-  border: 1px solid #e6eef5;
-  border-radius: 16px;
-  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.06);
-}
-.interior-form-title {
-  text-align: center;
-  color: #0b63b6;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: clamp(16px, 2vw, 26px);
-}
-
-/* thông báo thành công */
-.interior-success {
-  margin-bottom: 16px;
-  background: #f6ffed;
-  border: 1px solid #52c41a;
-  color: #389e0d;
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-size: 15px;
-  text-align: center;
-}
-
-/* container form */
-.interior-form-container {
-  margin-top: 8px;
-  align-items: stretch;
-  padding: 20px;
-}
-
-/* panel form bên trái */
-.interior-form-left {
-  background: #fff;
-  border-radius: 12px;
-  padding: 14px;
-  border: 1px solid #dbe7f3;
-  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.05);
-}
-
-/* text nhỏ trong form */
-.contact-info-box {
-  margin-bottom: 10px;
-}
-.contact-subtitle {
-  margin: 0;
-  font-size: 15px;
-  color: #4b5563;
-  text-transform: none;
-}
-
-/* input/textarea radius + focus ring xanh (Ant Design) */
-.interior-form-left .ant-input,
-.interior-form-left .ant-input-affix-wrapper,
-.interior-form-left .ant-input-textarea textarea {
-  border-radius: 10px !important;
-  border-color: #d1deea;
-  height: 44px;
-}
-.interior-form-left .ant-input-textarea textarea {
-  min-height: 90px;
-  height: auto;
-}
-.interior-form-left .ant-input:focus,
-.interior-form-left .ant-input-affix-wrapper-focused,
-.interior-form-left .ant-input-focused,
-.interior-form-left .ant-input-textarea textarea:focus {
-  border-color: #1b73cf !important;
-  box-shadow: 0 0 0 3px rgba(27, 115, 207, 0.16) !important;
-}
-
-/* label & dấu * */
-.interior-form-left .ant-form-item-label > label {
-  color: #096cb5;
-  font-weight: 600;
-}
-.interior-form-left .ant-form-item-required::before {
-  color: #ef4444 !important;
-}
-
-/* radio: spacing gọn */
-.interior-form-left .ant-row {
-  row-gap: 8px;
-}
-.interior-form-left .ant-radio-wrapper {
-  margin-right: 0;
-}
-
-/* nút gửi */
-.interior-form-left .ant-btn-primary {
-  height: 44px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #0a78d1, #0259a6);
-  box-shadow: 0 10px 22px rgba(2, 89, 166, 0.25);
-}
-
-/* ảnh bên phải form */
-.interior-form-image-box {
-  position: relative;
-  width: 100%;
-}
-.interior-form-image {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16/10;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* social icons */
-.interior-socials {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  display: flex;
-  gap: 10px;
-}
-.interior-social-icon {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 8px;
-  background: #fff;
-  border: 1px solid #d9e4ef;
-  color: #0f172a;
-  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.08);
-  transition: transform 0.15s ease;
-}
-.interior-social-icon.fb {
-  color: #1877f2;
-}
-.interior-social-icon.yt {
-  color: #ff0033;
-}
-.interior-social-icon.tt {
-  color: #111;
-}
-.interior-social-icon:hover {
-  transform: translateY(-2px);
-}
-
-/* đặt icon ra ngoài cạnh phải khi màn hình rộng */
-.interior-form-image-box .interior-socials {
-  position: absolute;
-  top: 50%;
-  right: -44px;
-  transform: translateY(-50%);
-  display: grid;
-  gap: 10px;
-}
-
 /* ===== CTA cuối trang – chốt gọi nội thất ===== */
 .interior-bottom-cta {
   width: 100%;
@@ -908,13 +718,6 @@ img {
 }
 
 @media (max-width: 992px) {
-  .interior-form-image-box .interior-socials {
-    right: 12px;
-    bottom: 12px;
-    top: auto;
-    transform: none;
-    display: flex;
-  }
   .interior-bottom-cta-inner {
     grid-template-columns: minmax(0, 1fr);
     padding: 16px 16px 18px;
@@ -932,17 +735,6 @@ img {
   .interior-bottom-cta-note {
     text-align: left;
     max-width: none;
-  }
-}
-
-/* căn giữa khối ảnh theo chiều dọc ở màn hình >= md */
-@media (min-width: 768px) {
-  .interior-form-image-wrap {
-    display: flex;
-    align-items: center;
-  }
-  .interior-form-image-box {
-    margin: 0 auto;
   }
 }
 

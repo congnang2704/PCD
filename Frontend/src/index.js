@@ -70,6 +70,5 @@ ReactDOM.createRoot(rootElement).render(
     >
       <App />
     </BrowserRouter>
-    ;
   </React.StrictMode>
 );

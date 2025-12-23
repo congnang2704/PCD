@@ -1,4 +1,3 @@
-# robots.txt for https://nguyenhai.com.vn
 User-agent: *
 Allow: /
 

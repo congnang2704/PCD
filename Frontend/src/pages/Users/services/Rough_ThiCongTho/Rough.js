@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Rough.css";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 
 // ảnh
 import thicongtho from "../../../../assets/anh (1).jpg";
@@ -491,16 +491,6 @@ const Rough = () => {
         id="contact"
         aria-labelledby="contact-title"
       >
-        <h2 className="rough-section-title" id="contact-title">
-          Nhận tư vấn &amp; báo giá thi công phần thô
-        </h2>
-        <p className="rough-text contact-intro">
-          Vui lòng để lại thông tin liên hệ, diện tích dự kiến hoặc gửi kèm bản
-          vẽ (nếu có). Đội ngũ{" "}
-          <span className="highlight-brand">PCD Nguyễn Hải</span> sẽ liên hệ tư
-          vấn phương án kết cấu và báo giá chi tiết, phù hợp ngân sách của
-          anh/chị.
-        </p>
         <ContactForm />
       </section>
 
