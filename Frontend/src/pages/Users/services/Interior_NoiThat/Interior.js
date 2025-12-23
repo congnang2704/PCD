@@ -1,22 +1,14 @@
-import React, { useMemo, useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Interior.css";
 
-import { Form, Input, Button, Row, Col, Grid, Radio, message } from "antd";
-import {
-  FacebookFilled,
-  YoutubeFilled,
-  TikTokOutlined,
-} from "@ant-design/icons";
-
-import Turnstile from "react-turnstile";
-
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
+import InteriorContactForm from "../../../../components/Mail/Mail_TKNT/FormMail_Interior";
 
 // assets
-import noithat from "../../../../assets/mau noi that.jpg";
-import cttb1House from "../../../../assets/PK3.png";
-import cttb2House from "../../../../assets/PK1.png";
-import cttb3House from "../../../../assets/PN1V1.png";
+import noithat from "../../../../assets/TKNT/maunoithat.webp";
+import cttb1House from "../../../../assets/TKNT/PK3.webp";
+import cttb2House from "../../../../assets/TKNT/PK1.webp";
+import cttb3House from "../../../../assets/TKNT/PN1V1.webp";
 
 import cttb4House from "../../../../assets/TKNT/1.webp";
 import cttb5House from "../../../../assets/TKNT/2.webp";
@@ -29,124 +21,10 @@ import cttb11House from "../../../../assets/TKNT/12.webp";
 import cttb12House from "../../../../assets/TKNT/17.webp";
 import cttb13House from "../../../../assets/TKNT/30.webp";
 
-import TKCL from "../../../../assets/banner/hero.webp";
-
-/* ẢNH FORM BÊN PHẢI */
-const mapImage = TKCL;
-
-const PHONE_RE = /^(0|\+84)(\d{9})$/; // 0xxxxxxxxx hoặc +84xxxxxxxxx (10 số)
-
-// lấy site key từ .env
-const TURNSTILE_SITE_KEY = process.env.REACT_APP_TURNSTILE_SITE_KEY;
-
-// hook breakpoint
-const { useBreakpoint } = Grid;
-
 // Hotline dùng chung
 const HOTLINE_1 = "0978 999 043";
-const HOTLINE_2 = "0905 402 989";
-const HOTLINEGOINGAY = "0978999043";
 
 const Interior = () => {
-  const [form] = Form.useForm();
-  const screens = useBreakpoint();
-
-  const [successMessage, setSuccessMessage] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [cfToken, setCfToken] = useState(""); // token Turnstile
-
-  // Map khung ngân sách -> số tiền ước lượng để đẩy vào Google Ads
-  const budgetValue = useMemo(() => {
-    const b = form.getFieldValue("budget");
-    switch (b) {
-      case "Dưới 50 Triệu":
-        return 30000000;
-      case "50 - 100 Triệu":
-        return 75000000;
-      case "100 - 150 Triệu":
-        return 125000000;
-      case "Trên 150 Triệu":
-        return 160000000;
-      default:
-        return 1000000;
-    }
-  }, [form]);
-
-  const onFinish = async (values) => {
-    if (submitting) return;
-
-    // bắt buộc phải xác nhận Turnstile
-    if (!cfToken) {
-      message.error("Vui lòng xác nhận bảo mật trước khi gửi form!");
-      return;
-    }
-
-    setSubmitting(true);
-
-    try {
-      const payload = {
-        name: values.name,
-        phone: values.phone,
-        email: values.email,
-        area_floor: values.area_floor,
-        location: values.location,
-        budget: values.budget,
-        message: values.message || "",
-        form_type: "noi-that",
-        turnstile_token: cfToken, // gửi token xuống backend
-      };
-
-      const response = await fetch(
-        "https://api.nguyenhai.com.vn/api/contacts",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      if (!response.ok) {
-        let errTxt = "";
-        try {
-          errTxt = await response.text();
-        } catch {}
-        throw new Error(`API ${response.status}: ${errTxt || "Gửi thất bại"}`);
-      }
-
-      // 🔥 BẮN GOOGLE ADS CONVERSION
-      if (window.gtag) {
-        window.gtag("event", "conversion", {
-          send_to: "AW-17496261728/Cf4vCIHqlo0bEOCI75ZB",
-          value: budgetValue,
-          currency: "VND",
-        });
-      }
-
-      // (Optional) cho GTM/Facebook đọc
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "form_submit_success",
-        form_name: "ContactForm_NoiThat",
-        budget: values.budget,
-        location: values.location,
-      });
-
-      setSuccessMessage(
-        "🎉 Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm nhất."
-      );
-      message.success("Đã nhận thông tin! Cảm ơn bạn.");
-      form.resetFields();
-      setCfToken(""); // reset captcha cho lần sau
-
-      // window.location.href = "/thank-you";
-    } catch (error) {
-      console.error("❗ Lỗi khi gửi dữ liệu:", error);
-      message.error("🚫 Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại!");
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
   // ===== SLIDER CÔNG TRÌNH NỘI THẤT =====
   const portfolioItems = [
     {
@@ -390,17 +268,14 @@ const Interior = () => {
             </ul>
             <p className="interior-service-hotline">
               📞 Hotline:
-              <a href={`tel:${HOTLINE_1}`}> {HOTLINE_1}</a> –{" "}
-              <a href={`tel:${HOTLINE_2}`}>{HOTLINE_2}</a>
+              <a href={`tel:0978999043`}> 0978 999 043</a> –{" "}
+              <a href={`tel:0905402989`}>0905 402 989</a>
             </p>
             <div className="interior-service-actions">
               <a href="#interior-form" className="interior-btn-small-primary">
                 Nhận tư vấn gói nhà phố
               </a>
-              <a
-                href={`tel:${HOTLINEGOINGAY}`}
-                className="interior-btn-small-ghost"
-              >
+              <a href={`tel:0978999043`} className="interior-btn-small-ghost">
                 Gọi ngay
               </a>
             </div>
@@ -419,17 +294,14 @@ const Interior = () => {
             </ul>
             <p className="interior-service-hotline">
               📞 Hotline:
-              <a href={`tel:${HOTLINE_1}`}> {HOTLINE_1}</a> –{" "}
-              <a href={`tel:${HOTLINE_2}`}>{HOTLINE_2}</a>
+              <a href={`tel:0978999043`}> 0978 999 043</a> –{" "}
+              <a href={`tel:0905402989`}>0905 402 989</a>
             </p>
             <div className="interior-service-actions">
               <a href="#interior-form" className="interior-btn-small-primary">
                 Tư vấn nội thất căn hộ
               </a>
-              <a
-                href={`tel:${HOTLINEGOINGAY}`}
-                className="interior-btn-small-ghost"
-              >
+              <a href={`tel:0978999043`} className="interior-btn-small-ghost">
                 Gọi ngay
               </a>
             </div>
@@ -448,17 +320,14 @@ const Interior = () => {
             </ul>
             <p className="interior-service-hotline">
               📞 Hotline:
-              <a href={`tel:${HOTLINE_1}`}> {HOTLINE_1}</a> –{" "}
-              <a href={`tel:${HOTLINE_2}`}>{HOTLINE_2}</a>
+              <a href={`tel:0978999043`}> 0978 999 043</a> –{" "}
+              <a href={`tel:0905402989`}>0905 402 989</a>
             </p>
             <div className="interior-service-actions">
               <a href="#interior-form" className="interior-btn-small-primary">
                 Tư vấn nội thất biệt thự
               </a>
-              <a
-                href={`tel:${HOTLINEGOINGAY}`}
-                className="interior-btn-small-ghost"
-              >
+              <a href={`tel:0978999043`} className="interior-btn-small-ghost">
                 Gọi ngay
               </a>
             </div>
@@ -477,17 +346,14 @@ const Interior = () => {
             </ul>
             <p className="interior-service-hotline">
               📞 Hotline:
-              <a href={`tel:${HOTLINE_1}`}> {HOTLINE_1}</a> –{" "}
-              <a href={`tel:${HOTLINE_2}`}>{HOTLINE_2}</a>
+              <a href={`tel:0978999043`}> 0978 999 043</a> –{" "}
+              <a href={`tel:0905402989`}>0905 402 989</a>
             </p>
             <div className="interior-service-actions">
               <a href="#interior-form" className="interior-btn-small-primary">
                 Tư vấn nội thất thương mại
               </a>
-              <a
-                href={`tel:${HOTLINEGOINGAY}`}
-                className="interior-btn-small-ghost"
-              >
+              <a href={`tel:0978999043`} className="interior-btn-small-ghost">
                 Gọi ngay
               </a>
             </div>
@@ -513,8 +379,7 @@ const Interior = () => {
               gia đình trẻ yêu sự phóng khoáng.
             </p>
             <p className="interior-style-hotline">
-              📞{" "}
-              <a href={`tel:${HOTLINEGOINGAY}`}>Gọi tư vấn phong cách Modern</a>
+              📞 <a href={`tel:0978999043`}>Gọi tư vấn phong cách Modern</a>
             </p>
           </div>
           <div className="interior-style-card">
@@ -524,10 +389,7 @@ const Interior = () => {
               không gian gọn gàng – thư thái.
             </p>
             <p className="interior-style-hotline">
-              📞{" "}
-              <a href={`tel:${HOTLINEGOINGAY}`}>
-                Gọi tư vấn phong cách Minimal
-              </a>
+              📞 <a href={`tel:0978999043`}>Gọi tư vấn phong cách Minimal</a>
             </p>
           </div>
           <div className="interior-style-card">
@@ -537,8 +399,7 @@ const Interior = () => {
               cấp &amp; khác biệt cho gia chủ.
             </p>
             <p className="interior-style-hotline">
-              📞{" "}
-              <a href={`tel:${HOTLINEGOINGAY}`}>Gọi tư vấn phong cách Luxury</a>
+              📞 <a href={`tel:0978999043`}>Gọi tư vấn phong cách Luxury</a>
             </p>
           </div>
           <div className="interior-style-card">
@@ -548,8 +409,7 @@ const Interior = () => {
               nhưng không bị nặng nề.
             </p>
             <p className="interior-style-hotline">
-              📞{" "}
-              <a href={`tel:${HOTLINEGOINGAY}`}>Gọi tư vấn phong cách Tân cổ</a>
+              📞 <a href={`tel:0978999043`}>Gọi tư vấn phong cách Tân cổ</a>
             </p>
           </div>
           <div className="interior-style-card">
@@ -559,10 +419,7 @@ const Interior = () => {
               biệt thự yêu nét hoài cổ.
             </p>
             <p className="interior-style-hotline">
-              📞{" "}
-              <a href={`tel:${HOTLINEGOINGAY}`}>
-                Gọi tư vấn phong cách Indochine
-              </a>
+              📞 <a href={`tel:0978999043`}>Gọi tư vấn phong cách Indochine</a>
             </p>
           </div>
           <div className="interior-style-card">
@@ -572,8 +429,7 @@ const Interior = () => {
               áp và gần gũi thiên nhiên.
             </p>
             <p className="interior-style-hotline">
-              📞{" "}
-              <a href={`tel:${HOTLINEGOINGAY}`}>Gọi tư vấn phong cách Bắc Âu</a>
+              📞 <a href={`tel:0978999043`}>Gọi tư vấn phong cách Bắc Âu</a>
             </p>
           </div>
         </div>
@@ -638,8 +494,8 @@ const Interior = () => {
             trạng công trình.{" "}
             <strong>
               Hotline:
-              <a href={`tel:${HOTLINE_1}`}> {HOTLINE_1}</a> –{" "}
-              <a href={`tel:${HOTLINE_2}`}>{HOTLINE_2}</a>
+              <a href={`tel:0978999043`}> 0978 999 043</a> –{" "}
+              <a href={`tel:0905402989`}>0905 402 989</a>
             </strong>
           </div>
           <div className="interior-process-item">
@@ -753,185 +609,8 @@ const Interior = () => {
         <FAQComponent />
       </section>
 
-      {/* ===== FORM LIÊN HỆ ===== */}
-      <section className="section-interior interior-form" id="interior-form">
-        <h1 className="interior-form-title">
-          Liên hệ tư vấn thiết kế nội thất
-        </h1>
-        <Row gutter={32} className="interior-form-container">
-          <Col xs={24} md={12} className="interior-form-left">
-            <Form form={form} layout="vertical" onFinish={onFinish}>
-              <div className="contact-info-box">
-                <h3 className="contact-subtitle">
-                  Hãy để lại thông tin, đội ngũ{" "}
-                  <span className="highlight-blue">Nguyễn Hải</span> sẽ liên hệ
-                  tư vấn miễn phí cho anh/chị.
-                </h3>
-              </div>
-
-              <Form.Item
-                name="name"
-                rules={[
-                  { required: true, message: "Vui lòng nhập họ và tên!" },
-                ]}
-              >
-                <Input placeholder="Họ và tên" autoComplete="name" />
-              </Form.Item>
-
-              <Form.Item
-                name="phone"
-                rules={[
-                  { required: true, message: "Vui lòng nhập số điện thoại!" },
-                  {
-                    validator: (_, v) =>
-                      !v || PHONE_RE.test(v)
-                        ? Promise.resolve()
-                        : Promise.reject("SĐT không hợp lệ (0/ +84 và 10 số)."),
-                  },
-                ]}
-              >
-                <Input
-                  placeholder="Số điện thoại"
-                  inputMode="tel"
-                  autoComplete="tel"
-                />
-              </Form.Item>
-
-              <Form.Item
-                name="email"
-                rules={[
-                  { required: true, message: "Vui lòng nhập email hợp lệ!" },
-                  { type: "email", message: "Email không hợp lệ!" },
-                ]}
-              >
-                <Input placeholder="Email" autoComplete="email" />
-              </Form.Item>
-
-              <Form.Item
-                name="area_floor"
-                rules={[
-                  {
-                    required: true,
-                    message: "Vui lòng nhập diện tích và số tầng!",
-                  },
-                ]}
-              >
-                <Input placeholder="Diện tích & loại không gian cần thiết kế (VD: Nhà phố 3 tầng, căn hộ 2PN…)" />
-              </Form.Item>
-
-              <Form.Item
-                name="location"
-                rules={[
-                  { required: true, message: "Vui lòng nhập địa phương!" },
-                ]}
-              >
-                <Input placeholder="Địa phương / Khu vực công trình" />
-              </Form.Item>
-
-              <Form.Item
-                label={
-                  <span style={{ color: "rgb(9, 108, 181)", fontWeight: 500 }}>
-                    Ngân sách dự kiến cho thiết kế nội thất
-                  </span>
-                }
-                name="budget"
-                rules={[
-                  { required: true, message: "Vui lòng chọn ngân sách!" },
-                ]}
-              >
-                <Radio.Group style={{ width: "100%", fontWeight: 500 }}>
-                  <Row gutter={[10, 10]}>
-                    <Col span={12}>
-                      <Radio value="Dưới 50 Triệu">Dưới 50 Triệu</Radio>
-                    </Col>
-                    <Col span={12}>
-                      <Radio value="50 - 100 Triệu">50 - 100 Triệu</Radio>
-                    </Col>
-                    <Col span={12}>
-                      <Radio value="100 - 150 Triệu">100 - 150 Triệu</Radio>
-                    </Col>
-                    <Col span={12}>
-                      <Radio value="Trên 150 Triệu">Trên 150 Triệu</Radio>
-                    </Col>
-                  </Row>
-                </Radio.Group>
-              </Form.Item>
-
-              <Form.Item name="message">
-                <Input.TextArea
-                  rows={3}
-                  placeholder="Anh/chị có thể mô tả thêm về phong cách yêu thích, hiện trạng công trình…"
-                />
-              </Form.Item>
-
-              {/* Turnstile CAPTCHA */}
-              <div style={{ marginBottom: 16, textAlign: "center" }}>
-                <Turnstile
-                  sitekey={TURNSTILE_SITE_KEY}
-                  onVerify={(token) => setCfToken(token)}
-                  onExpire={() => setCfToken("")}
-                  options={{ theme: "light" }}
-                />
-              </div>
-
-              {successMessage && (
-                <div className="interior-success">{successMessage}</div>
-              )}
-
-              <Form.Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  block
-                  loading={submitting}
-                  disabled={submitting}
-                  style={{ background: "#016bb4", border: "none" }}
-                >
-                  {submitting ? "Đang gửi..." : "Gửi yêu cầu thiết kế nội thất"}
-                </Button>
-              </Form.Item>
-            </Form>
-          </Col>
-
-          {screens.md && (
-            <Col xs={24} md={12} className="interior-form-image-wrap">
-              <div className="interior-form-image-box">
-                <img
-                  src={mapImage}
-                  alt="Nguyễn Hải Design & Build"
-                  className="interior-form-image"
-                />
-                <div className="interior-socials">
-                  <a
-                    href="https://www.facebook.com/nguyenhaidesignandbuild"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="interior-social-icon fb"
-                  >
-                    <FacebookFilled />
-                  </a>
-                  <a
-                    href="https://www.youtube.com/@thicongnhadanang"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="interior-social-icon yt"
-                  >
-                    <YoutubeFilled />
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@nguyenhai22.11.2012"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="interior-social-icon tt"
-                  >
-                    <TikTokOutlined />
-                  </a>
-                </div>
-              </div>
-            </Col>
-          )}
-        </Row>
-      </section>
+      {/* ===== FORM LIÊN HỆ (tách ra component) ===== */}
+      <InteriorContactForm />
 
       {/* CTA cuối trang – chốt khách gọi nội thất */}
       <section className="interior-bottom-cta">

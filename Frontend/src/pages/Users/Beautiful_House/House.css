@@ -12,7 +12,7 @@
 
 /* ===== Layout ===== */
 .house-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 24px 16px 64px;
 }
@@ -45,7 +45,7 @@
   line-height: 1.15;
   font-weight: 700;
   letter-spacing: 0.2px;
-  background: linear-gradient(90deg, var(--brand), var(--brand2));
+  background: var(--brand);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -319,7 +319,7 @@
 }
 .price-card .price-hint {
   font-weight: 700;
-  color: var(--ink);
+  color: #096cb5;
   margin-bottom: 6px;
 }
 .price-card .note {

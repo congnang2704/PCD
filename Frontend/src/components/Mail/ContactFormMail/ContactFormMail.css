@@ -1,0 +1,241 @@
+.form-wrapper {
+  max-width: 1300px;
+  margin: 20px auto 0;
+  min-height: 520px; /* desktop */
+}
+
+.form-background-overlay {
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.form-container.ant-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.form-container {
+  border-radius: 12px;
+}
+
+.form-contact {
+  border: 1px solid #016bb4;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px #016cb48f;
+}
+
+.form-container input {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-title-h1 {
+  text-transform: uppercase;
+  font-size: clamp(18px, 1.5vw, 24px) !important;
+  text-align: center;
+  color: #016bb4;
+  font-weight: 700;
+  padding-top: 15px;
+}
+
+.contact-info-box {
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: clamp(14px, 1.5vw, 18px) !important;
+  font-weight: 600;
+  color: #096cb5;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.contact-subtitle {
+  font-size: clamp(11px, 1.2vw, 16px);
+  font-weight: 700;
+  color: #096cb5;
+  margin-top: 0;
+}
+
+/* ============================
+   SIDE CARD (ẢNH + CTA + SOCIAL)
+   ============================ */
+
+.form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-card {
+  position: relative;
+  width: 100%;
+  padding: 20px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Khối ảnh */
+
+.side-image-block {
+  width: 100%;
+  height: 350px;
+  border-radius: 22px;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(1, 107, 180, 0.25);
+}
+
+.side-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Box thông tin */
+
+.side-info {
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+  padding: 14px 18px 16px;
+}
+
+.side-info-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.side-info-subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.side-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.side-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.side-btn-primary {
+  background-color: #096cb5;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(9, 108, 181, 0.5);
+}
+
+.side-btn-primary:hover {
+  background-color: #075a91;
+}
+
+.side-btn-outline {
+  background-color: #ffffff;
+  color: #096cb5;
+  border: 1px solid #096cb5;
+}
+
+.side-btn-outline:hover {
+  background-color: rgba(9, 108, 181, 0.08);
+}
+
+/* Social icons bên phải, canh giữa */
+
+.side-social {
+  position: absolute;
+  right: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.side-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  color: #016bb4;
+  border: none;
+  transition: all 0.2s ease;
+  font-size: 18px;
+}
+
+.side-social-icon:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+/* màu riêng từng mạng nếu muốn */
+.side-social-icon.fb {
+  color: #1877f2;
+}
+
+.side-social-icon.yt {
+  color: #ff0000;
+}
+
+.side-social-icon.tt {
+  color: #000000;
+}
+
+/* Ẩn side-social trên màn hình nhỏ (cột ẩn rồi nên không cần) */
+@media (max-width: 991px) {
+  .side-social {
+    display: none;
+  }
+  .form-wrapper {
+    min-height: 620px; /* mobile 1 cột thường dài hơn */
+  }
+}
+
+@media (max-width: 767px) {
+  .form-side--responsive {
+    display: none !important;
+  }
+}
+
+/* 3) Chừa sẵn chỗ cho Turnstile (captcha) */
+.turnstile-slot {
+  margin-bottom: 16px;
+  text-align: center;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

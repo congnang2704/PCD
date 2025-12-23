@@ -17,7 +17,7 @@ import {
   TrademarkOutlined,
 } from "@ant-design/icons";
 import { Link, useLocation, useNavigate, Outlet } from "react-router-dom";
-import logo from "../../../assets/logo pcd nguyen hai.png";
+import logo from "../../../assets/logopcdnguyenhai.webp";
 import "./Dashboard_Admin.css";
 import AccountInfoDrawer from "./AccountInfoDrawer";
 

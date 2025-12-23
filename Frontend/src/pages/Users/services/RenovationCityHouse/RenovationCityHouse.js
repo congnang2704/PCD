@@ -21,7 +21,9 @@ import CTPK3 from "../../../../assets/NT/PK2.webp";
 import CTSCN from "../../../../assets/NT/photo-1600585154526-990dced4db0d.webp";
 
 // ✅ Lazy-load ContactForm để giảm JS initial cho trang
-const ContactForm = lazy(() => import("../../view/Mail/ContactFormMail"));
+const ContactForm = lazy(() =>
+  import("../../../../components/Mail/ContactFormMail/ContactFormMail")
+);
 
 /* ====== Brand config ====== */
 const BRAND = {
@@ -153,7 +155,6 @@ export default function RenovationCityHouse() {
             alt="Sau cải tạo - nhà phố"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
             width={1001}
             height={1502}
             className="nhr-hero-main-img"

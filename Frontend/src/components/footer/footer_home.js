@@ -3,7 +3,7 @@ import { Layout, Row, Col, Typography, Space } from "antd";
 import { GlobalOutlined, MailOutlined } from "@ant-design/icons";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
-import logo from "../../assets/logo_chuan_19062025.png";
+import logo from "../../assets/logopcdnguyenhai.webp";
 import "./footer_home.css";
 
 const { Footer } = Layout;
@@ -16,10 +16,20 @@ const FooterHome = () => (
         {/* Cột 1: Logo & mô tả */}
         <Col xs={24} md={10} className="footer-col">
           <Space direction="vertical" size={12} className="footer-stack">
-            <img src={logo} alt="Logo" className="footer-logo" />
-            <h1 level={5} className="footer-heading">
+            <img
+              src={logo}
+              alt="Logo Nguyễn Hải"
+              className="footer-logo"
+              width={220}
+              height={58}
+              decoding="async"
+              loading="lazy"
+            />
+
+            <h2 className="footer-heading">
               CÔNG TY TNHH THIẾT KẾ VÀ XÂY DỰNG NGUYỄN HẢI
-            </h1>
+            </h2>
+
             <p className="footer-subtitle">
               KIẾN TẠO KHÔNG GIAN, NÂNG TẦM GIÁ TRỊ
             </p>
@@ -32,9 +42,7 @@ const FooterHome = () => (
 
         {/* Cột 2: Thông tin liên hệ */}
         <Col xs={24} sm={12} md={7} className="footer-col">
-          <h1 level={5} className="footer-heading">
-            THÔNG TIN LIÊN HỆ
-          </h1>
+          <h2 className="footer-heading">THÔNG TIN LIÊN HỆ</h2>
           <div className="footer-list">
             <Space align="start" className="footer-item">
               <FaLocationDot className="footer-icon" />
@@ -71,9 +79,7 @@ const FooterHome = () => (
 
         {/* Cột 3: Chính sách & Liên kết */}
         <Col xs={24} sm={12} md={7} className="footer-col">
-          <h1 level={5} className="footer-heading">
-            CHÍNH SÁCH
-          </h1>
+          <h1 className="footer-heading">CHÍNH SÁCH</h1>
           <div className="footer-links">
             <Link href="/chinh-sach-bao-mat" className="footer-link">
               Chính sách bảo mật

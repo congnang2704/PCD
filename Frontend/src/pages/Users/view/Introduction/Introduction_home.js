@@ -1,14 +1,11 @@
-// IntroductionHome.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Introduction.css";
 import { Row, Col } from "antd";
 import { HomeOutlined, RiseOutlined } from "@ant-design/icons";
 
-/* ẢNH BANNER NỘI BỘ (STATIC) */
 import banner3 from "../../../../assets/banner/2.webp";
 import TKCL from "../../../../assets/banner/hero.webp";
 
-/* ẢNH INTRO BÊN PHẢI */
 const mapImage = TKCL;
 
 const HERO_BANNER = {
@@ -19,27 +16,43 @@ const HERO_BANNER = {
 const IntroductionHome = () => {
   const [showMore, setShowMore] = useState(false);
 
+  useEffect(() => {
+    const href = HERO_BANNER.image;
+    const id = "preload-hero-banner";
+    if (document.getElementById(id)) return;
+
+    const link = document.createElement("link");
+    link.id = id;
+    link.rel = "preload";
+    link.as = "image";
+    link.href = href;
+    link.type = "image/webp";
+    document.head.appendChild(link);
+
+    return () => link.remove();
+  }, []);
+
   return (
     <section className="intro-home" aria-labelledby="nh-home-title">
-      {/* ===== HERO – LCP chính ===== */}
       <div className="intro-slider-wrap">
         <div className="intro-slide">
           <img
+            className="intro-slide-image"
             src={HERO_BANNER.image}
             alt={HERO_BANNER.title}
-            className="intro-slide-image"
             loading="eager"
             decoding="async"
+            fetchpriority="high"
+            fetchPriority="high"
             width={1580}
             height={691}
+            style={{ aspectRatio: "1580 / 691" }}
           />
         </div>
       </div>
 
-      {/* ===== INTRO TEXT + IMAGE ===== */}
       <div className="intro-container">
         <Row gutter={[32, 24]} align="middle" className="intro-section">
-          {/* LEFT TEXT */}
           <Col xs={24} lg={12} className="intro-text">
             <header>
               <h1 id="nh-home-title" className="home-hero__intro-title">
@@ -58,33 +71,33 @@ const IntroductionHome = () => {
               nghiệp hóa, hiện đại hóa đất nước.
             </p>
 
-            <div
-              className={`intro-paragraph-more ${showMore ? "show" : "hide"}`}
-            >
-              <p className="intro-paragraph">
-                Bên cạnh việc chính là tạo ra các sản phẩm cho ngành xây dựng,
-                công ty còn là nơi hội tụ đông đảo Thạc sỹ, Kiến trúc sư và Kỹ
-                sư…
-              </p>
-              <p className="intro-paragraph">
-                NGUYỄN HẢI CO., LTD theo đuổi chiến lược phát triển bền vững,
-                cung cấp dịch vụ thiết kế – thi công – giám sát – đấu thầu – dự
-                án, nội ngoại thất, công trình dân dụng – công nghiệp.
-              </p>
-              <p className="intro-paragraph">
-                Chúng tôi luôn hướng đến giá trị cộng đồng và mô hình "kiến trúc
-                bền vững".
-              </p>
+            <div className={`intro-more ${showMore ? "open" : "closed"}`}>
+              <div className="intro-more__inner">
+                <p className="intro-paragraph">
+                  Bên cạnh việc chính là tạo ra các sản phẩm cho ngành xây dựng,
+                  công ty còn là nơi hội tụ đông đảo Thạc sỹ, Kiến trúc sư và Kỹ
+                  sư…
+                </p>
+                <p className="intro-paragraph">
+                  NGUYỄN HẢI CO., LTD theo đuổi chiến lược phát triển bền vững,
+                  cung cấp dịch vụ thiết kế – thi công – giám sát – đấu thầu –
+                  dự án, nội ngoại thất, công trình dân dụng – công nghiệp.
+                </p>
+                <p className="intro-paragraph">
+                  Chúng tôi luôn hướng đến giá trị cộng đồng và mô hình "kiến
+                  trúc bền vững".
+                </p>
+              </div>
             </div>
 
             <button
+              type="button"
               onClick={() => setShowMore((s) => !s)}
               className="intro-toggle"
             >
               {showMore ? "Thu gọn" : "Xem thêm"}
             </button>
 
-            {/* FEATURES */}
             <div className="intro-features">
               <Row gutter={[16, 16]}>
                 <Col xs={24} md={12} className="feature-item">
@@ -105,7 +118,6 @@ const IntroductionHome = () => {
             </div>
           </Col>
 
-          {/* RIGHT IMAGE */}
           <Col xs={24} lg={12} className="intro-image">
             <img
               src={mapImage}
@@ -113,6 +125,9 @@ const IntroductionHome = () => {
               className="intro-image-img"
               loading="lazy"
               decoding="async"
+              width={1200}
+              height={900}
+              style={{ aspectRatio: "4 / 3" }}
             />
           </Col>
         </Row>

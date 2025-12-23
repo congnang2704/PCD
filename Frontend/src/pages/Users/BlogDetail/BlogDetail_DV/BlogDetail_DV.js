@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./BlogDetail_DV.css";
 import DQKH from "../../view/DanhGiaKH/DanhGiaKH";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 
 const API_BASE = "https://api.nguyenhai.com.vn/api/blogs";
 

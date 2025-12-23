@@ -3,7 +3,7 @@ import { Layout, Menu, Input, Grid, Button, Drawer, Dropdown } from "antd";
 import { SearchOutlined, MenuOutlined, UserOutlined } from "@ant-design/icons";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import logo from "../../assets/logo_chuan_19062025.png";
+import logo from "../../assets/logopcdnguyenhai.webp";
 import "./header_home.css";
 import AccountInfoDrawer from "./AccountInfoDrawer";
 

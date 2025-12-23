@@ -1,7 +1,7 @@
 // src/components/Users/services/Villa_Construction/VillaConstruction.js
 import React, { useEffect, useState } from "react";
 import "./villa-construction.css";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 
 import BTSV from "../../../../assets/BTSV.png";
 import NTBT from "../../../../assets/NTBT.png";

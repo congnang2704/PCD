@@ -1,0 +1,299 @@
+/* ===== FORM WRAP ===== */
+.interior-form {
+  width: 100%;
+  max-width: 1400px;
+  margin: 18px auto;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e6eef5;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.06);
+}
+
+.interior-form-title {
+  color: #016bb4;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 16px;
+  font-size: clamp(18px, 1.5vw, 24px) !important;
+  font-weight: 700;
+}
+
+/* thông báo thành công */
+.interior-success {
+  margin-bottom: 16px;
+  background: #f6ffed;
+  border: 1px solid #52c41a;
+  color: #389e0d;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* container form */
+.interior-form-container {
+  margin-top: 8px;
+  align-items: stretch;
+  padding: 20px;
+}
+
+/* panel form bên trái */
+.interior-form-left {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid #dbe7f3;
+  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.05);
+}
+
+/* box info đầu form */
+.contact-info-box {
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px dashed #93c5fd;
+  background: rgba(239, 246, 255, 0.85);
+  padding: 12px 12px;
+}
+
+.contact-subtitle-h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* highlight (fallback) */
+.highlight-blue {
+  color: #016bb4;
+  font-weight: 800;
+}
+
+/* input/textarea radius + focus ring xanh (Ant Design) */
+.interior-form-left .ant-input,
+.interior-form-left .ant-input-affix-wrapper,
+.interior-form-left .ant-input-textarea textarea {
+  border-radius: 10px !important;
+  border-color: #d1deea;
+  min-height: 44px;
+}
+
+.interior-form-left .ant-input-textarea textarea {
+  min-height: 90px;
+  height: auto;
+}
+
+.interior-form-left .ant-input:focus,
+.interior-form-left .ant-input-affix-wrapper-focused,
+.interior-form-left .ant-input-focused,
+.interior-form-left .ant-input-textarea textarea:focus {
+  border-color: #1b73cf !important;
+  box-shadow: 0 0 0 3px rgba(27, 115, 207, 0.16) !important;
+}
+
+/* label & dấu * */
+.interior-form-left .ant-form-item-label > label {
+  color: #096cb5;
+  font-weight: 700;
+}
+
+.interior-form-left .ant-form-item-required::before {
+  color: #ef4444 !important;
+}
+
+/* radio: spacing gọn */
+.interior-form-left .ant-row {
+  row-gap: 8px;
+}
+
+.interior-form-left .ant-radio-wrapper {
+  margin-right: 0;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* nút gửi */
+.interior-form-left .ant-btn-primary {
+  height: 44px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0b63b6, #064f93);
+  box-shadow: 0 10px 22px rgba(2, 89, 166, 0.18);
+  font-weight: 800;
+  border: none !important;
+}
+
+.interior-form-left .ant-btn-primary:hover {
+  background: linear-gradient(90deg, #075a91, #053f78);
+}
+
+/* =========================================================
+   RIGHT COLUMN (MATCH FORM KIẾN TRÚC)  ✅ CHỈ SỬA PHẦN NÀY
+   - Card ảnh bo góc + shadow
+   - Social dọc, thò ra ngoài nhẹ
+   - Card info dưới ảnh + 2 nút
+   ========================================================= */
+
+.interior-form-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* wrapper phải */
+.icf-right {
+  width: 100%;
+  max-width: 560px;
+  display: grid;
+  gap: 14px;
+}
+
+/* Card ảnh */
+.icf-right-media {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.1);
+}
+
+.icf-right-img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Social dọc bên phải */
+.icf-right-socials {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 10px;
+}
+
+.icf-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 22px rgba(2, 6, 23, 0.12);
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.icf-social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(2, 6, 23, 0.14);
+}
+
+.icf-social-btn.fb {
+  color: #1877f2;
+}
+.icf-social-btn.yt {
+  color: #ff0033;
+}
+.icf-social-btn.tt {
+  color: #111;
+}
+
+/* Card info dưới ảnh */
+.icf-right-info {
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.1);
+  padding: 14px 14px 12px;
+}
+
+.icf-right-title {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.icf-right-hotline {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.icf-right-hotline a {
+  color: #0b63b6;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* 2 nút */
+.icf-right-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.icf-btn-primary,
+.icf-btn-outline {
+  height: 40px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.icf-btn-primary {
+  background: #0b63b6;
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(11, 99, 182, 0.22);
+}
+
+.icf-btn-primary:hover {
+  background: #084f92;
+}
+
+.icf-btn-outline {
+  background: #fff;
+  color: #0b63b6;
+  border: 1px solid #93c5fd;
+}
+
+.icf-btn-outline:hover {
+  background: #eff6ff;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 992px) {
+  .icf-right {
+    max-width: 100%;
+  }
+
+  /* socials về góc dưới phải trên mobile/tablet */
+  .icf-right-socials {
+    top: auto;
+    bottom: 12px;
+    right: 12px;
+    transform: none;
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .interior-form-container {
+    padding: 10px;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import "../House.css";
-import ContactForm from "../../view/Mail/ContactFormMail";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 
 const API_BLOGS = "https://api.nguyenhai.com.vn/api/blogs";
 const CATEGORY_NAME = "Căn hộ, khách sạn";
