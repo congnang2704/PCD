@@ -187,6 +187,12 @@
   border-color: #d6dee8;
 }
 
+/* ✅ CWV-friendly: ưu tiên render card đầu (tránh delay paint hiếm gặp) */
+.hp-card--mini:first-child {
+  contain: none;
+  content-visibility: visible;
+}
+
 /* Thumb */
 .hp-thumb {
   position: relative;
@@ -398,7 +404,7 @@
   background: #f8fafc;
 }
 
-/* ===== Modal (giữ nguyên, chỉ chỉnh nhẹ) ===== */
+/* ===== Modal (giữ nguyên) ===== */
 .hp-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -469,12 +475,6 @@
   border-radius: 12px;
   margin: 8px 0;
   object-fit: cover;
-}
-
-.hp-modal-desc {
-  text-align: justify;
-  color: #334155;
-  line-height: 1.6;
 }
 
 .hp-modal-actions {

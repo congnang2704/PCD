@@ -187,19 +187,30 @@ export default function HomeProjects() {
       const statusClass =
         STATUS_STYLE[(p?.status || "").toLowerCase()] || "badge-gray";
 
+      // ✅ Card đầu thường nằm trên fold => ưu tiên tải (CWV/LCP)
+      const isFirst = i === 0;
+
       return (
         <article
           key={p?._id || i}
           className="hp-card hp-card--mini"
           onClick={() => setSelected(p)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") setSelected(p);
+          }}
         >
           <div className="hp-thumb">
             <img
               src={cover}
               alt={p?.name || "project"}
               className="hp-img"
-              loading="lazy"
+              loading={isFirst ? "eager" : "lazy"}
+              fetchPriority={isFirst ? "high" : "auto"}
               decoding="async"
+              // ✅ cực quan trọng: giúp mobile không tải ảnh quá lớn
+              sizes="(max-width: 560px) 88vw, (max-width: 900px) 50vw, 25vw"
               onError={(e) => (e.currentTarget.src = "/no-image.png")}
             />
             {p?.status && (
@@ -282,7 +293,8 @@ export default function HomeProjects() {
           </div>
         ) : (
           <p className="hp-subtext">
-            Một số công trình tiêu biểu mà Nguyễn Hải đã thiết kế & thi công.
+            Một số công trình tiêu biểu mà Nguyễn Hải đã thiết kế &amp; thi
+            công.
           </p>
         )}
       </div>
@@ -352,6 +364,7 @@ export default function HomeProjects() {
                     className="hp-sbtn prev"
                     onClick={() => go(-1)}
                     type="button"
+                    aria-label="Ảnh trước"
                   >
                     ‹
                   </button>
@@ -361,6 +374,9 @@ export default function HomeProjects() {
                     className="hp-modal-cover"
                     src={slides[curr]}
                     alt={selected.name}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                     onError={(e) => (e.currentTarget.src = "/no-image.png")}
                     onClick={() => go(1)}
                   />
@@ -369,6 +385,7 @@ export default function HomeProjects() {
                     className="hp-sbtn next"
                     onClick={() => go(1)}
                     type="button"
+                    aria-label="Ảnh sau"
                   >
                     ›
                   </button>
@@ -387,10 +404,13 @@ export default function HomeProjects() {
                       }`}
                       onClick={() => setCurr(i)}
                       type="button"
+                      aria-label={`Xem ảnh ${i + 1}`}
                     >
                       <img
                         src={u}
                         alt=""
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => (e.currentTarget.src = "/no-image.png")}
                       />
                     </button>

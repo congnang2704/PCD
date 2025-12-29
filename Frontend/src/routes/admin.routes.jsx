@@ -72,6 +72,8 @@ import QL_BGThietKe from "../pages/Admin/QL/QL_BGThietKe/BGThietKe";
 import AdminTrackingCodes from "../pages/Admin/TrackingCodes/AdminTrackingCodes";
 import QL_ThuongHieu from "../pages/Admin/Brands/Brand";
 
+import NotFound from "../pages/NotFound/NotFound";
+
 export default function AdminRoutes() {
   return (
     <Routes>
@@ -143,6 +145,8 @@ export default function AdminRoutes() {
         <Route path="ql-hd-thiet-ke" element={<QL_HDThietKe />} />
         <Route path="ql-bg-thiet-ke" element={<QL_BGThietKe />} />
         <Route path="ql-thuonghieu" element={<QL_ThuongHieu />} />
+
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

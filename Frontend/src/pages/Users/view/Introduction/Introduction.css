@@ -2,19 +2,17 @@
   --primary: #096cb5;
   --text: #333;
   --muted: #555;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 
-  /* Chiều cao banner */
+  /* ✅ CWV-safe: tránh vh trên mobile */
   --banner-desktop: 680px;
-  --banner-mobile: clamp(160px, 32vh, 220px);
+  --banner-mobile: 220px;
+
   --content-max: 900px;
 }
 
 html {
   overflow-y: scroll;
 }
-
-/* ========== KHUNG CHUNG ========== */
 
 .intro-home {
   background-color: #fff;
@@ -59,26 +57,6 @@ html {
   margin: 8px 0;
 }
 
-/* Khối “Xem thêm/Thu gọn” */
-.intro-paragraph-more {
-  max-width: var(--content-max);
-  margin: 10px 0 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.2s ease, visibility 0.2s;
-}
-
-.intro-paragraph-more.hide {
-  max-height: 0;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.intro-paragraph-more.show {
-  max-height: 1200px;
-  opacity: 1;
-  visibility: visible;
-}
-
 /* Nút toggle */
 .intro-toggle {
   display: inline-flex;
@@ -98,7 +76,7 @@ html {
   filter: brightness(0.95);
 }
 
-/* Feature items (icon + title + text) */
+/* Feature items */
 .intro-features {
   margin-top: 10px;
 }
@@ -127,7 +105,6 @@ html {
   font-size: 15px;
   line-height: 1.6;
   color: #334e68;
-  /* text-align: justify; */
 }
 
 /* Mobile padding gọn lại */
@@ -138,15 +115,7 @@ html {
   }
 }
 
-/* ========== BANNER HERO – ẢNH LCP ========== */
-
-.intro-slide-image,
-.intro-image-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
+/* ========== HERO ========== */
 .intro-slider-wrap {
   width: 100%;
 }
@@ -155,9 +124,25 @@ html {
   width: 100%;
 }
 
+/* ✅ LCP image: cố định khung + giữ ratio đúng ảnh */
+.intro-slide-image {
+  display: block;
+  width: 100%;
+  height: var(--banner-desktop);
+  object-fit: cover;
+  aspect-ratio: 1580 / 691;
+}
+
+/* ✅ Mobile: dùng px cố định (CWV-safe) */
+@media (max-width: 991px) {
+  .intro-slide-image {
+    height: var(--banner-mobile);
+  }
+}
+
+/* ========== “Xem thêm” ========== */
 .intro-more {
   overflow: hidden;
-  will-change: max-height;
   transition: max-height 200ms ease;
 }
 
@@ -173,59 +158,9 @@ html {
   padding-top: 8px;
 }
 
-/* ✅ LCP image: cố định chiều cao hiển thị + giữ ratio đúng ảnh 1580/691 */
-.intro-slide-image {
-  width: 100%;
-  height: var(--banner-desktop); /* ✅ quan trọng: cố định khung */
-  object-fit: cover;
-  display: block;
-  aspect-ratio: 1580 / 691; /* ✅ đúng tỷ lệ ảnh thật */
-  /* contain-intrinsic-size: 1580px 691px; */
-}
-
-/* ✅ Mobile: chỉ giảm height, KHÔNG đổi ratio */
-@media (max-width: 991px) {
-  .intro-slide-image {
-    height: var(--banner-mobile);
-  }
-}
-
-/* Caption nếu dùng sau này */
-.intro-slide-caption {
-  position: absolute;
-  bottom: 22px;
-  left: 28px;
-  color: #fff;
-  font-size: clamp(1rem, 2.4vw, 1.8rem);
-  font-weight: bold;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
-  max-width: 60%;
-  min-height: 48px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.slick-active .intro-slide-caption {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 767px) {
-  .intro-slide-caption {
-    left: 12px;
-    bottom: 12px;
-    max-width: 90%;
-  }
-  .intro-hero-main {
-    max-width: 360px;
-    max-height: 260px;
-  }
-}
-
 /* ========== ẢNH BÊN PHẢI ========== */
-
 .intro-image-img {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: 14px;

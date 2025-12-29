@@ -1,18 +1,23 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./Container_Services.css";
-import { Row, Col, Image, Grid, Button, Pagination, Space } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { Grid } from "antd";
+import { useNavigate } from "react-router-dom";
+
 import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
 import FAQComponent from "../../view/FAQComponent/FAQComponent";
-import bannerImage from "../../../../assets/banner/2.webp";
-import { useNavigate } from "react-router-dom";
 import DQKH from "../../view/DanhGiaKH/DanhGiaKH";
+
+import Hero from "../../../../components/Service/Hero";
+import ServiceGroups from "../../../../components/Service/ServiceGroups";
+import Process from "../../../../components/Service/Process";
+import Packages from "../../../../components/Service/Packages";
+import BlogGrid from "../../../../components/Service/BlogGrid";
 
 const { useBreakpoint } = Grid;
 
 const API_BLOGS = "https://api.nguyenhai.com.vn/api/blogs";
 
-// 5 category theo tên (chuẩn hóa để so khớp nhanh)
+// 5 category theo tên
 const ALLOWED_CATEGORY_NAMES = [
   "Thiết kế kiến trúc",
   "Thi công công trình thô",
@@ -20,36 +25,34 @@ const ALLOWED_CATEGORY_NAMES = [
   "Thi công xây nhà trọn gói",
   "Thiết kế nội thất",
 ];
+
 const norm = (s = "") =>
   s
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim();
+
 const ALLOWED_SET = new Set(ALLOWED_CATEGORY_NAMES.map(norm));
 
-// Helpers nhỏ gọn, tránh đụng content
 const getPostImage = (p) =>
   p?.cover_image || p?.avatar_blog || p?.thumbnail || "/default.jpg";
 
 const getPostCateNames = (p) =>
   (p?.categoryIds || []).map((c) => c?.name || c?.title || "").filter(Boolean);
 
-const Services = () => {
-  const screens = useBreakpoint();
+export default function Services() {
+  useBreakpoint(); // giữ cho consistent nếu bạn cần screens sau này
   const navigate = useNavigate();
 
   const [sourcePosts, setSourcePosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // filter theo danh mục (ALL = tất cả 5)
   const [cateFilter, setCateFilter] = useState("ALL");
 
-  // phân trang
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
-  // util build query
   const buildQuery = (params = {}) => {
     const q = new URLSearchParams();
     Object.entries(params).forEach(([k, v]) => {
@@ -69,12 +72,12 @@ const Services = () => {
       try {
         setLoading(true);
 
-        // Cache 60s để quay lại trang không phải load lại
-        const cacheKey = "svc-blogs:v2";
+        const cacheKey = "svc-blogs:v3";
         const cacheTsKey = cacheKey + ":ts";
         const now = Date.now();
         const last = Number(sessionStorage.getItem(cacheTsKey) || 0);
         const cached = sessionStorage.getItem(cacheKey);
+
         if (cached && now - last < 60 * 1000) {
           if (alive) {
             setSourcePosts(JSON.parse(cached));
@@ -83,11 +86,10 @@ const Services = () => {
           }
         }
 
-        // Gọi API bản "nhẹ": không kéo content
         const q = buildQuery({
           status: "published",
           sort: "-published_at,-created_at",
-          limit: 300, // đủ rộng để bao phủ 5 nhóm DV
+          limit: 300,
           fields:
             "title,slug,thumbnail,cover_image,avatar_blog,description,is_active,status,categoryIds.name,categoryIds.title,published_at,created_at",
         });
@@ -96,6 +98,7 @@ const Services = () => {
           signal: ac.signal,
           headers: { Accept: "application/json" },
         });
+
         const data = await res.json();
         const list = Array.isArray(data)
           ? data
@@ -105,7 +108,6 @@ const Services = () => {
           ? data.data
           : [];
 
-        // Chỉ lấy blog thuộc 5 danh mục định nghĩa + active
         const filtered = list
           .filter(
             (p) =>
@@ -119,7 +121,6 @@ const Services = () => {
             _id: p._id,
             slug: p.slug,
             title: p.title || "",
-            // description đã có sẵn -> không stripHtml(content)
             description: p.description || "",
             cover_image: p.cover_image,
             avatar_blog: p.avatar_blog,
@@ -155,7 +156,6 @@ const Services = () => {
     };
   }, []);
 
-  // posts sau khi áp filter danh mục
   const filteredByCate = useMemo(() => {
     if (cateFilter === "ALL") return sourcePosts;
     const key = norm(cateFilter);
@@ -164,139 +164,48 @@ const Services = () => {
     );
   }, [sourcePosts, cateFilter]);
 
-  // reset về trang 1 khi đổi filter
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [cateFilter]);
+  useEffect(() => setCurrentPage(1), [cateFilter]);
 
-  // phân trang client (vì API chưa hỗ trợ filter-by-cate)
   const startIndex = (currentPage - 1) * postsPerPage;
   const currentPosts = filteredByCate.slice(
     startIndex,
     startIndex + postsPerPage
   );
 
+  const onScrollToPosts = () => {
+    const el = document.getElementById("svc-posts");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const onOpenPost = (slug) => navigate(`/dich-vu/${slug}`);
+
   return (
-    <div className="services-page">
-      {/* Banner */}
-      <Row>
-        <Col span={24}>
-          <Image
-            className="responsive-banner"
-            width="100%"
-            height={screens.xs ? "auto" : "700px"}
-            src={bannerImage}
-            alt="Banner"
-            preview={false}
-            style={{ display: "block", objectFit: "cover", maxWidth: "100%" }}
-          />
-        </Col>
-      </Row>
+    <div className="svc-page">
+      <Hero onScrollToPosts={onScrollToPosts} />
 
-      {/* Highlight */}
-      <div className="services-highlight">
-        <h2 className="services-title">DỊCH VỤ</h2>
-        <p className="services-desc">
-          Để đáp ứng nhu cầu của khách hàng, Nguyễn Hải cung cấp các dịch vụ
-          như: Thiết kế kiến trúc, thi công nhà phố, thiết kế và thi công trọn
-          gói,… tại Đà Nẵng và nhiều tỉnh thành khác.
-        </p>
+      <div className="svc-container">
+        <ServiceGroups />
+        <BlogGrid
+          loading={loading}
+          currentPosts={currentPosts}
+          filteredTotal={filteredByCate.length}
+          currentPage={currentPage}
+          postsPerPage={postsPerPage}
+          setCurrentPage={setCurrentPage}
+          cateFilter={cateFilter}
+          setCateFilter={setCateFilter}
+          allowedCategories={ALLOWED_CATEGORY_NAMES}
+          getPostImage={getPostImage}
+          onOpenPost={onOpenPost}
+        />
+        <Process />
+
+        <Packages />
+
+        <FAQComponent />
+        <ContactForm />
+        <DQKH />
       </div>
-
-      {/* Filter theo danh mục */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          margin: "8px 0 16px",
-        }}
-      >
-        <Space wrap>
-          <Button
-            type={cateFilter === "ALL" ? "primary" : "default"}
-            onClick={() => setCateFilter("ALL")}
-          >
-            Tất cả
-          </Button>
-          {ALLOWED_CATEGORY_NAMES.map((name) => (
-            <Button
-              key={name}
-              type={cateFilter === name ? "primary" : "default"}
-              onClick={() => setCateFilter(name)}
-            >
-              {name}
-            </Button>
-          ))}
-        </Space>
-      </div>
-
-      {/* Post List */}
-      <div className="services-grid">
-        <Row gutter={[24, 24]}>
-          {loading ? (
-            <Col span={24}>
-              <p style={{ textAlign: "center" }}>⏳ Đang tải bài viết…</p>
-            </Col>
-          ) : currentPosts.length === 0 ? (
-            <Col span={24}>
-              <p style={{ textAlign: "center" }}>Không có bài viết.</p>
-            </Col>
-          ) : (
-            currentPosts.map((post) => (
-              <Col xs={24} sm={12} md={8} key={post._id}>
-                <div
-                  className="post-card"
-                  onClick={() => navigate(`/dich-vu/${post.slug}`)}
-                >
-                  <img
-                    src={getPostImage(post)}
-                    alt={post.title}
-                    className="post-image"
-                    loading="lazy"
-                    onError={(e) => (e.currentTarget.src = "/default.jpg")}
-                  />
-                  <div className="post-content">
-                    <h4 className="post-title">{post.title}</h4>
-                    {post.description && (
-                      <p className="post-desc">
-                        {(post.description || "").slice(0, 90)}…
-                      </p>
-                    )}
-                    <Button
-                      type="primary"
-                      icon={<ArrowRightOutlined />}
-                      className="post-btn"
-                      onClick={() => navigate(`/dich-vu/${post.slug}`)}
-                    >
-                      Khám phá
-                    </Button>
-                  </div>
-                </div>
-              </Col>
-            ))
-          )}
-        </Row>
-
-        {/* Pagination */}
-        {!loading && filteredByCate.length > postsPerPage && (
-          <Pagination
-            current={currentPage}
-            pageSize={postsPerPage}
-            total={filteredByCate.length}
-            onChange={(page) => setCurrentPage(page)}
-            showSizeChanger={false}
-            className="custom-pagination"
-            style={{ marginTop: 16, textAlign: "center" }}
-          />
-        )}
-      </div>
-
-      {/* FAQ + Đánh giá + Contact */}
-      <FAQComponent />
-      <DQKH />
-      <ContactForm />
     </div>
   );
-};
-
-export default Services;
+}
