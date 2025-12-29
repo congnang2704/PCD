@@ -60,6 +60,8 @@ import WarrantyPolicy from "../pages/Users/Policy/Warranty";
 import BlogDetail from "../pages/Users/BlogDetail/BlogDetail_DV";
 import BlogDetail_MND from "../pages/Users/BlogDetail/BlogDetail_MND";
 
+import NotFound from "../pages/NotFound/NotFound";
+
 export default function UserRoutes() {
   return (
     <Routes>
@@ -160,6 +162,9 @@ export default function UserRoutes() {
       {/* Chính sách */}
       <Route path="/chinh-sach-bao-mat" element={<SecurityPolicy />} />
       <Route path="/chinh-sach-bao-hanh" element={<WarrantyPolicy />} />
+
+      {/* ✅ 404 */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

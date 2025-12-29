@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Introduction.css";
 import { Row, Col } from "antd";
 import { HomeOutlined, RiseOutlined } from "@ant-design/icons";
@@ -16,22 +16,6 @@ const HERO_BANNER = {
 const IntroductionHome = () => {
   const [showMore, setShowMore] = useState(false);
 
-  useEffect(() => {
-    const href = HERO_BANNER.image;
-    const id = "preload-hero-banner";
-    if (document.getElementById(id)) return;
-
-    const link = document.createElement("link");
-    link.id = id;
-    link.rel = "preload";
-    link.as = "image";
-    link.href = href;
-    link.type = "image/webp";
-    document.head.appendChild(link);
-
-    return () => link.remove();
-  }, []);
-
   return (
     <section className="intro-home" aria-labelledby="nh-home-title">
       <div className="intro-slider-wrap">
@@ -42,7 +26,6 @@ const IntroductionHome = () => {
             alt={HERO_BANNER.title}
             loading="eager"
             decoding="async"
-            fetchpriority="high"
             fetchPriority="high"
             width={1580}
             height={691}
@@ -94,6 +77,7 @@ const IntroductionHome = () => {
               type="button"
               onClick={() => setShowMore((s) => !s)}
               className="intro-toggle"
+              aria-expanded={showMore}
             >
               {showMore ? "Thu gọn" : "Xem thêm"}
             </button>

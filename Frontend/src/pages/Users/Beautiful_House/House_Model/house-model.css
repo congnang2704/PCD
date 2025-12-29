@@ -1,0 +1,371 @@
+:root {
+  --primary: #096cb5;
+  --bg: #f5f7fb;
+  --text: #1f2937;
+  --muted: #6b7280;
+}
+
+/* ===== CONTAINER ===== */
+.house-container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 48px 20px 80px;
+  background: var(--bg);
+}
+
+/* ===== TITLE ===== */
+.house-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.house-subtitle {
+  max-width: 820px;
+  margin: 12px auto 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ===== GRID ===== */
+.house-section {
+  margin-bottom: 64px;
+}
+
+.house-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+/* ===== CTA ===== */
+.house-cta {
+  background: linear-gradient(135deg, #096cb5, #0c7ddc);
+  border-radius: 24px;
+  padding: 56px 32px;
+  text-align: center;
+  color: #fff;
+  margin: 80px 0;
+}
+
+.house-cta h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.house-cta p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.house-cta a {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ===== TRUST ===== */
+.why-choose-us {
+  margin: 80px 0;
+}
+
+.why-choose-us h3 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 36px;
+}
+
+.why-choose-us ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.why-choose-us li {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ===== FAQ ===== */
+.house-faq {
+  background: #fff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+}
+
+.house-faq h3 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 28px;
+}
+
+.house-faq details {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 0;
+}
+
+.house-faq summary {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.house-faq p {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-weight: 600;
+}
+
+.pagination .active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ===== CONTACT ===== */
+.house-contact-heading {
+  margin: 80px 0 24px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .house-title {
+    font-size: 26px;
+  }
+  .house-cta h2 {
+    font-size: 22px;
+  }
+}
+/* ---------------- */
+/* ======== House Card ======== 
+import React, { useState, useEffect, useMemo } from "react";
+import "./house-model.css";
+import ContactForm from "../../../../components/Mail/ContactFormMail/ContactFormMail";
+
+import HouseFilter from "./components/HouseFilter";
+import HouseCard from "./components/HouseCard";
+import WhyChooseUs from "./components/WhyChooseUs";
+import HouseFAQ from "./components/HouseFAQ";
+
+const ALLOWED_CATEGORY_NAMES = [
+  "Nhà 3 tầng",
+  "Nhà 2 tầng",
+  "Nhà 5 tầng",
+  "Biệt thự",
+  "Căn hộ, khách sạn",
+];
+
+const API_BLOGS = "https://api.nguyenhai.com.vn/api/blogs";
+const ITEMS_PER_PAGE = 9;
+
+const norm = (s = "") =>
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
+const ALLOWED_SET = new Set(ALLOWED_CATEGORY_NAMES.map(norm));
+
+const getImg = (p) =>
+  p?.cover_image || p?.avatar_blog || p?.thumbnail || "/default.jpg";
+
+const getCateNames = (p) =>
+  (p?.categoryIds || []).map((c) => c?.name || c?.title || "").filter(Boolean);
+
+const buildQuery = (params = {}) => {
+  const q = new URLSearchParams();
+  Object.entries(params).forEach(([k, v]) => {
+    if (!v) return;
+    q.append(k, v);
+  });
+  return q.toString() ? `?${q}` : "";
+};
+
+const Container_HouseModel = () => {
+  const [houses, setHouses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    let alive = true;
+    const ac = new AbortController();
+
+    (async () => {
+      try {
+        setLoading(true);
+        const q = buildQuery({
+          status: "published",
+          sort: "-published_at,-created_at",
+          limit: 400,
+          fields:
+            "title,slug,thumbnail,cover_image,avatar_blog,description,is_active,status,categoryIds.name,categoryIds.title,published_at,created_at",
+        });
+
+        const res = await fetch(API_BLOGS + q, {
+          signal: ac.signal,
+          headers: { Accept: "application/json" },
+        });
+
+        const data = await res.json();
+        const list = Array.isArray(data?.items) ? data.items : [];
+
+        const filtered = list
+          .filter(
+            (p) =>
+              (p?.status || "").toLowerCase() === "published" &&
+              p?.is_active !== false
+          )
+          .filter((p) => getCateNames(p).some((n) => ALLOWED_SET.has(norm(n))))
+          .sort(
+            (a, b) =>
+              new Date(b.published_at || b.created_at || 0) -
+              new Date(a.published_at || a.created_at || 0)
+          );
+
+        if (alive) {
+          setHouses(filtered);
+          setCurrentPage(1);
+        }
+      } catch (e) {
+        console.error(e);
+      } finally {
+        if (alive) setLoading(false);
+      }
+    })();
+
+    return () => {
+      alive = false;
+      ac.abort();
+    };
+  }, []);
+
+  const totalPages = Math.ceil(houses.length / ITEMS_PER_PAGE) || 1;
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  const currentItems = useMemo(
+    () => houses.slice(startIndex, startIndex + ITEMS_PER_PAGE),
+    [houses, startIndex]
+  );
+
+  return (
+    <div className="house-container">
+      {HERO}
+      <h1 className="house-title">
+        999+ Mẫu Nhà Đẹp – Thiết Kế Hiện Đại, Dẫn Đầu Xu Hướng
+      </h1>
+      <p className="house-subtitle">
+        Tổng hợp các mẫu nhà phố, biệt thự, căn hộ – thiết kế tối ưu công năng,
+        phù hợp ngân sách, thi công thực tế tại Việt Nam.
+      </p>
+
+      {<HouseFilter />}
+
+      {GRID}
+      <section className="house-section">
+        <div className="house-grid">
+          {loading ? (
+            <div className="loading">Đang tải dữ liệu…</div>
+          ) : (
+            currentItems.map((house) => (
+              <HouseCard key={house._id} house={house} getImg={getImg} />
+            ))
+          )}
+        </div>
+      </section>
+
+      {CTA RIÊNG}
+      <section className="house-cta">
+        <h2>Bạn đã có đất nhưng chưa biết xây mẫu nhà nào phù hợp?</h2>
+        <p>
+          Kiến trúc sư Nguyễn Hải tư vấn miễn phí theo diện tích đất, ngân sách
+          và nhu cầu sử dụng thực tế.
+        </p>
+        <a href="#contact-form">Nhận tư vấn miễn phí</a>
+      </section>
+
+      {TRUST}
+      <WhyChooseUs />
+
+      {FAQ}
+      <HouseFAQ />
+
+      {PAGINATION}
+      {!loading && totalPages > 1 && (
+        <div className="pagination">
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((p) => p - 1)}
+          >
+            « Trước
+          </button>
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <button
+              key={i}
+              className={currentPage === i + 1 ? "active" : ""}
+              onClick={() => setCurrentPage(i + 1)}
+            >
+              {i + 1}
+            </button>
+          ))}
+          <button
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((p) => p + 1)}
+          >
+            Tiếp »
+          </button>
+        </div>
+      )}
+
+      {CONTACT}
+      <h3 className="house-contact-heading">
+        Để lại thông tin – Kiến trúc sư PCD Nguyễn Hải sẽ liên hệ tư vấn cho bạn
+      </h3>
+      <div id="contact-form">
+        <ContactForm />
+      </div>
+    </div>
+  );
+};
+
+export default Container_HouseModel;
+----------------- */
